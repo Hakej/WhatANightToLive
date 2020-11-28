@@ -20,19 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ab102d-a720-49cc-a493-14ee8ff692de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Glass.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Glass.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/PlayerMaterial.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/PlayerMaterial.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/MainMap.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/MainMap.blend.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/MainMap.blend1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/MainMap.blend1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/TestRoom.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/TestRoom.blend.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/TestRoom.blend1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/TestRoom.blend1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/WithCTRL.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/WithCTRL/MainMap.blend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/WithCTRL/MainMap.blend.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/WithCTRL/MainMap.blend1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/WithCTRL/MainMap.blend1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Map.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Map.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Map.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Map.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Map_applyTransform.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Map_applyTransform.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test_CameraManager.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test_CameraManager.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +78,8 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -95,7 +113,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606555997299</updated>
-      <workItem from="1606556015625" duration="1516000" />
+      <workItem from="1606556015625" duration="7091000" />
     </task>
     <servers />
   </component>
@@ -118,5 +136,58 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1606559664095">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.bottom/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559664095" />
+    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1606559664094">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.center/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559664094" />
+    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1606559664094">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.left/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559664094" />
+    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1606559664095">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.0.right/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559664095" />
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1606559668133">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.bottom/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559668133" />
+    <state width="1877" height="375" key="GridCell.Tab.1.center" timestamp="1606559668133">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.center/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559668133" />
+    <state width="1877" height="375" key="GridCell.Tab.1.left" timestamp="1606559668133">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.left/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559668133" />
+    <state width="1877" height="375" key="GridCell.Tab.1.right" timestamp="1606559668133">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="375" key="GridCell.Tab.1.right/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606559668133" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerLook.cs</url>
+          <line>17</line>
+          <properties documentPath="C:\Wyskakuje z tonącego HDD\Praca inżynierska\Unity\What a Night to Live\Assets\Scripts\PlayerLook.cs" initialLine="17">
+            <startOffsets>
+              <option value="394" />
+            </startOffsets>
+            <endOffsets>
+              <option value="468" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
