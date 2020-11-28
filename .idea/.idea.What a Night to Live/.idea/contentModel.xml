@@ -7,12 +7,18 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Models" t="Include">
-          <e p="LowPolyOfficeProps_LITE" t="Include">
-            <e p="About.txt" t="Include" />
+          <e p="ThirdParty" t="Include">
+            <e p="LowPolyOfficeProps_LITE" t="Include">
+              <e p="About.txt" t="Include" />
+            </e>
+            <e p="TV" t="Include">
+              <e p="readme.txt" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="ButtonUI.cs" t="Include" />
+          <e p="GameHandler.cs" t="Include" />
           <e p="Laptop.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
         </e>
