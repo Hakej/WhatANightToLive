@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\zer0v\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\zer0v\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_What a Night to Live.-1455255664.00" t="ExcludeRecursive" />
+    <e p="C:\Wyskakuje z tonącego HDD\Praca inżynierska\Unity\What a Night to Live" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="CameraManager.cs" t="Include" />
+          <e p="PlayerLook.cs" t="Include" />
+          <e p="PlayerMovement.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="What a Night to Live.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
