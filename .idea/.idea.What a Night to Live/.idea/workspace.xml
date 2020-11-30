@@ -19,7 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64ab102d-a720-49cc-a493-14ee8ff692de" name="Default Changelist" comment="" />
+    <list default="true" id="64ab102d-a720-49cc-a493-14ee8ff692de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.xcf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,8 +52,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TV.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Laptop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -97,6 +106,7 @@
       <updated>1606555997299</updated>
       <workItem from="1606556015625" duration="19417000" />
       <workItem from="1606750743915" duration="664000" />
+      <workItem from="1606760428214" duration="664000" />
     </task>
     <servers />
   </component>
@@ -202,6 +212,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="167" y="70" width="1602" height="931" key="SettingsEditor/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606581810103" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1606761093886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606761093886" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1606582468039">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

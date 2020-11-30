@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -6,9 +7,20 @@ public class PlayerController : MonoBehaviour
     public float RotationSpeed = 0.5f;
 
     public GameObject UICanvas;
+    public GameObject Flashlight;
 
     private bool _isTurning;
 
+    public void StartUsingFlashlight()
+    {
+        Flashlight.SetActive(true);
+    }
+
+    public void StopUsingFlashlight()
+    {
+        Flashlight.SetActive(false);
+    }
+    
     public void TurnLeft()
     {
         if (_isTurning) return;
@@ -26,6 +38,7 @@ public class PlayerController : MonoBehaviour
         if (_isTurning) return;
         StartCoroutine(RotateMe(Vector3.up * 180));
     }
+    
     private IEnumerator RotateMe(Vector3 byAngles)
     {
         _isTurning = true;
