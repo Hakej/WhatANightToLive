@@ -20,15 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ab102d-a720-49cc-a493-14ee8ff692de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/ArchimeshPlayerRoom.blend" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Blender/ArchimeshPlayerRoom.blend.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TV.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/TV.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Blender/PlayerRoom.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Blender/PlayerRoom.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Blender/PlayerRoom.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Blender/PlayerRoom.blend.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Blender/PlayerRoom.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Blender/PlayerRoom.blend1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtonUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtonUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Laptop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Laptop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +43,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/04258D1C-DC10-4424-8C2A-17A6A31A3CF7/f0/c55d85fd/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ButtonUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TV.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Laptop.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -51,9 +53,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TV.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Laptop.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" />
       </list>
     </option>
   </component>
@@ -105,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606555997299</updated>
       <workItem from="1606556015625" duration="19417000" />
-      <workItem from="1606750743915" duration="347000" />
+      <workItem from="1606750743915" duration="664000" />
     </task>
     <servers />
   </component>
@@ -219,24 +222,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606588770638" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Laptop.cs</url>
-          <line>25</line>
-          <properties documentPath="C:\Wyskakuje z tonącego HDD\Praca inżynierska\Unity\What a Night to Live\Assets\Scripts\Laptop.cs" initialLine="24">
-            <startOffsets>
-              <option value="557" />
-            </startOffsets>
-            <endOffsets>
-              <option value="576" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -94,10 +94,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="ButtonUI.cs" t="Include" />
           <e p="GameHandler.cs" t="Include" />
           <e p="Laptop.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="TV.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

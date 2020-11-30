@@ -2514,6 +2514,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1468208222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468208220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c1b5dfe310e42409f4afaec786cdbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WhiteNoise: {fileID: 1468208221}
+  SanityText: {fileID: 1920473636}
+  MaxWhiteNoiseVolume: 0.1
+  WhiteNoiseStartingSanity: 50
 --- !u!1 &1540832222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,11 +2667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingSanity: 100
-  BaseSanityDrop: 5
-  SanityText: {fileID: 1920473636}
-  WhiteNoise: {fileID: 1468208221}
-  WhiteNoiseStartingSanity: 50
-  MaxWhiteNoiseVolume: 0.1
+  BaseSanityDrop: 0.1
 --- !u!4 &1687331039
 Transform:
   m_ObjectHideFlags: 0

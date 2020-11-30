@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Laptop : MonoBehaviour
 {
     public Camera Camera;
     public GameObject UICanvas;
+    
     public float FocusedFOV = 12f;
     public float UnfocusedFOV = 60f;
     public float FocusingSpeed = 1f;
@@ -17,7 +17,6 @@ public class Laptop : MonoBehaviour
     private void OnMouseDown()
     {
         if (_isFocusing) return;
-
         StartCoroutine(Focus());
     }
     
@@ -27,9 +26,9 @@ public class Laptop : MonoBehaviour
         UICanvas.SetActive(_isFocused);
         
         var fromFOV = Camera.fieldOfView;
-        var toFOV = _isFocused ? UnfocusedFOV : FocusedFOV;
-
         var fromX = Camera.transform.rotation.x;
+        
+        var toFOV = _isFocused ? UnfocusedFOV : FocusedFOV;
         var toX = _isFocused ? 0f : FocusedCameraRotationX;
         
         for (var t = 0f; t < 1; t += Time.deltaTime / FocusingSpeed)

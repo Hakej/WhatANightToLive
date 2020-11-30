@@ -30,8 +30,10 @@ public class PlayerController : MonoBehaviour
     {
         _isTurning = true;
         UICanvas.SetActive(false);
+        
         var fromAngle = transform.rotation;
         var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
+        
         for (var t = 0f; t < 1; t += Time.deltaTime / RotationSpeed)
         {
             transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
