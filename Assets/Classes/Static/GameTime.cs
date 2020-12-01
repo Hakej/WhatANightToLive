@@ -49,6 +49,7 @@ namespace Classes.Static
             
             _minutes = 0f;
             _hour++;
+            
             if (_hour >= 24)
             {
                 _hour = 0;

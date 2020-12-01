@@ -20,13 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ab102d-a720-49cc-a493-14ee8ff692de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/WinScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/WinScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TypeWriterEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TypeWriterEffect.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelLoader.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/LevelLoader.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Clock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Clock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Clock.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Clock.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TypeWriterEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TypeWriterEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TypeWriterEffect.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TypeWriterEffect.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +45,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/04258D1C-DC10-4424-8C2A-17A6A31A3CF7/f0/c55d85fd/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TV.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Laptop.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -61,8 +67,11 @@
         <option value="$PROJECT_DIR$/Assets/Classes/Singleton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EventHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Classes/Static/GameTime.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/TypeWriterEffect.cs" />
+        <option value="$PROJECT_DIR$/Assets/LevelLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/SceneLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TypeWriterEffect.cs" />
       </list>
     </option>
   </component>
@@ -116,7 +125,7 @@
       <workItem from="1606556015625" duration="19417000" />
       <workItem from="1606750743915" duration="664000" />
       <workItem from="1606760428214" duration="664000" />
-      <workItem from="1606825670072" duration="8289000" />
+      <workItem from="1606825670072" duration="9600000" />
     </task>
     <servers />
   </component>
@@ -238,10 +247,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606582468039" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606833117659">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606837667127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833117659" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606837667127" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
