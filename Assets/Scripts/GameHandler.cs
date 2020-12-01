@@ -1,25 +1,36 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Classes.Interfaces;
+using Classes.Static;
+using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
-    public static float CurrentSanity;
-
+    [Header("Sanity")]
+    public static Sanity Sanity;
     public float StartingSanity = 100f;
     public float BaseSanityDrop = 0.05f;
+
+    [Header("Game time")]
+    public static GameTime GameTime;
+    public int StartingHour;
+    public int StartingMinutes;
     
-    private float _currentSanityDrop;
+    private List<IUpdateable> Updateables = new List<IUpdateable>();
 
     private void Start()
     {
-        CurrentSanity = StartingSanity;
-        _currentSanityDrop = BaseSanityDrop;
+        Sanity = new Sanity(StartingSanity, BaseSanityDrop);
+        GameTime = new GameTime(StartingHour, StartingMinutes);
+        
+        Updateables.Add(Sanity);
+        Updateables.Add(GameTime);
     }
 
     private void Update()
     {
-        if (CurrentSanity > 0f)
+        foreach (var updateable in Updateables)
         {
-            CurrentSanity -= _currentSanityDrop * Time.deltaTime;
+            updateable.Update(Time.deltaTime);
         }
     }
 }

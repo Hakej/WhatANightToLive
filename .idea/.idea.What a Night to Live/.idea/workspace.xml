@@ -20,14 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ab102d-a720-49cc-a493-14ee8ff692de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.xcf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/flashlight.xcf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Interfaces.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Interfaces/IUpdateable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Interfaces/IUpdateable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Static.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Static/GameTime.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Static/GameTime.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Static/Sanity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Classes/Static/Sanity.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Clock.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Clock.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Clock.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Clock.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/ThirdParty/Alarm OBJ.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/ThirdParty/Alarm OBJ.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/digital-7 SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/digital-7 SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/digital-7.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/digital-7.ttf.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TV.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +73,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ButtonUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TV.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Laptop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Classes/Time.cs" />
+        <option value="$PROJECT_DIR$/Assets/Classes/GameTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/Classes/Static/Sanity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TV.cs" />
+        <option value="$PROJECT_DIR$/Assets/Clock.cs" />
+        <option value="$PROJECT_DIR$/Assets/Classes/Interfaces/IUpdateable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Classes/Static/GameTime.cs" />
       </list>
     </option>
   </component>
@@ -73,7 +102,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -86,10 +115,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="22032">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="22032" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -107,6 +136,7 @@
       <workItem from="1606556015625" duration="19417000" />
       <workItem from="1606750743915" duration="664000" />
       <workItem from="1606760428214" duration="664000" />
+      <workItem from="1606825670072" duration="6235000" />
     </task>
     <servers />
   </component>
@@ -132,6 +162,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="161" key="#Plugins" timestamp="1606832458728">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="161" key="#Plugins/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606832458728" />
     <state x="834" y="436" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.ChooseSilentCodeCleanupProfileDialog" timestamp="1606581830914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -144,38 +178,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="408" height="464" key="DebuggerActiveHint/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606582674410" />
-    <state width="1877" height="197" key="GridCell.Tab.0.bottom" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.0.bottom" timestamp="1606833246481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.bottom/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
-    <state width="1877" height="197" key="GridCell.Tab.0.center" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.0.bottom/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833246481" />
+    <state width="1877" height="197" key="GridCell.Tab.0.center" timestamp="1606833246480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.center/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
-    <state width="1877" height="197" key="GridCell.Tab.0.left" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.0.center/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833246480" />
+    <state width="1877" height="197" key="GridCell.Tab.0.left" timestamp="1606833246480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.left/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
-    <state width="1877" height="197" key="GridCell.Tab.0.right" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.0.left/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833246480" />
+    <state width="1877" height="197" key="GridCell.Tab.0.right" timestamp="1606833246480">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.0.right/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
-    <state width="1877" height="197" key="GridCell.Tab.1.bottom" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.0.right/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833246480" />
+    <state width="1877" height="197" key="GridCell.Tab.1.bottom" timestamp="1606833248142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.1.bottom/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
-    <state width="1877" height="197" key="GridCell.Tab.1.center" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.1.bottom/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833248142" />
+    <state width="1877" height="197" key="GridCell.Tab.1.center" timestamp="1606833248142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.1.center/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
-    <state width="1877" height="197" key="GridCell.Tab.1.left" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.1.center/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833248142" />
+    <state width="1877" height="197" key="GridCell.Tab.1.left" timestamp="1606833248142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.1.left/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
-    <state width="1877" height="197" key="GridCell.Tab.1.right" timestamp="1606599547808">
+    <state width="1877" height="197" key="GridCell.Tab.1.left/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833248142" />
+    <state width="1877" height="197" key="GridCell.Tab.1.right" timestamp="1606833248142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="197" key="GridCell.Tab.1.right/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547808" />
+    <state width="1877" height="197" key="GridCell.Tab.1.right/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833248142" />
     <state width="1877" height="197" key="GridCell.Tab.2.bottom" timestamp="1606599547809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -208,10 +242,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="197" key="GridCell.Tab.3.right/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606599547809" />
-    <state x="167" y="70" width="1602" height="931" key="SettingsEditor" timestamp="1606581810103">
+    <state x="670" y="210" key="RiderGenerateDialog" timestamp="1606828810762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="167" y="70" width="1602" height="931" key="SettingsEditor/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606581810103" />
+    <state x="670" y="210" key="RiderGenerateDialog/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606828810762" />
+    <state x="167" y="70" width="1602" height="931" key="SettingsEditor" timestamp="1606832436139">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="167" y="70" width="1602" height="931" key="SettingsEditor/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606832436139" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1606761093886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -220,9 +258,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606582468039" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606588770638">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606833117659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606588770638" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1824.0.1824.974/0.0.1920.1040@0.0.1920.1040" timestamp="1606833117659" />
   </component>
 </project>
