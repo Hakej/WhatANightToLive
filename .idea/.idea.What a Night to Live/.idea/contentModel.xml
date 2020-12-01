@@ -11,6 +11,7 @@
           <e p="Interfaces" t="Include">
             <e p="IUpdateable.cs" t="Include" />
           </e>
+          <e p="Singleton.cs" t="Include" />
           <e p="Static" t="Include">
             <e p="GameTime.cs" t="Include" />
             <e p="Sanity.cs" t="Include" />

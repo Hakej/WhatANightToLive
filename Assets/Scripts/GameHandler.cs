@@ -3,7 +3,7 @@ using Classes.Interfaces;
 using Classes.Static;
 using UnityEngine;
 
-public class GameHandler : MonoBehaviour
+public class GameHandler : Singleton<GameHandler>
 {
     [Header("Sanity")]
     public static Sanity Sanity;
