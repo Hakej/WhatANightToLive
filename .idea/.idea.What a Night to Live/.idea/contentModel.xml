@@ -111,6 +111,7 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="TV.cs" t="Include" />
         </e>
+        <e p="TypeWriterEffect.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

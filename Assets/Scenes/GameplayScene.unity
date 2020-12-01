@@ -2701,8 +2701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingSanity: 100
   BaseSanityDrop: 0.1
-  StartingHour: 5
-  StartingMinutes: 55
+  StartingHour: 22
+  StartingMinutes: 0
   WinningHour: 6
 --- !u!4 &1687331039
 Transform:
