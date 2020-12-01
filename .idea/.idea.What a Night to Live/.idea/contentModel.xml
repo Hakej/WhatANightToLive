@@ -105,6 +105,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="EventHandler.cs" t="Include" />
           <e p="GameHandler.cs" t="Include" />
           <e p="Laptop.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />

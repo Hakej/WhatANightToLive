@@ -1,4 +1,5 @@
 ﻿using Classes.Interfaces;
+using UnityEngine;
 
 namespace Classes.Static
 {
@@ -33,16 +34,21 @@ namespace Classes.Static
 
         public void Update(float deltaTime)
         {
+            if (_hour == GameHandler.Instance.WinningHour)
+            {
+                EventHandler.Instance.Win();
+                return;
+            }
+            
             _minutes += deltaTime;
-
-            if (!(_minutes >= 60))
+            
+            if (_minutes < 60)
             {
                 return;
             }
-
-            _hour++;
-            _minutes = 0f;
             
+            _minutes = 0f;
+            _hour++;
             if (_hour >= 24)
             {
                 _hour = 0;

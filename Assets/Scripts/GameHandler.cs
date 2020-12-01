@@ -6,14 +6,15 @@ using UnityEngine;
 public class GameHandler : Singleton<GameHandler>
 {
     [Header("Sanity")]
-    public static Sanity Sanity;
     public float StartingSanity = 100f;
     public float BaseSanityDrop = 0.05f;
+    public static Sanity Sanity;
 
     [Header("Game time")]
+    public int StartingHour = 22;
+    public int StartingMinutes = 0;
+    public int WinningHour = 6;
     public static GameTime GameTime;
-    public int StartingHour;
-    public int StartingMinutes;
     
     private List<IUpdateable> Updateables = new List<IUpdateable>();
 
@@ -24,6 +25,8 @@ public class GameHandler : Singleton<GameHandler>
         
         Updateables.Add(Sanity);
         Updateables.Add(GameTime);
+
+        EventHandler.Instance.OnWin += OnWin;
     }
 
     private void Update()
@@ -32,5 +35,13 @@ public class GameHandler : Singleton<GameHandler>
         {
             updateable.Update(Time.deltaTime);
         }
+    }
+
+    private static void OnWin()
+    {
+        // TODO: Add winning logic
+        Debug.Log("You win!");
+        
+        Destroy(Instance.gameObject);
     }
 }
