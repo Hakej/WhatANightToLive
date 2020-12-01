@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameHandler : Singleton<GameHandler>
 {
+    public SceneLoader SceneLoader;
+    
     [Header("Sanity")]
     public float StartingSanity = 100f;
     public float BaseSanityDrop = 0.05f;
@@ -16,32 +18,30 @@ public class GameHandler : Singleton<GameHandler>
     public int WinningHour = 6;
     public static GameTime GameTime;
     
-    private List<IUpdateable> Updateables = new List<IUpdateable>();
+    private readonly List<IUpdateable> _updateables = new List<IUpdateable>();
 
     private void Start()
     {
         Sanity = new Sanity(StartingSanity, BaseSanityDrop);
         GameTime = new GameTime(StartingHour, StartingMinutes);
         
-        Updateables.Add(Sanity);
-        Updateables.Add(GameTime);
+        _updateables.Add(Sanity);
+        _updateables.Add(GameTime);
 
         EventHandler.Instance.OnWin += OnWin;
     }
 
     private void Update()
     {
-        foreach (var updateable in Updateables)
+        foreach (var updateable in _updateables)
         {
             updateable.Update(Time.deltaTime);
         }
     }
 
-    private static void OnWin()
+    private void OnWin()
     {
         // TODO: Add winning logic
-        Debug.Log("You win!");
-        
-        Destroy(Instance.gameObject);
+        SceneLoader.LoadWinScene();
     }
 }

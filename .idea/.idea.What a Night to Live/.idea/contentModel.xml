@@ -17,7 +17,6 @@
             <e p="Sanity.cs" t="Include" />
           </e>
         </e>
-        <e p="Clock.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="ThirdParty" t="Include">
             <e p="LowPolyOfficeProps_LITE" t="Include">
@@ -105,13 +104,15 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Clock.cs" t="Include" />
           <e p="EventHandler.cs" t="Include" />
           <e p="GameHandler.cs" t="Include" />
           <e p="Laptop.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="SceneLoader.cs" t="Include" />
           <e p="TV.cs" t="Include" />
+          <e p="TypeWriterEffect.cs" t="Include" />
         </e>
-        <e p="TypeWriterEffect.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
