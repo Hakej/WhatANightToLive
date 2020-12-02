@@ -17,6 +17,7 @@
             <e p="Sanity.cs" t="Include" />
           </e>
         </e>
+        <e p="Enemy.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="ThirdParty" t="Include">
             <e p="LowPolyOfficeProps_LITE" t="Include">

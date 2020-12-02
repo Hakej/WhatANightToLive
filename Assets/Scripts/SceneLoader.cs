@@ -12,7 +12,11 @@ public class SceneLoader : MonoBehaviour
     {
         StartCoroutine(LoadLevel("Scenes/WinScene"));
     }
-
+    
+    public void LoadLoseScene()
+    {
+        StartCoroutine(LoadLevel("Scenes/LoseScene"));
+    }
     private IEnumerator LoadLevel(string sceneName)
     {
         Transition.SetTrigger("Start");

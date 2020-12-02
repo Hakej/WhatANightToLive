@@ -29,6 +29,7 @@ public class GameHandler : Singleton<GameHandler>
         _updateables.Add(GameTime);
 
         EventHandler.Instance.OnWin += OnWin;
+        EventHandler.Instance.OnLose += OnLose;
     }
 
     private void Update()
@@ -43,5 +44,11 @@ public class GameHandler : Singleton<GameHandler>
     {
         // TODO: Add winning logic
         SceneLoader.LoadWinScene();
+    }
+
+    private void OnLose()
+    {
+        // TODO: Add losing logic
+        SceneLoader.LoadLoseScene();
     }
 }

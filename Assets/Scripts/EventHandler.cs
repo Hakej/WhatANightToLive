@@ -3,12 +3,15 @@
 public class EventHandler : Singleton<EventHandler>
 {
     public event Action OnWin;
+    public event Action OnLose;
 
     public void Win()
     {
-        if (OnWin != null)
-        {
-            OnWin();
-        }
+        OnWin?.Invoke();
+    }
+
+    public void Lose()
+    {
+        OnLose?.Invoke();
     }
 }
