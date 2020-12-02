@@ -109,6 +109,7 @@
           <e p="GameHandler.cs" t="Include" />
           <e p="Laptop.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="Room.cs" t="Include" />
           <e p="SceneLoader.cs" t="Include" />
           <e p="TV.cs" t="Include" />
           <e p="TypeWriterEffect.cs" t="Include" />
