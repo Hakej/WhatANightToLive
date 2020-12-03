@@ -117,10 +117,10 @@
             <e p="EventHandler.cs" t="Include" />
             <e p="GameHandler.cs" t="Include" />
             <e p="GlobalInputHandler.cs" t="Include" />
+            <e p="SceneHandler.cs" t="Include" />
           </e>
           <e p="Laptop.cs" t="Include" />
           <e p="Room.cs" t="Include" />
-          <e p="SceneLoader.cs" t="Include" />
           <e p="TV.cs" t="Include" />
           <e p="TypeWriterEffect.cs" t="Include" />
         </e>

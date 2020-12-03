@@ -970,6 +970,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7833639004051263281, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2286d68ca9a40a34899333b65c4ea2a9, type: 3}
 --- !u!1 &345050814 stripped
@@ -1352,6 +1357,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 695487786}
     m_Modifications:
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
@@ -1371,6 +1396,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.811
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90164393
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.43247917
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 51.25
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -1466,7 +1526,7 @@ PrefabInstance:
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
-      value: Room (11)
+      value: LeftHallway
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -1521,6 +1581,11 @@ PrefabInstance:
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7833639004051263281, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1852,7 +1917,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2196,7 +2261,7 @@ PrefabInstance:
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
-      value: Room (8)
+      value: BackStorage
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -2251,6 +2316,11 @@ PrefabInstance:
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7833639004051263281, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2528,7 +2598,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2620,7 +2690,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2894,7 +2964,7 @@ PrefabInstance:
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
-      value: Room (4)
+      value: FrontStorage
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -3370,6 +3440,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8586625320841385753, guid: 260f0f2e50157c04b88ceb640a7ff818,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8393324986811031368, guid: 260f0f2e50157c04b88ceb640a7ff818,
         type: 3}
       propertyPath: m_IsActive
@@ -3612,7 +3687,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5946,7 +6021,7 @@ PrefabInstance:
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
-      value: Room (2)
+      value: Anteroom
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -6987,6 +7062,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7833639004051263281, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2286d68ca9a40a34899333b65c4ea2a9, type: 3}
 --- !u!1 &2767942183961668558 stripped
@@ -7100,6 +7180,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 695487786}
     m_Modifications:
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.62514454
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
@@ -7118,7 +7218,17 @@ PrefabInstance:
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
-      value: Room
+      value: LivingRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041049969799150357, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.497
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
