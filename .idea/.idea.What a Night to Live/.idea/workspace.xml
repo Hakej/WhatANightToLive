@@ -20,20 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ab102d-a720-49cc-a493-14ee8ff692de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/minimap_border.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/minimap_border.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/minimap_border2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Graphics/minimap_border2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MinimapRenderTexture.renderTexture" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/MinimapRenderTexture.renderTexture.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.What a Night to Live/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameplayScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
