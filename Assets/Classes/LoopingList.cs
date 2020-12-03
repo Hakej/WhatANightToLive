@@ -2,7 +2,7 @@
 
 namespace Classes
 {
-    public class NavigationList<T> : List<T>
+    public class LoopingList<T> : List<T>
     {
         private int _currentIndex = 0;
         
@@ -10,8 +10,8 @@ namespace Classes
         {
             get
             {
-                if (_currentIndex > Count - 1) { _currentIndex = Count - 1; }
-                if (_currentIndex < 0) { _currentIndex = 0; }
+                if (_currentIndex > Count - 1) { _currentIndex = 0; }
+                if (_currentIndex < 0) { _currentIndex = Count - 1; }
                 return _currentIndex;
             }
             set { _currentIndex = value; }

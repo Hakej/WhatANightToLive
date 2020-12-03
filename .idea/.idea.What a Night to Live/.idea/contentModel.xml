@@ -11,6 +11,7 @@
           <e p="Interfaces" t="Include">
             <e p="IUpdateable.cs" t="Include" />
           </e>
+          <e p="LoopingList.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
           <e p="Static" t="Include">
             <e p="GameTime.cs" t="Include" />
@@ -105,11 +106,19 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Clock.cs" t="Include" />
+          <e p="Controllers" t="Include">
+            <e p="PlayerController.cs" t="Include" />
+            <e p="PlayerFocusController.cs" t="Include" />
+            <e p="SecurityCamerasController.cs" t="Include" />
+          </e>
           <e p="Enemy.cs" t="Include" />
-          <e p="EventHandler.cs" t="Include" />
-          <e p="GameHandler.cs" t="Include" />
+          <e p="Handlers" t="Include">
+            <e p="DebugHandler.cs" t="Include" />
+            <e p="EventHandler.cs" t="Include" />
+            <e p="GameHandler.cs" t="Include" />
+            <e p="GlobalInputHandler.cs" t="Include" />
+          </e>
           <e p="Laptop.cs" t="Include" />
-          <e p="PlayerController.cs" t="Include" />
           <e p="Room.cs" t="Include" />
           <e p="SceneLoader.cs" t="Include" />
           <e p="TV.cs" t="Include" />
