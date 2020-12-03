@@ -105,6 +105,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="ButtonColorTintFix.cs" t="Include" />
           <e p="Clock.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="PlayerController.cs" t="Include" />
@@ -120,9 +121,14 @@
             <e p="SceneHandler.cs" t="Include" />
           </e>
           <e p="Laptop.cs" t="Include" />
+          <e p="MainMenu" t="Include">
+            <e p="PlayButton.cs" t="Include" />
+            <e p="TitleScreen.cs" t="Include" />
+          </e>
           <e p="Room.cs" t="Include" />
           <e p="TV.cs" t="Include" />
           <e p="TypeWriterEffect.cs" t="Include" />
+          <e p="TypeWriterEffectPRO.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

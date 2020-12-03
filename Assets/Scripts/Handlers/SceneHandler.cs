@@ -17,6 +17,12 @@ public class SceneHandler : MonoBehaviour
     {
         StartCoroutine(LoadLevel("Scenes/LoseScene"));
     }
+
+    public void LoadGameplayScene()
+    {
+        StartCoroutine(LoadLevel("Scenes/GameplayScene"));
+    }
+    
     private IEnumerator LoadLevel(string sceneName)
     {
         Transition.SetTrigger("Start");
