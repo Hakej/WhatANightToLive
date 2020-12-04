@@ -10,7 +10,10 @@ public class PlayerFocusController : Singleton<PlayerFocusController>
     public float UnfocusedFOV = 60f;
     public float FocusingSpeed = 0.25f;
     public float FocusedCameraRotationX = 3f;
-
+    
+    public float FocusedAudioVolume = 0.5f;
+    public float UnfocusedAudioVolume = 1f;
+    
     public GameObject PlayerUICanvas;
     public GameObject CameraUICanvas;
     
