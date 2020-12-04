@@ -1,58 +1,40 @@
 ﻿using Classes.Interfaces;
-using UnityEngine;
 
 namespace Classes.Static
 {
     public class GameTime : IUpdateable
     {
-        private int _hour;
-        private float _minutes;
+        public Time CurrentTime;
 
-        public GameTime(int hour, float minutes)
+        private readonly Time _winningTime;
+        
+        public GameTime(Time time, Time winningTime)
         {
-            _hour = hour;
-            _minutes = minutes;
-        }
-
-        public override string ToString()
-        {
-            var hour = _hour.ToString();
-            var minutes = ((int)_minutes).ToString();
-
-            if (_hour < 10)
-            {
-                hour = "0" + hour;
-            }
-
-            if (_minutes < 10)
-            {
-                minutes = "0" + minutes;
-            }
-            
-            return $"{hour}:{minutes}";
+            CurrentTime = time;
+            _winningTime = winningTime;
         }
 
         public void Update(float deltaTime)
         {
-            if (_hour == GameHandler.Instance.WinningHour)
+            if (CurrentTime.Hour == _winningTime.Hour)
             {
                 EventHandler.Instance.Win();
                 return;
             }
             
-            _minutes += deltaTime;
+            CurrentTime.Minutes += deltaTime;
             
-            if (_minutes < 60)
+            if (CurrentTime.Minutes < 60)
             {
                 return;
             }
             
-            _minutes = 0f;
-            _hour++;
+            CurrentTime.Minutes = 0f;
+            CurrentTime.Hour++;
             
-            if (_hour >= 24)
+            if (CurrentTime.Hour >= 24)
             {
-                _hour = 0;
+                CurrentTime.Hour = 0;
             }
         }
     }

@@ -1,59 +1,61 @@
 ﻿using System.Collections.Generic;
 using Classes.Interfaces;
 using Classes.Static;
-using Handlers;
 using UnityEditor;
 using UnityEngine;
+using Time = Classes.Time;
 
-public class GameHandler : Singleton<GameHandler>
+namespace Handlers
 {
-    [Header("Scenes")]
-    public SceneHandler SceneHandler;
-    public SceneAsset WinScene;
-    public SceneAsset LoseScene;
+    public class GameHandler : Singleton<GameHandler>
+    {
+        [Header("Scenes")]
+        public SceneHandler SceneHandler;
+        public SceneAsset WinScene;
+        public SceneAsset LoseScene;
 
-    [Header("Sanity")]
-    public float StartingSanity = 100f;
-    public float BaseSanityDrop = 0.05f;
-    public static Sanity Sanity;
+        [Header("Sanity")]
+        public float StartingSanity = 100f;
+        public float BaseSanityDrop = 0.05f;
+        public static Sanity Sanity;
 
-    [Header("Game time")]
-    public int StartingHour = 22;
-    public int StartingMinutes = 0;
-    public int WinningHour = 6;
-    public static GameTime GameTime;
+        [Header("Game time")] 
+        public Time StartingTime;
+        public Time WinningTime;
+        public static GameTime GameTime;
     
-    private readonly List<IUpdateable> _updateables = new List<IUpdateable>();
+        private readonly List<IUpdateable> _updateables = new List<IUpdateable>();
 
-    private void Start()
-    {
-        Sanity = new Sanity(StartingSanity, BaseSanityDrop);
-        GameTime = new GameTime(StartingHour, StartingMinutes);
-        
-        _updateables.Add(Sanity);
-        _updateables.Add(GameTime);
-
-        EventHandler.Instance.OnWin += OnWin;
-        EventHandler.Instance.OnLose += OnLose;
-    }
-
-    private void Update()
-    {
-        foreach (var updateable in _updateables)
+        private void Start()
         {
-            updateable.Update(Time.deltaTime);
+            GameTime = new GameTime(StartingTime, WinningTime);
+            Sanity = new Sanity(StartingSanity, BaseSanityDrop);
+        
+            _updateables.Add(Sanity);
+            _updateables.Add(GameTime);
+
+            EventHandler.Instance.OnWin += OnWin;
+            EventHandler.Instance.OnLose += OnLose;
         }
-    }
 
-    private void OnWin()
-    {
-        // TODO: Add winning logic
-        SceneHandler.LoadScene(WinScene);
-    }
+        private void Update()
+        {
+            foreach (var updateable in _updateables)
+            {
+                updateable.Update(UnityEngine.Time.deltaTime);
+            }
+        }
 
-    private void OnLose()
-    {
-        // TODO: Add losing logic
-        SceneHandler.LoadScene(LoseScene);
+        private void OnWin()
+        {
+            // TODO: Add winning logic
+            SceneHandler.LoadScene(WinScene);
+        }
+
+        private void OnLose()
+        {
+            // TODO: Add losing logic
+            SceneHandler.LoadScene(LoseScene);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Handlers;
+using TMPro;
 using UnityEngine;
 
 public class Clock : MonoBehaviour
@@ -7,6 +8,6 @@ public class Clock : MonoBehaviour
     
     private void Update()
     {
-        TimeText.text = GameHandler.GameTime.ToString();
+        TimeText.text = GameHandler.GameTime.CurrentTime.ToString();
     }
 }
