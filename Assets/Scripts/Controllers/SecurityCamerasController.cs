@@ -23,20 +23,20 @@ namespace Controllers
 
         public void NextCamera()
         {
-            _cameras.Current.GetComponent<Camera>().enabled = false;
-            _cameras.MoveNext.GetComponent<Camera>().enabled = true;
+            _cameras.Current.SetActive(false);
+            _cameras.MoveNext.SetActive(true);
         }
 
         public void PreviousCamera()
         {
-            _cameras.Current.GetComponent<Camera>().enabled = false;
-            _cameras.MovePrevious.GetComponent<Camera>().enabled = true;
+            _cameras.Current.SetActive(false);
+            _cameras.MovePrevious.SetActive(true);
         }
 
         private void ToggleCams(bool isFocused)
         {
-            PlayerCamera.GetComponent<Camera>().enabled = !isFocused;
-            _cameras.Current.GetComponent<Camera>().enabled = isFocused;
+            PlayerCamera.SetActive(!isFocused);
+            _cameras.Current.SetActive(isFocused);
 
             var focus = PlayerFocusController.Instance;
             AudioListener.volume = isFocused ? focus.FocusedAudioVolume : focus.UnfocusedAudioVolume;
