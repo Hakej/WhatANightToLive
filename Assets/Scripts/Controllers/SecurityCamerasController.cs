@@ -6,6 +6,7 @@ namespace Controllers
     public class SecurityCamerasController : Singleton<SecurityCamerasController>
     {
         public GameObject PlayerCamera;
+        public AudioSource FocusCamSound;
     
         private LoopingList<GameObject> _cameras;
 
@@ -23,16 +24,20 @@ namespace Controllers
 
         public void NextCamera()
         {
-            _cameras.Current.SetActive(false);
-            _cameras.MoveNext.SetActive(true);
+            ChangeCam(_cameras.Current, _cameras.MoveNext);
         }
 
         public void PreviousCamera()
         {
-            _cameras.Current.SetActive(false);
-            _cameras.MovePrevious.SetActive(true);
+            ChangeCam(_cameras.Current, _cameras.MovePrevious);
         }
 
+        private void ChangeCam(GameObject oldCam, GameObject newCam)
+        {
+            oldCam.SetActive(false);
+            newCam.SetActive(true);
+        }
+        
         private void ToggleCams(bool isFocused)
         {
             PlayerCamera.SetActive(!isFocused);
@@ -40,6 +45,11 @@ namespace Controllers
 
             var focus = PlayerFocusController.Instance;
             AudioListener.volume = isFocused ? focus.FocusedAudioVolume : focus.UnfocusedAudioVolume;
+
+            if (isFocused)
+            {
+                FocusCamSound.Play();
+            }
         }
     }
 }
