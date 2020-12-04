@@ -1,12 +1,17 @@
 ﻿using System.Collections.Generic;
 using Classes.Interfaces;
 using Classes.Static;
+using Handlers;
+using UnityEditor;
 using UnityEngine;
 
 public class GameHandler : Singleton<GameHandler>
 {
+    [Header("Scenes")]
     public SceneHandler SceneHandler;
-    
+    public SceneAsset WinScene;
+    public SceneAsset LoseScene;
+
     [Header("Sanity")]
     public float StartingSanity = 100f;
     public float BaseSanityDrop = 0.05f;
@@ -43,12 +48,12 @@ public class GameHandler : Singleton<GameHandler>
     private void OnWin()
     {
         // TODO: Add winning logic
-        SceneHandler.LoadWinScene();
+        SceneHandler.LoadScene(WinScene);
     }
 
     private void OnLose()
     {
         // TODO: Add losing logic
-        SceneHandler.LoadLoseScene();
+        SceneHandler.LoadScene(LoseScene);
     }
 }

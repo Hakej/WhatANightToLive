@@ -1,34 +1,33 @@
 ﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneHandler : MonoBehaviour
+namespace Handlers
 {
-    public Animator Transition;
+    public class SceneHandler : MonoBehaviour
+    {
+        public Animator Transition;
 
-    public float TransitionTime = 1f;
-    
-    public void LoadWinScene()
-    {
-        StartCoroutine(LoadLevel("Scenes/WinScene"));
-    }
-    
-    public void LoadLoseScene()
-    {
-        StartCoroutine(LoadLevel("Scenes/LoseScene"));
-    }
+        private float _transitionTime;
 
-    public void LoadGameplayScene()
-    {
-        StartCoroutine(LoadLevel("Scenes/GameplayScene"));
-    }
+        public void Start()
+        {
+            _transitionTime = Transition.GetComponent<Animator>().runtimeAnimatorController.animationClips[0].length;
+        }
+
+        public void LoadScene(SceneAsset scene)
+        {
+            StartCoroutine(LoadLevel(scene.name));
+        }
     
-    private IEnumerator LoadLevel(string sceneName)
-    {
-        Transition.SetTrigger("Start");
+        private IEnumerator LoadLevel(string sceneName)
+        {
+            Transition.SetTrigger("Start");
         
-        yield return new WaitForSeconds(TransitionTime);
+            yield return new WaitForSeconds(_transitionTime);
 
-        SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
