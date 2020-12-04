@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,18 +6,15 @@ public class PlayerController : MonoBehaviour
     public float RotationSpeed = 0.5f;
 
     public GameObject UICanvas;
-    public GameObject Flashlight;
+    public Light Flashlight;
+    public AudioSource FlashlightSound;
 
     private bool _isTurning;
 
-    public void StartUsingFlashlight()
+    public void ToggleFlashlight(bool state)
     {
-        Flashlight.SetActive(true);
-    }
-
-    public void StopUsingFlashlight()
-    {
-        Flashlight.SetActive(false);
+        Flashlight.enabled = state;
+        FlashlightSound.Play();
     }
     
     public void TurnLeft()
