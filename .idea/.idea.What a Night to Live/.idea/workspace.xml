@@ -24,12 +24,11 @@
       <change afterPath="$PROJECT_DIR$/Assets/Animations/Text (TMP).controller.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Animations/TitleScreen.anim" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Animations/TitleScreen.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/SceneHandler.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/SceneHandler.prefab.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/ButtonColorTintFix.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/ButtonColorTintFix.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/PlayButton.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/PlayButton.cs.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/TitleScreen.cs" afterDir="false" />
@@ -46,9 +45,11 @@
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/digital-7 SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/digital-7 SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelLoader.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelLoader.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelLoader.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SceneHandler.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/LevelLoader.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SceneHandler.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Handlers/SceneHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Handlers/SceneHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
