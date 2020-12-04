@@ -6,17 +6,10 @@ public class PlayerController : MonoBehaviour
     public float RotationSpeed = 0.5f;
 
     public GameObject UICanvas;
-    public Light Flashlight;
-    public AudioSource FlashlightSound;
+    public AudioSource MoveSound;
 
     private bool _isTurning;
 
-    public void ToggleFlashlight(bool state)
-    {
-        Flashlight.enabled = state;
-        FlashlightSound.Play();
-    }
-    
     public void TurnLeft()
     {
         if (_isTurning) return;
@@ -39,6 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         _isTurning = true;
         UICanvas.SetActive(false);
+        MoveSound.Play();
         
         var fromAngle = transform.rotation;
         var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
