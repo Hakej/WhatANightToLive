@@ -260,7 +260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You left the place alive.
+  m_Text: You left to live another day.
 --- !u!222 &651810367
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Delay: 0.1
+  InitialDelay: 2
   Text: {fileID: 651810366}
 --- !u!1 &920600322
 GameObject:
