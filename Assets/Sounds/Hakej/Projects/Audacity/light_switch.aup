@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="light_switch_data" version="1.3.0" audacityversion="2.2.2" sel0="0.0000000000" sel1="0.0963840000" vpos="0" h="0.0000000000" zoom="5208.3333333333" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Encoded by" value="Sound Grinder 3.5.5"/>
+	</tags>
+	<wavetrack name="household_bathroom_extractor_fan_switch_click" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="4626">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808b6d.au" len="4626" min="-0.541683" max="0.449464" rms="0.046584"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="household_bathroom_extractor_fan_switch_click" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="48000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="4626">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808f5f.au" len="4626" min="-0.499483" max="0.561749" rms="0.050104"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
