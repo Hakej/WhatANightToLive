@@ -17,13 +17,17 @@ namespace Handlers
         [Header("Sanity")]
         public float StartingSanity = 100f;
         public float BaseSanityDrop = 0.05f;
-        public static Sanity Sanity;
+        public Sanity Sanity;
 
         [Header("Game time")] 
         public Time StartingTime;
         public Time WinningTime;
-        public static GameTime GameTime;
-    
+        public GameTime GameTime;
+
+        [Header("Player's Room's Power")]
+        public bool IsPlayersPowerOn = true;
+        public GameObject PlayerPowerSwitch;
+        
         private readonly List<IUpdateable> _updateables = new List<IUpdateable>();
 
         private void Start()
@@ -36,6 +40,7 @@ namespace Handlers
 
             EventHandler.Instance.OnWin += OnWin;
             EventHandler.Instance.OnLose += OnLose;
+            EventHandler.Instance.OnPowerToggle += OnPowerToggle;
         }
 
         private void Update()
@@ -56,6 +61,16 @@ namespace Handlers
         {
             // TODO: Add losing logic
             SceneHandler.LoadScene(LoseScene);
+        }
+        
+        private void OnPowerToggle(bool areLightsOn, string poweredTag)
+        {
+            if (!PlayerPowerSwitch.CompareTag(poweredTag))
+            {
+                return;
+            }
+            
+            IsPlayersPowerOn = areLightsOn;
         }
     }
 }

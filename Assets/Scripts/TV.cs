@@ -12,7 +12,7 @@ public class TV : MonoBehaviour
 
     private void Update()
     {
-        var curSanity = GameHandler.Sanity.CurrentSanity;
+        var curSanity = GameHandler.Instance.Sanity.CurrentSanity;
         
         SanityText.text = $"Sanity: {(int)curSanity}%";
         
