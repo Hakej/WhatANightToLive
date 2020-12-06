@@ -47,6 +47,7 @@ public class PoweredDevice : MonoBehaviour
         }
         else
         {
+            StopAllCoroutines();
             PowerSound.clip = PowerOff;
             PowerSound.Play();
         }
