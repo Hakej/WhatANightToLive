@@ -8,6 +8,8 @@ namespace Classes.Static
     {
         public float CurrentSanity;
 
+        public float CurrentSanityDrop => _currentSanityDrop;
+
         private float _baseSanityDrop;
         private float _startingSanity;
         private float _currentSanityDrop;
@@ -30,6 +32,11 @@ namespace Classes.Static
             if (CurrentSanity > 0f)
             {
                 CurrentSanity -= _currentSanityDrop * deltaTime;
+            }
+
+            if (CurrentSanity > 100f)
+            {
+                CurrentSanity = 100f;
             }
         }
     }
