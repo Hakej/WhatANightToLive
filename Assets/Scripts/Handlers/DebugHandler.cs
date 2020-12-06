@@ -1,40 +1,42 @@
-﻿using Handlers;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
-public class DebugHandler : Singleton<DebugHandler>
+namespace Handlers
 {
-    public bool IsDebugModeOn = true;
-    public Canvas DebugUICanvas;
-    public TextMeshProUGUI DebugInfo;
-
-    private void Start()
+    public class DebugHandler : Singleton<DebugHandler>
     {
-        UpdateDebug();
-    }
+        public bool IsDebugModeOn = true;
+        public Canvas DebugUICanvas;
+        public TextMeshProUGUI DebugInfo;
 
-    public void Update()
-    {
-        if (!IsDebugModeOn)
+        private void Start()
         {
-            return;
+            UpdateDebug();
         }
 
-        var gh = GameHandler.Instance;
+        public void Update()
+        {
+            if (!IsDebugModeOn)
+            {
+                return;
+            }
+
+            var gh = GameHandler.Instance;
         
-        DebugInfo.text = $"Current sanity level: {gh.Sanity.CurrentSanity}\n" +
-                         $"Current fear level: {gh.FearLevel}" +
-                         $"Current sanity drop: {gh.Sanity.CurrentSanityDrop}";
-    }
+            DebugInfo.text = $"Current sanity level: {gh.Sanity.CurrentSanity}\n" +
+                             $"Current fear level: {gh.Sanity.CurrentFearLevel}\n" +
+                             $"Current sanity drop: {gh.Sanity.CurrentSanityDrop}";
+        }
 
-    public void ToggleDebugMode()
-    {
-        IsDebugModeOn = !IsDebugModeOn;
-        UpdateDebug();
-    }
+        public void ToggleDebugMode()
+        {
+            IsDebugModeOn = !IsDebugModeOn;
+            UpdateDebug();
+        }
 
-    private void UpdateDebug()
-    {
-        DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+        private void UpdateDebug()
+        {
+            DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+        }
     }
 }

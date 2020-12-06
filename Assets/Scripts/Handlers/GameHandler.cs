@@ -3,8 +3,6 @@ using Classes.Interfaces;
 using Classes.Static;
 using UnityEditor;
 using UnityEngine;
-using Time = Classes.Time;
-
 namespace Handlers
 {
     public class GameHandler : Singleton<GameHandler>
@@ -15,16 +13,9 @@ namespace Handlers
         public SceneAsset LoseScene;
 
         [Header("Sanity")]
-        public float StartingSanity = 100f;
-        public float BaseSanityDrop = 0.05f;
-        public float FearSanityDropMultiplier = 2f;
         public Sanity Sanity;
-
-        public int FearLevel = 1;
         
         [Header("Game time")] 
-        public Time StartingTime;
-        public Time WinningTime;
         public GameTime GameTime;
 
         [Header("Player's Room's Power")]
@@ -35,12 +26,14 @@ namespace Handlers
 
         private void Start()
         {
-            GameTime = new GameTime(StartingTime, WinningTime);
-            Sanity = new Sanity(StartingSanity, BaseSanityDrop, FearSanityDropMultiplier);
-            
             _updateables.Add(Sanity);
             _updateables.Add(GameTime);
 
+            foreach (var updateable in _updateables)
+            {
+                updateable.Start();
+            }
+            
             EventHandler.Instance.OnWin += OnWin;
             EventHandler.Instance.OnLose += OnLose;
             EventHandler.Instance.OnPowerToggle += OnPowerToggle;
@@ -50,7 +43,7 @@ namespace Handlers
         {
             foreach (var updateable in _updateables)
             {
-                updateable.Update(UnityEngine.Time.deltaTime);
+                updateable.Update(Time.deltaTime);
             }
         }
 
@@ -77,11 +70,11 @@ namespace Handlers
 
             if (areLightsOn)
             {
-                FearLevel--;
+                Sanity.CurrentFearLevel--;
             }
             else
             {
-                FearLevel++;
+                Sanity.CurrentFearLevel++;
             }
         }
     }

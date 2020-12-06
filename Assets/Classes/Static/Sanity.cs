@@ -1,42 +1,36 @@
-﻿using Classes.Interfaces;
-using Handlers;
-using UnityEngine;
+﻿using System;
+using Classes.Interfaces;
 
 namespace Classes.Static
 {
+    [Serializable]
     public class Sanity : IUpdateable
     {
-        public float CurrentSanity;
+        public float BaseSanityDrop = 0.3f;
+        public float StartingSanity = 100f;
 
-        public float CurrentSanityDrop => _currentSanityDrop;
-
-        private float _baseSanityDrop;
-        private float _startingSanity;
-        private float _currentSanityDrop;
-        private float _fearSanityDropMultiplier;
+        public int CurrentFearLevel = 0;
         
-        public Sanity(float startingSanity, float baseSanityDrop, float fearSanityDropMultiplier)
+        public float CurrentSanity { get; private set; }
+        public float CurrentSanityDrop { get; private set; }
+        
+        public void Start()
         {
-            CurrentSanity = startingSanity;
-            
-            _startingSanity = startingSanity;
-            _baseSanityDrop = baseSanityDrop;
-            _currentSanityDrop = baseSanityDrop;
-            _fearSanityDropMultiplier = fearSanityDropMultiplier;
+            CurrentSanity = StartingSanity;
         }
 
         public void Update(float deltaTime)
         {
-            _currentSanityDrop = _baseSanityDrop * _fearSanityDropMultiplier;
+            CurrentSanityDrop = BaseSanityDrop + BaseSanityDrop * CurrentFearLevel;
             
             if (CurrentSanity > 0f)
             {
-                CurrentSanity -= _currentSanityDrop * deltaTime;
+                CurrentSanity -= CurrentSanityDrop * deltaTime;
             }
 
-            if (CurrentSanity > 100f)
+            if (CurrentSanity > StartingSanity)
             {
-                CurrentSanity = 100f;
+                CurrentSanity = StartingSanity;
             }
         }
     }

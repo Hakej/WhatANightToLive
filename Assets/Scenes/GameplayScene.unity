@@ -4943,8 +4943,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -50}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 200, y: -70}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1269595889
 MonoBehaviour:
@@ -5958,6 +5958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDebugModeOn: 1
   DebugUICanvas: {fileID: 370089109}
+  DebugInfo: {fileID: 1269595889}
 --- !u!1 &1530224649
 GameObject:
   m_ObjectHideFlags: 0
@@ -6380,16 +6381,17 @@ MonoBehaviour:
   SceneHandler: {fileID: 376669244}
   WinScene: {fileID: 102900000, guid: dcddcf2b06db30b4280ed4627899bdd8, type: 3}
   LoseScene: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206, type: 3}
-  StartingSanity: 100
-  BaseSanityDrop: 0.3
-  FearSanityDropMultiplier: 2
-  FearLevel: 1
-  StartingTime:
-    Hour: 22
-    Minutes: 0
-  WinningTime:
-    Hour: 6
-    Minutes: 0
+  Sanity:
+    CurrentSanity: 100
+    BaseSanityDrop: 0.3
+    CurrentFearLevel: 0
+  GameTime:
+    CurrentTime:
+      Hour: 22
+      Minutes: 0
+    WinningTime:
+      Hour: 6
+      Minutes: 0
   IsPlayersPowerOn: 1
   PlayerPowerSwitch: {fileID: 906444317}
 --- !u!4 &1687331039
