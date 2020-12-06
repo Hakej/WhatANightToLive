@@ -17,8 +17,11 @@ namespace Handlers
         [Header("Sanity")]
         public float StartingSanity = 100f;
         public float BaseSanityDrop = 0.05f;
+        public float FearSanityDropMultiplier = 2f;
         public Sanity Sanity;
 
+        public int FearLevel = 1;
+        
         [Header("Game time")] 
         public Time StartingTime;
         public Time WinningTime;
@@ -33,8 +36,8 @@ namespace Handlers
         private void Start()
         {
             GameTime = new GameTime(StartingTime, WinningTime);
-            Sanity = new Sanity(StartingSanity, BaseSanityDrop);
-        
+            Sanity = new Sanity(StartingSanity, BaseSanityDrop, FearSanityDropMultiplier);
+            
             _updateables.Add(Sanity);
             _updateables.Add(GameTime);
 
@@ -71,6 +74,15 @@ namespace Handlers
             }
             
             IsPlayersPowerOn = areLightsOn;
+
+            if (areLightsOn)
+            {
+                FearLevel--;
+            }
+            else
+            {
+                FearLevel++;
+            }
         }
     }
 }
