@@ -512,7 +512,7 @@ MonoBehaviour:
   Text: {fileID: 218498243}
   MinOutline: 0.2
   MaxOutline: 0.35
-  Speed: 2
+  Speed: 1
 --- !u!1 &659884300
 GameObject:
   m_ObjectHideFlags: 0

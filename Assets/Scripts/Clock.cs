@@ -8,6 +8,6 @@ public class Clock : MonoBehaviour
     
     private void Update()
     {
-        TimeText.text = GameHandler.GameTime.CurrentTime.ToString();
+        TimeText.text = GameHandler.Instance.GameTime.CurrentTime.ToString();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 public class EventHandler : Singleton<EventHandler>
 {
@@ -6,6 +7,7 @@ public class EventHandler : Singleton<EventHandler>
     public event Action OnLose;
     public event Action<bool> OnPlayerFocusChangeStart;
     public event Action<bool> OnPlayerFocusChangeStop;
+    public event Action<bool, string> OnPowerToggle;
 
     public void Win()
     {
@@ -25,5 +27,10 @@ public class EventHandler : Singleton<EventHandler>
     public void PlayerFocusChangeStop(bool isFocused)
     {
         OnPlayerFocusChangeStop?.Invoke(isFocused);
+    }
+
+    public void PlayersLightsToggle(bool isPowerOn, string gameObjectTag)
+    {
+        OnPowerToggle?.Invoke(isPowerOn, gameObjectTag);
     }
 }
