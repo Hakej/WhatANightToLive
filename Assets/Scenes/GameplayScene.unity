@@ -5907,6 +5907,7 @@ MonoBehaviour:
   GameObjectsToToggle:
   - {fileID: 404038501}
   - {fileID: 858975708}
+  - {fileID: 516428416}
   PowerSound: {fileID: 1683036226}
   PowerOn: {fileID: 8300000, guid: e6e718cd194c4f34d83dc54724bcb001, type: 3}
   PowerRunning: {fileID: 8300000, guid: d3e24a123bba7884aac5e7a0864c3d06, type: 3}
@@ -6380,7 +6381,9 @@ MonoBehaviour:
   WinScene: {fileID: 102900000, guid: dcddcf2b06db30b4280ed4627899bdd8, type: 3}
   LoseScene: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206, type: 3}
   StartingSanity: 100
-  BaseSanityDrop: 0.1
+  BaseSanityDrop: 0.3
+  FearSanityDropMultiplier: 2
+  FearLevel: 1
   StartingTime:
     Hour: 22
     Minutes: 0
