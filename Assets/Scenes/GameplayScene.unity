@@ -3013,7 +3013,7 @@ PrefabInstance:
     - target: {fileID: 6646585631110139450, guid: 1c4151658ec90d54e861d0a34461ba21,
         type: 3}
       propertyPath: m_Name
-      value: PlayersPowerSwitch
+      value: MainPowerSwitch
       objectReference: {fileID: 0}
     - target: {fileID: 6646585631110139450, guid: 1c4151658ec90d54e861d0a34461ba21,
         type: 3}
