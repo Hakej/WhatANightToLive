@@ -1,5 +1,6 @@
 ﻿using System;
 using Classes.Interfaces;
+using UnityEngine;
 
 namespace Classes.Static
 {
@@ -36,6 +37,11 @@ namespace Classes.Static
             {
                 CurrentTime.Hour = 0;
             }
+        }
+
+        public bool IsCurrentTimeEqual(Time time)
+        {
+            return CurrentTime.Hour == time.Hour && (int) CurrentTime.Minutes == (int) time.Minutes;
         }
     }
 }

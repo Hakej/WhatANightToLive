@@ -194,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8277398045375427700
 Transform:
   m_ObjectHideFlags: 0
@@ -224,5 +224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingRoom: {fileID: 0}
-  Difficulty: 0
+  SpawningTime:
+    Hour: 0
+    Minutes: 0
+  StartingDifficulty: 0
   MoveCooldown: 0

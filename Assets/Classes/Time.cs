@@ -1,4 +1,5 @@
 ﻿using System;
+using Classes.Static;
 
 namespace Classes
 {
