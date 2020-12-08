@@ -34,15 +34,19 @@ namespace Controllers
 
         private void ChangeCam(GameObject oldCam, GameObject newCam)
         {
-            oldCam.SetActive(false);
-            newCam.SetActive(true);
+            //oldCam.SetActive(false);
+            //newCam.SetActive(true);
+            oldCam.GetComponent<Camera>().enabled = false;
+            newCam.GetComponent<Camera>().enabled = true;
         }
         
         private void ToggleCams(bool isFocused)
         {
-            PlayerCamera.SetActive(!isFocused);
-            _cameras.Current.SetActive(isFocused);
-
+            //PlayerCamera.SetActive(!isFocused);
+            //_cameras.Current.SetActive(isFocused);
+            PlayerCamera.GetComponent<Camera>().enabled = !isFocused;
+            _cameras.Current.GetComponent<Camera>().enabled = isFocused;
+            
             var focus = PlayerFocusController.Instance;
             AudioListener.volume = isFocused ? focus.FocusedAudioVolume : focus.UnfocusedAudioVolume;
 
