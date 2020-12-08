@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2037546}
   - component: {fileID: 2037545}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: Global_PostProcessing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1469,12 +1469,17 @@ PrefabInstance:
     - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_SpotAngle
-      value: 80
+      value: 115.83197
       objectReference: {fileID: 0}
     - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 3
+      value: 16.436996
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -5847,7 +5852,7 @@ PrefabInstance:
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
-      value: Room (3)
+      value: MainRoom
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -7177,6 +7182,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 695487786}
     m_Modifications:
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 5.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Range
+      value: 5.51
+      objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
@@ -7414,6 +7429,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 695487786}
     m_Modifications:
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Range
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
@@ -8167,6 +8192,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 695487786}
     m_Modifications:
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Range
+      value: 4.34
+      objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
@@ -8867,12 +8902,12 @@ PrefabInstance:
     - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Intensity
-      value: 3
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: 667953054173309597, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Range
-      value: 5
+      value: 10.02
       objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
