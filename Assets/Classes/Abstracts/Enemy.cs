@@ -22,6 +22,7 @@ namespace Classes.Abstracts
             if (StartingDifficulty == 0)
             {
                 Destroy(gameObject);
+                return;
             }
         
             CurrentRoom = StartingRoom;
