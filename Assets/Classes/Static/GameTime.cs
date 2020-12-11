@@ -1,6 +1,7 @@
 ﻿using System;
 using Classes.Interfaces;
 using UnityEngine;
+using EventHandler = Handlers.EventHandler;
 
 namespace Classes.Static
 {

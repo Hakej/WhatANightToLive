@@ -1,5 +1,6 @@
 ﻿using System;
 using Classes.Interfaces;
+using EventHandler = Handlers.EventHandler;
 
 namespace Classes.Static
 {

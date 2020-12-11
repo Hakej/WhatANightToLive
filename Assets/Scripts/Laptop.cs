@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Controllers;
+using UnityEngine;
 
 public class Laptop : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Laptop : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (PlayerCellphoneController.Instance.IsPlayerOnPhone) return;
+        
        _focus.ToggleFocus();
     }
 }
