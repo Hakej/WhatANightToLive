@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerRoom
   - Devices_PlayerRoom
+  - PlayerAdjacentRoom
   layers:
   - Default
   - TransparentFX

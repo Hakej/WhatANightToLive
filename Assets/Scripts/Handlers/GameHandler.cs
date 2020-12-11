@@ -21,6 +21,9 @@ namespace Handlers
         [Header("Player's Room's Power")]
         public bool IsPlayersPowerOn = true;
         public GameObject PlayerPowerSwitch;
+
+        [HideInInspector]
+        public int CurrentDangerLevel = 1;
         
         private readonly List<IUpdateable> _updateables = new List<IUpdateable>();
 
@@ -71,10 +74,12 @@ namespace Handlers
             if (areLightsOn)
             {
                 Sanity.CurrentFearLevel--;
+                CurrentDangerLevel++;
             }
             else
             {
                 Sanity.CurrentFearLevel++;
+                CurrentDangerLevel--;
             }
         }
     }

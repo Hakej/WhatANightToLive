@@ -1,4 +1,5 @@
 ﻿using Handlers;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace Classes.Abstracts
@@ -13,9 +14,17 @@ namespace Classes.Abstracts
         [Range(0, 20)]
         public int StartingDifficulty;
         public float MoveCooldown;
-    
-        protected float CurrentCooldown = 0f;
+        
+        [Header("Enemy attack's strength")]
+        public float AttackPower;
+        public float AttackingTime;
+
         protected GameObject CurrentRoom;
+
+        private float _currentCooldown = 0f;
+        private float _currentAttackPower = 0f;
+        private float _currentAttackingTime = 0f;
+        private bool _isAttacking = false;
         
         public void Spawn()
         {
@@ -32,46 +41,70 @@ namespace Classes.Abstracts
         
             Debug.Log($"{gameObject.name}: I've spawned in {StartingRoom.name}.");
         }
-        
-        public void ChangeRoom(GameObject newRoom)
+
+        protected void ChangeRoom(GameObject newRoom)
         {
             CurrentRoom = newRoom;
             transform.position = newRoom.transform.position;
         }
-        
-        public void TryAttack()
+
+        protected void ChangeToAttackMode()
         {
-            if (GameHandler.Instance.IsPlayersPowerOn)
-            {       
-                SuccessfulAttack();
-            }
-            else
-            {
-                FailAttack();
-            }
+            _isAttacking = true;
         }
 
-        public void SuccessfulAttack()
+        private void SuccessfulAttack()
         {
             EventHandler.Instance.Lose();     
         }
     
         public void FailAttack()
         {
+            _isAttacking = false;
             ChangeRoom(StartingRoom);
             Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {StartingRoom.name}.");
         }
         
         private void Update()
         {
-            CurrentCooldown += UnityEngine.Time.deltaTime;
+            if (_isAttacking)
+            {
+                CheckAttack();
+            }
+            else
+            {
+                CheckMove();
+            }
+        }
 
-            if (CurrentCooldown < MoveCooldown)
+        private void CheckAttack()
+        {
+            _currentAttackPower += UnityEngine.Time.deltaTime * GameHandler.Instance.CurrentDangerLevel;
+
+            if (_currentAttackPower >= AttackPower)
+            {
+                SuccessfulAttack();
+                return;
+            }
+
+            _currentAttackingTime += UnityEngine.Time.deltaTime;
+
+            if (_currentAttackingTime >= AttackingTime)
+            {
+                FailAttack();
+            }
+        }
+        
+        private void CheckMove()
+        {
+            _currentCooldown += UnityEngine.Time.deltaTime;
+
+            if (_currentCooldown < MoveCooldown)
             {
                 return;
             }
 
-            CurrentCooldown = 0f;
+            _currentCooldown = 0f;
         
             var randomNumber = Random.Range(1, 20);
 
@@ -83,8 +116,7 @@ namespace Classes.Abstracts
 
             Move();
         }
-        
-        public abstract void Move();
 
+        protected abstract void Move();
     }
 }

@@ -4,20 +4,19 @@ using Random = UnityEngine.Random;
 
 public class GenericEnemy : Enemy
 {
-    public override void Move()
+    protected override void Move()
     {
         var curRoom = CurrentRoom.GetComponent<Room>();
         var adjRooms = curRoom.AdjacentRooms;
         var newRoom = adjRooms[Random.Range(0, adjRooms.Length)];
 
-        if (newRoom.CompareTag("PlayerRoom"))
-        {
-            TryAttack();
-            return;
-        }
-        
         ChangeRoom(newRoom);
         
         Debug.Log($"{gameObject.name}: I've successfully moved to {newRoom.name}.");
+        
+        if (newRoom.CompareTag("PlayerAdjacentRoom"))
+        {
+            ChangeToAttackMode();
+        }
     }
 }

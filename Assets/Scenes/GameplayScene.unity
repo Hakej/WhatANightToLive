@@ -1803,6 +1803,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHallway
       objectReference: {fileID: 0}
+    - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerAdjacentRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2190,7 +2195,7 @@ PrefabInstance:
         type: 3}
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
-      objectReference: {fileID: 1920434593}
+      objectReference: {fileID: 1315325224}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.data[2]
@@ -2776,7 +2781,7 @@ PrefabInstance:
         type: 3}
       propertyPath: AdjacentRooms.Array.data[0]
       value: 
-      objectReference: {fileID: 1920434593}
+      objectReference: {fileID: 1315325224}
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
@@ -7074,7 +7079,17 @@ PrefabInstance:
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: SpawningTime.Minutes
-      value: 0
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: AttackPower
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: AttackingTime
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
@@ -7386,6 +7401,7 @@ MonoBehaviour:
       Minutes: 0
   IsPlayersPowerOn: 1
   PlayerPowerSwitch: {fileID: 906444317}
+  CurrentDangerLevel: 1
 --- !u!4 &1687331039
 Transform:
   m_ObjectHideFlags: 0
@@ -9754,11 +9770,16 @@ PrefabInstance:
         type: 3}
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
-      objectReference: {fileID: 1920434593}
+      objectReference: {fileID: 1315325224}
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
       value: RightHallway
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerAdjacentRoom
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -9878,6 +9899,16 @@ PrefabInstance:
         type: 3}
       propertyPath: SpawningTime.Minutes
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: AttackPower
+      value: 6.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: AttackingTime
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
@@ -10082,7 +10113,7 @@ PrefabInstance:
     - target: {fileID: 7941905352758590236, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7941905352758590237, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
