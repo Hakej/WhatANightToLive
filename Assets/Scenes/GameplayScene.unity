@@ -1922,7 +1922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &573195591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3848,6 +3848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationSpeed: 0.2
   UICanvas: {fileID: 1815233546}
+  FlashlightButton: {fileID: 573195590}
   MoveSound: {fileID: 1051608108}
 --- !u!114 &1051608107
 MonoBehaviour:
