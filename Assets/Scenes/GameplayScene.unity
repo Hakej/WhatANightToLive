@@ -1276,6 +1276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2e199c8bb5c334eb8bc12bc1df5ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisableEnemies: 1
 --- !u!114 &376669244 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3075185056239619879, guid: b8cce44429994cd4886b57e4cb3af51a,
@@ -7389,7 +7390,7 @@ MonoBehaviour:
   WinScene: {fileID: 102900000, guid: dcddcf2b06db30b4280ed4627899bdd8, type: 3}
   LoseScene: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206, type: 3}
   Sanity:
-    BaseSanityDrop: 0.3
+    BaseSanityDrop: 5
     StartingSanity: 100
     CurrentFearLevel: 0
   GameTime:

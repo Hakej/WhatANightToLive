@@ -8,10 +8,18 @@ namespace Handlers
 {
     public class EnemyHandler : MonoBehaviour
     {
+        public bool DisableEnemies;
+        
         private List<Enemy> _enemiesToSpawn;
     
         private void Start()
         {
+            if (DisableEnemies)
+            {
+                Destroy(this);
+                return;
+            }
+            
             _enemiesToSpawn = new List<Enemy>();
         
             foreach (Transform child in transform)

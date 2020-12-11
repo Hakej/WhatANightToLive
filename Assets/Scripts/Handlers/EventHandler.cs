@@ -8,6 +8,9 @@ public class EventHandler : Singleton<EventHandler>
     public event Action<bool> OnPlayerFocusChangeStart;
     public event Action<bool> OnPlayerFocusChangeStop;
     public event Action<bool, string> OnPowerToggle;
+    public event Action<bool> OnPlayerSanityCrossing50;
+    public event Action<bool> OnPlayerSanityCrossing25;
+    
 
     public void Win()
     {
@@ -32,5 +35,15 @@ public class EventHandler : Singleton<EventHandler>
     public void PlayersLightsToggle(bool isPowerOn, string gameObjectTag)
     {
         OnPowerToggle?.Invoke(isPowerOn, gameObjectTag);
+    }
+
+    public void PlayerSanityCrossing50(bool isBelow)
+    {
+        OnPlayerSanityCrossing50?.Invoke(isBelow);
+    }
+    
+    public void PlayerSanityCrossing25(bool isBelow)
+    {
+        OnPlayerSanityCrossing25?.Invoke(isBelow);
     }
 }

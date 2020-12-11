@@ -40,6 +40,8 @@ namespace Handlers
             EventHandler.Instance.OnWin += OnWin;
             EventHandler.Instance.OnLose += OnLose;
             EventHandler.Instance.OnPowerToggle += OnPowerToggle;
+            EventHandler.Instance.OnPlayerSanityCrossing50 += OnPlayerSanityCrossing50;
+            EventHandler.Instance.OnPlayerSanityCrossing25 += OnPlayerSanityCrossing25;
         }
 
         private void Update()
@@ -79,6 +81,30 @@ namespace Handlers
             else
             {
                 Sanity.CurrentFearLevel++;
+                CurrentDangerLevel--;
+            }
+        }
+
+        private void OnPlayerSanityCrossing50(bool isBelow)
+        {
+            if (isBelow)
+            {
+                CurrentDangerLevel++;
+            }
+            else
+            {
+                CurrentDangerLevel--;
+            }
+        }
+        
+        private void OnPlayerSanityCrossing25(bool isBelow)
+        {
+            if (isBelow)
+            {
+                CurrentDangerLevel++;
+            }
+            else
+            {
                 CurrentDangerLevel--;
             }
         }

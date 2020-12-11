@@ -21,6 +21,8 @@ namespace Classes.Static
 
         public void Update(float deltaTime)
         {
+            var oldSanity = CurrentSanity;
+            
             CurrentSanityDrop = BaseSanityDrop + BaseSanityDrop * CurrentFearLevel;
             
             if (CurrentSanity > 0f)
@@ -31,6 +33,24 @@ namespace Classes.Static
             if (CurrentSanity > StartingSanity)
             {
                 CurrentSanity = StartingSanity;
+            }
+
+            if (oldSanity >= 50f && CurrentSanity < 50f)
+            {
+                EventHandler.Instance.PlayerSanityCrossing50(true);
+            }
+            else if (oldSanity < 50f && CurrentSanity >= 50f)
+            {
+                EventHandler.Instance.PlayerSanityCrossing50(false);
+            }
+            
+            if (oldSanity >= 25f && CurrentSanity < 25f)
+            {
+                EventHandler.Instance.PlayerSanityCrossing25(true);
+            }
+            else if (oldSanity < 25f && CurrentSanity >= 25f)
+            {
+                EventHandler.Instance.PlayerSanityCrossing25(false);
             }
         }
     }
