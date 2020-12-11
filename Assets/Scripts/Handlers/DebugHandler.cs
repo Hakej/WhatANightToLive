@@ -25,7 +25,7 @@ namespace Handlers
         
             DebugInfo.text = $"Current sanity level: {gh.Sanity.CurrentSanity}\n" +
                              $"Current fear level: {gh.Sanity.CurrentFearLevel}\n" +
-                             $"Current sanity drop: {gh.Sanity.CurrentSanityDrop}" +
+                             $"Current sanity drop: {gh.Sanity.CurrentSanityDrop}\n" +
                              $"Current danger level: {gh.CurrentDangerLevel}";
         }
 
