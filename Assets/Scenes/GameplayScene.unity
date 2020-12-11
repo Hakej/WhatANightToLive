@@ -1817,7 +1817,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8319f524c0df59e47bd4b16c4501edb3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2e3847e245cc6d643a72499aef709a2f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -3347,7 +3347,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bbad09bd32a6c1a4c956efb4170f505f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e0a66a2d4a4bf05468ff8cb945867ff0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3576,9 +3576,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 769b064134965554785b04d6e54bc5eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c00de613267ef0a4daf64d1a4a602145, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3882,9 +3882,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 260f9b00238052641a213c585993e412, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a7864a84e5742204fb1c326eac9fdaf0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 2
   Loop: 0
   Mute: 0
@@ -8163,7 +8163,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0eb433a4a17777147aaf5f24accac565, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2d2ced4381baa1e44b032465b44b4171, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -8452,8 +8452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 2047425845}
-  FlashlightOnSound: {fileID: 8300000, guid: 70e342a85f4e9fb42944268f6717fa4f, type: 3}
-  FlashlightOffSound: {fileID: 8300000, guid: 073d618d5ad758e4c8c65665327efb5a, type: 3}
+  FlashlightOnSound: {fileID: 8300000, guid: 29e5a71c8390c5045b9d3dcbb237ba82, type: 3}
+  FlashlightOffSound: {fileID: 8300000, guid: 487fbf40896e35b44a9655f8cbafb2c3, type: 3}
   FlashLight: {fileID: 2047425844}
 --- !u!1 &2057349721
 GameObject:
