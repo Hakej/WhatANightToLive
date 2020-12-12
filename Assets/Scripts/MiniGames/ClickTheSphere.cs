@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Numerics;
+using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 namespace MiniGames
 {
     public class ClickTheSphere : MiniGame
     {
         public GameObject Sphere;
+        public AudioSource ShrinkSound;
         
         public int StartingClicksNeeded = 15;
 
@@ -16,7 +19,10 @@ namespace MiniGames
 
             var newScale = (float)_currentClicksNeeded / StartingClicksNeeded;
             
-            Sphere.transform.localScale = new Vector3(newScale, newScale, newScale);
+            ShrinkSound.Play();
+            ShrinkSound.pitch = newScale;
+            
+            Sphere.transform.localScale = Vector3.one * newScale;
 
             if (_currentClicksNeeded == 0)
             {
