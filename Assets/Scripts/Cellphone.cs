@@ -1,5 +1,4 @@
-﻿using System;
-using Controllers;
+﻿using Controllers;
 using UnityEngine;
 
 public class Cellphone : MonoBehaviour

@@ -15,16 +15,28 @@ namespace Classes.Abstracts
         public int StartingDifficulty;
         public float MoveCooldown;
         
+        [Header("Chance of successful attack on a failed attack")]
+        public float ChanceOnSanityAbove50 = 0f;
+        public float ChanceOnSanityBelow50 = 1f;
+        public float ChanceOnSanityBelow25 = 2f;
+        public float ChanceOnSanityBelow1 = 100f;
+        
         [Header("Enemy attack's strength")]
         public float AttackPower;
         public float AttackingTime;
 
-        protected GameObject CurrentRoom;
-
+        [HideInInspector]
+        public GameObject CurrentRoom;
+        [HideInInspector]
+        public bool IsAttacking = false;
+        [HideInInspector]
+        public float CurrentAttackPower = 0f;
+        [HideInInspector]
+        public float CurrentAttackingTime = 0f;
+        
         private float _currentCooldown = 0f;
-        private float _currentAttackPower = 0f;
-        private float _currentAttackingTime = 0f;
-        private bool _isAttacking = false;
+        
+        public float CurrentChanceOfPowerAttack { get; private set; }
         
         public void Spawn()
         {
@@ -36,12 +48,35 @@ namespace Classes.Abstracts
         
             CurrentRoom = StartingRoom;
             transform.position = StartingRoom.transform.position;
-            
+
+            EventHandler.Instance.OnPlayerSanityCrossing50 += OnPlayerSanityCrossing50;
+            EventHandler.Instance.OnPlayerSanityCrossing25 += OnPlayerSanityCrossing25;
+            EventHandler.Instance.OnPlayerSanityCrossing1 += OnPlayerSanityCrossing1;
+
             gameObject.SetActive(true);
+
+            CurrentChanceOfPowerAttack = ChanceOnSanityAbove50;
+            
+            DebugHandler.Instance.SpawnedEnemies.Add(this);
         
             Debug.Log($"{gameObject.name}: I've spawned in {StartingRoom.name}.");
         }
 
+        private void OnPlayerSanityCrossing50(bool isBelow)
+        {
+            CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow50 : ChanceOnSanityAbove50;
+        }
+        
+        private void OnPlayerSanityCrossing25(bool isBelow)
+        {
+            CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow25 : ChanceOnSanityBelow50;
+        }
+        
+        private void OnPlayerSanityCrossing1(bool isBelow)
+        {
+            CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow1 : ChanceOnSanityBelow25;
+        }
+        
         protected void ChangeRoom(GameObject newRoom)
         {
             CurrentRoom = newRoom;
@@ -50,7 +85,7 @@ namespace Classes.Abstracts
 
         protected void ChangeToAttackMode()
         {
-            _isAttacking = true;
+            IsAttacking = true;
         }
 
         private void SuccessfulAttack()
@@ -60,14 +95,14 @@ namespace Classes.Abstracts
     
         public void FailAttack()
         {
-            _isAttacking = false;
+            IsAttacking = false;
             ChangeRoom(StartingRoom);
             Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {StartingRoom.name}.");
         }
         
         private void Update()
         {
-            if (_isAttacking)
+            if (IsAttacking)
             {
                 CheckAttack();
             }
@@ -79,18 +114,21 @@ namespace Classes.Abstracts
 
         private void CheckAttack()
         {
-            _currentAttackPower += UnityEngine.Time.deltaTime * GameHandler.Instance.CurrentDangerLevel;
+            CurrentAttackPower += UnityEngine.Time.deltaTime * GameHandler.Instance.CurrentDangerLevel;
 
-            if (_currentAttackPower >= AttackPower)
+            if (CurrentAttackPower >= AttackPower)
             {
                 SuccessfulAttack();
                 return;
             }
 
-            _currentAttackingTime += UnityEngine.Time.deltaTime;
+            CurrentAttackingTime += UnityEngine.Time.deltaTime;
 
-            if (_currentAttackingTime >= AttackingTime)
+            if (CurrentAttackingTime >= AttackingTime)
             {
+                var chance = Random.Range(0f, 100f);
+                
+                
                 FailAttack();
             }
         }

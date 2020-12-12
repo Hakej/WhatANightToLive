@@ -11,7 +11,7 @@ namespace Handlers
         public event Action<bool, string> OnPowerToggle;
         public event Action<bool> OnPlayerSanityCrossing50;
         public event Action<bool> OnPlayerSanityCrossing25;
-        public event Action<bool> OnPhoneToggle;
+        public event Action<bool> OnPlayerSanityCrossing1;
     
 
         public void Win()
@@ -48,10 +48,10 @@ namespace Handlers
         {
             OnPlayerSanityCrossing25?.Invoke(isBelow);
         }
-    
-        public void PhoneToggle(bool isOnPhone)
+        
+        public void PlayerSanityCrossing1(bool isBelow)
         {
-            OnPhoneToggle?.Invoke(isOnPhone);
+            OnPlayerSanityCrossing1?.Invoke(isBelow);
         }
     }
 }

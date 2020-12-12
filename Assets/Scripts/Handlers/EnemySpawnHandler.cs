@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Classes.Abstracts;
 using UnityEngine;
 
 namespace Handlers
 {
-    public class EnemyHandler : MonoBehaviour
+    public class EnemySpawnHandler : MonoBehaviour
     {
         public bool DisableEnemies;
         
