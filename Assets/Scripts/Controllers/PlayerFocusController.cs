@@ -16,10 +16,7 @@ namespace Controllers
     
         public float FocusedAudioVolume = 0.5f;
         public float UnfocusedAudioVolume = 1f;
-    
-        public GameObject PlayerUICanvas;
-        public GameObject CameraUICanvas;
-    
+
         [HideInInspector]
         public bool IsFocused = false;
 
@@ -27,8 +24,8 @@ namespace Controllers
 
         private void Start()
         {
-            CameraUICanvas.SetActive(IsFocused);
-            PlayerUICanvas.SetActive(!IsFocused);
+            UIHandler.Instance.ToggleCameraUI(IsFocused);
+            UIHandler.Instance.TogglePlayerUI(!IsFocused);
         }
 
         public void ToggleFocus()
@@ -64,8 +61,8 @@ namespace Controllers
         
             IsFocused = !IsFocused;
         
-            CameraUICanvas.SetActive(IsFocused);
-            PlayerUICanvas.SetActive(!IsFocused);
+            UIHandler.Instance.ToggleCameraUI(IsFocused);
+            UIHandler.Instance.TogglePlayerUI(!IsFocused);
 
             EventHandler.Instance.PlayerFocusChangeStop(IsFocused);
         

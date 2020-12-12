@@ -203,9 +203,55 @@ Transform:
   - {fileID: 2057349722}
   - {fileID: 1480665862}
   - {fileID: 374355146}
+  - {fileID: 968832187}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &24585222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24585223}
+  - component: {fileID: 24585224}
+  m_Layer: 0
+  m_Name: MiniGameHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &24585223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24585222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1000, y: -1000, z: -1000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &24585224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24585222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d0b2410f592924b9acc220941cfe57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayerInMiniGame: 0
+  PlayerCamera: {fileID: 27472587}
 --- !u!1 &25826271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,7 +1810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2e199c8bb5c334eb8bc12bc1df5ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisableEnemies: 0
+  DisableEnemies: 1
 --- !u!114 &376669244 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3075185056239619879, guid: b8cce44429994cd4886b57e4cb3af51a,
@@ -4829,6 +4875,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958949571}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &968832186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968832187}
+  - component: {fileID: 968832188}
+  m_Layer: 0
+  m_Name: UIHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &968832187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968832186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 16503766}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968832188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968832186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604c5aed67698334cb9bc6e0031f8823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerUICanvas: {fileID: 1815233546}
+  CameraUICanvas: {fileID: 1390997431}
+  CellphoneUICanvas: {fileID: 228566104}
 --- !u!4 &992367185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941905352758590237, guid: b8cce44429994cd4886b57e4cb3af51a,
@@ -5110,6 +5202,7 @@ GameObject:
   - component: {fileID: 1051608108}
   - component: {fileID: 1051608109}
   - component: {fileID: 1051608110}
+  - component: {fileID: 1051608111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5170,8 +5263,6 @@ MonoBehaviour:
   FocusedCameraRotationX: 3
   FocusedAudioVolume: 0.5
   UnfocusedAudioVolume: 1
-  PlayerUICanvas: {fileID: 1815233546}
-  CameraUICanvas: {fileID: 1390997431}
   IsFocused: 0
 --- !u!82 &1051608108
 AudioSource:
@@ -5292,6 +5383,20 @@ MonoBehaviour:
   CellphoneObject: {fileID: 2106818659}
   CellphoneUI: {fileID: 228566104}
   IsPlayerOnPhone: 0
+--- !u!114 &1051608111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051608104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d0b2410f592924b9acc220941cfe57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsPlayerInMiniGame: 0
+  PlayerCamera: {fileID: 0}
 --- !u!1 &1067698408
 GameObject:
   m_ObjectHideFlags: 0
@@ -7016,7 +7121,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1344258588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 24585224}
+        m_TargetAssemblyTypeName: Controllers.MiniGameHandler, Assembly-CSharp
+        m_MethodName: StartMiniGame
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1483448279094336574, guid: e3bc5df56f0958043b47b6a538482d07,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1344258588
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,5 +54,10 @@ namespace Classes.Static
                 EventHandler.Instance.PlayerSanityCrossing25(false);
             }
         }
+
+        public void GainSanity(float gainedSanity)
+        {
+            CurrentSanity += gainedSanity;
+        }
     }
 }
