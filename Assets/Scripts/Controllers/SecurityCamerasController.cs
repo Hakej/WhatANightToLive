@@ -8,47 +8,49 @@ namespace Controllers
     {
         public GameObject PlayerCamera;
         public AudioSource FocusCamSound;
-    
-        private LoopingList<GameObject> _cameras;
+        public string SecurityCamTag;
+
+        public LoopingList<GameObject> Cameras;
 
         private void Start()
         {
-            _cameras = new LoopingList<GameObject>();
-        
-            foreach (Transform child in transform)
-            {
-                _cameras.Add(child.gameObject);
-            }
-        
+            Cameras = new LoopingList<GameObject>();
+
+            var cameras = GameObject.FindGameObjectsWithTag(SecurityCamTag);
+
+            foreach (var camera in cameras) Cameras.Add(camera);
+
             EventHandler.Instance.OnPlayerFocusChangeStop += ToggleCams;
         }
 
         public void NextCamera()
         {
-            ChangeCam(_cameras.Current, _cameras.MoveNext);
+            ChangeCam(Cameras.Current, Cameras.MoveNext);
         }
 
         public void PreviousCamera()
         {
-            ChangeCam(_cameras.Current, _cameras.MovePrevious);
+            ChangeCam(Cameras.Current, Cameras.MovePrevious);
         }
 
         private void ChangeCam(GameObject oldCam, GameObject newCam)
         {
-            //oldCam.SetActive(false);
-            //newCam.SetActive(true);
             oldCam.GetComponent<Camera>().enabled = false;
             newCam.GetComponent<Camera>().enabled = true;
+            
+            oldCam.GetComponent<SecurityCamera>().AudioListener.SetActive(false);
+            newCam.GetComponent<SecurityCamera>().AudioListener.SetActive(true);
         }
-        
+
         private void ToggleCams(bool isFocused)
         {
-            //PlayerCamera.SetActive(!isFocused);
-            //_cameras.Current.SetActive(isFocused);
             PlayerCamera.GetComponent<Camera>().enabled = !isFocused;
-            _cameras.Current.GetComponent<Camera>().enabled = isFocused;
+            Cameras.Current.GetComponent<Camera>().enabled = isFocused;
             
+            Cameras.Current.GetComponent<SecurityCamera>().AudioListener.SetActive(isFocused);
+
             var focus = PlayerFocusController.Instance;
+            
             AudioListener.volume = isFocused ? focus.FocusedAudioVolume : focus.UnfocusedAudioVolume;
 
             if (isFocused)

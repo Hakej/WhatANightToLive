@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace Handlers
 {
@@ -12,6 +13,8 @@ namespace Handlers
         public event Action<bool> OnPlayerSanityCrossing50;
         public event Action<bool> OnPlayerSanityCrossing25;
         public event Action<bool> OnPlayerSanityCrossing1;
+
+        public event Action<GameObject, GameObject> OnEnemyChangingRoom;
     
 
         public void Win()
@@ -52,6 +55,11 @@ namespace Handlers
         public void PlayerSanityCrossing1(bool isBelow)
         {
             OnPlayerSanityCrossing1?.Invoke(isBelow);
+        }
+        
+        public void EnemyChangingRoom(GameObject oldRoom, GameObject newRoom)
+        {
+            OnEnemyChangingRoom?.Invoke(oldRoom, newRoom);
         }
     }
 }

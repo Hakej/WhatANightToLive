@@ -8,6 +8,7 @@ namespace Handlers
     public class EnemySpawnHandler : MonoBehaviour
     {
         public bool DisableEnemies;
+        public GameObject EnemiesGameObject;
         
         private List<Enemy> _enemiesToSpawn;
     
@@ -21,7 +22,7 @@ namespace Handlers
             
             _enemiesToSpawn = new List<Enemy>();
         
-            foreach (Transform child in transform)
+            foreach (Transform child in EnemiesGameObject.transform)
             {
                 _enemiesToSpawn.Add(child.GetComponent<Enemy>()); 
             }

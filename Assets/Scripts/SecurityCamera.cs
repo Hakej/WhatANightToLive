@@ -10,11 +10,15 @@ public class SecurityCamera : MonoBehaviour
     public float VarianceInPause = 0.5f;
     public float Speed = 0.1f;
 
-    private Quaternion _startAngle;
-    private Quaternion _endAngle;
+    public float DistortionTime = 1f;
+    public GameObject DistortionPlane;
+    public GameObject AudioListener;
+    public AudioSource DistortionSound;
+
+    private bool _isDistorted;
 
     private bool _isRotatingToTheRight = true;
-    
+
     private void Start()
     {
         if (!IsRotating)
@@ -23,10 +27,7 @@ public class SecurityCamera : MonoBehaviour
         }
 
         var rot = transform.localRotation;
-        
-        _startAngle = Quaternion.Euler(rot.x, rot.y - HalfAngle, rot.z);
-        _endAngle = Quaternion.Euler(rot.x, rot.y + HalfAngle, rot.z);
-        
+
         StartCoroutine(CameraRotation());
     }
 
@@ -36,7 +37,7 @@ public class SecurityCamera : MonoBehaviour
         {
             var byAngles = Vector3.up * HalfAngle;
             byAngles *= _isRotatingToTheRight ? 1 : -1;
-            
+
             var fromAngle = transform.rotation;
             var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
 
@@ -45,13 +46,34 @@ public class SecurityCamera : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
                 yield return null;
             }
-            
+
             _isRotatingToTheRight = !_isRotatingToTheRight;
             transform.rotation = toAngle;
 
             var currentTimeToPause = TimeToPause + Random.Range(0f, VarianceInPause);
-            
+
             yield return new WaitForSeconds(currentTimeToPause);
         }
+    }
+
+    public void StartDistortion()
+    {
+        if (!_isDistorted)
+        {
+            StartCoroutine(Distortion());
+        }
+    }
+
+    private IEnumerator Distortion()
+    {
+        _isDistorted = true;
+        DistortionPlane.SetActive(true);
+        DistortionSound.Play();
+
+        yield return new WaitForSeconds(DistortionTime);
+
+        DistortionSound.Stop();
+        DistortionPlane.SetActive(false);
+        _isDistorted = false;
     }
 }

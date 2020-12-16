@@ -79,6 +79,8 @@ namespace Classes.Abstracts
         
         protected void ChangeRoom(GameObject newRoom)
         {
+            EventHandler.Instance.EnemyChangingRoom(CurrentRoom, newRoom);
+
             CurrentRoom = newRoom;
             transform.position = newRoom.transform.position;
         }
