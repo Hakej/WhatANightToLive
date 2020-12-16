@@ -11,8 +11,6 @@ namespace Controllers
         public bool IsPlayerInMiniGame = false;
 
         public Camera PlayerCamera;
-        public AudioSource MiniGameFinish;
-        public TextMeshProUGUI GainedSanityText;
         
         public void StartMiniGame(GameObject miniGame)
         {
@@ -33,14 +31,9 @@ namespace Controllers
 
         private IEnumerator FinishGameAfterDelay(GameObject miniGame, float delay)
         {
-            GainedSanityText.gameObject.SetActive(true);
-            GainedSanityText.text = "You've calmed your mind a little.";
-            
-            MiniGameFinish.Play();
-            
+            Toast.Instance.Show("You've calmed your mind a little.", delay);
+
             yield return new WaitForSeconds(delay);
-            
-            GainedSanityText.gameObject.SetActive(false);
             
             UIHandler.Instance.TogglePlayerUI(true);
             
