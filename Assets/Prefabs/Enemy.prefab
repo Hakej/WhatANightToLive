@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 5822761892982298793}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,3 +229,13 @@ MonoBehaviour:
     Minutes: 0
   StartingDifficulty: 0
   MoveCooldown: 0
+  ChanceOnSanityAbove50: 0
+  ChanceOnSanityBelow50: 1
+  ChanceOnSanityBelow25: 2
+  ChanceOnSanityBelow1: 100
+  AttackPower: 0
+  AttackingTime: 0
+  CurrentRoom: {fileID: 0}
+  IsAttacking: 0
+  CurrentAttackPower: 0
+  CurrentAttackingTime: 0

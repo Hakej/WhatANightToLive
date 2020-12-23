@@ -22,6 +22,11 @@ namespace Handlers
         public bool IsPlayersPowerOn = true;
         public GameObject PlayerPowerSwitch;
 
+        public GameObject UI;
+        public GameObject Ambient;
+        public GameObject EndScreen;
+        public GameObject Environment;
+        
         [HideInInspector]
         public int CurrentDangerLevel = 1;
         
@@ -54,8 +59,18 @@ namespace Handlers
 
         private void OnWin()
         {
-            // TODO: Add winning logic
-            SceneHandler.LoadScene(WinScene);
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            foreach (var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+
+            Destroy(UI);
+            Destroy(Ambient);
+            Destroy(Environment);
+            
+            EndScreen.SetActive(true);
         }
 
         private void OnLose()

@@ -9,6 +9,7 @@ namespace Classes.Static
     public class GameTime : IUpdateable
     {
         public Time CurrentTime;
+        public Time SunriseStartTime;
 
         public Time WinningTime;
 
@@ -22,6 +23,11 @@ namespace Classes.Static
             {
                 EventHandler.Instance.Win();
                 return;
+            }
+
+            if (IsCurrentTimeEqual(SunriseStartTime))
+            {
+                Sunrise.Instance.StartSunrise();
             }
             
             CurrentTime.Minutes += deltaTime;
