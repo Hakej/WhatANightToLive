@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TypeWriterEffect : MonoBehaviour
 {
     public float Delay = 0.1f;
     public float InitialDelay = 2f;
-    public Text Text;
+
+    public TextMeshProUGUI Text;
     
     private string _fullText;
     private string _currentText = "";
@@ -23,7 +22,7 @@ public class TypeWriterEffect : MonoBehaviour
     private IEnumerator ShowText()
     {
         yield return new WaitForSeconds(InitialDelay);
-        
+
         for (var i = 0; i <= _fullText.Length; i++)
         {
             _currentText = _fullText.Substring(0, i);

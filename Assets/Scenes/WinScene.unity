@@ -411,7 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Delay: 0.15
   InitialDelay: 7
-  Text: {fileID: 651810366}
+  Text: {fileID: 0}
 --- !u!95 &651810369
 Animator:
   serializedVersion: 3
@@ -506,7 +506,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Delay: 0.15
   InitialDelay: 7
-  Text: {fileID: 1496080823}
+  Text: {fileID: 0}
 --- !u!114 &1496080823
 MonoBehaviour:
   m_ObjectHideFlags: 0
