@@ -22,10 +22,11 @@ namespace Handlers
         public bool IsPlayersPowerOn = true;
         public GameObject PlayerPowerSwitch;
 
-        public GameObject UI;
-        public GameObject Ambient;
+        [Header("Objects to destroy on finish")]
+        public List<GameObject> ObjectsToDestroyOnFinish;
+        
+        [Header("Object to activate on win")]
         public GameObject EndScreen;
-        public GameObject Environment;
         
         [HideInInspector]
         public int CurrentDangerLevel = 1;
@@ -66,9 +67,10 @@ namespace Handlers
                 Destroy(enemy);
             }
 
-            Destroy(UI);
-            Destroy(Ambient);
-            Destroy(Environment);
+            foreach (var objectToDestroy in ObjectsToDestroyOnFinish)
+            {
+                Destroy(objectToDestroy);
+            }
             
             EndScreen.SetActive(true);
         }
