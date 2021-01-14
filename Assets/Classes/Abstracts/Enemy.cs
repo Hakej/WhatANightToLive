@@ -1,5 +1,4 @@
 ﻿using Handlers;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace Classes.Abstracts
@@ -8,7 +7,7 @@ namespace Classes.Abstracts
     {
         [Header("Spawn information")]
         public GameObject StartingRoom;
-        public Classes.Time SpawningTime;
+        public GameTime SpawningGameTime;
 
         [Header("Enemy AI")]
         [Range(0, 20)]
@@ -37,7 +36,7 @@ namespace Classes.Abstracts
         private float _currentCooldown = 0f;
         
         public float CurrentChanceOfPowerAttack { get; private set; }
-        
+
         public void Spawn()
         {
             if (StartingDifficulty == 0)
@@ -116,7 +115,7 @@ namespace Classes.Abstracts
 
         private void CheckAttack()
         {
-            CurrentAttackPower += UnityEngine.Time.deltaTime * GameHandler.Instance.CurrentDangerLevel;
+            CurrentAttackPower += Time.deltaTime * GameHandler.Instance.CurrentDangerLevel;
 
             if (CurrentAttackPower >= AttackPower)
             {
@@ -124,7 +123,7 @@ namespace Classes.Abstracts
                 return;
             }
 
-            CurrentAttackingTime += UnityEngine.Time.deltaTime;
+            CurrentAttackingTime += Time.deltaTime;
 
             if (CurrentAttackingTime >= AttackingTime)
             {
@@ -137,7 +136,7 @@ namespace Classes.Abstracts
         
         private void CheckMove()
         {
-            _currentCooldown += UnityEngine.Time.deltaTime;
+            _currentCooldown += Time.deltaTime;
 
             if (_currentCooldown < MoveCooldown)
             {

@@ -1,11 +1,12 @@
 ﻿using System;
 using Classes.Interfaces;
+using UnityEngine;
 using EventHandler = Handlers.EventHandler;
 
 namespace Classes.Static
 {
     [Serializable]
-    public class Sanity : IUpdateable
+    public class SanityHandler : Singleton<SanityHandler>
     {
         public float BaseSanityDrop = 0.3f;
         public float StartingSanity = 100f;
@@ -20,7 +21,7 @@ namespace Classes.Static
             CurrentSanity = StartingSanity;
         }
 
-        public void Update(float deltaTime)
+        public void Update()
         {
             var oldSanity = CurrentSanity;
             
@@ -28,7 +29,7 @@ namespace Classes.Static
             
             if (CurrentSanity > 0f)
             {
-                CurrentSanity -= CurrentSanityDrop * deltaTime;
+                CurrentSanity -= CurrentSanityDrop * Time.deltaTime;
             }
 
             if (CurrentSanity > StartingSanity)

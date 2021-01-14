@@ -9,6 +9,7 @@ TagManager:
   - PlayerAdjacentRoom
   - SecurityCamera
   - Enemy
+  - EnemySpawnRoom
   layers:
   - Default
   - TransparentFX

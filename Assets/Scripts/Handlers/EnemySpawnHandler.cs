@@ -30,11 +30,11 @@ namespace Handlers
 
         private void Update()
         {
-            var gameTime = GameHandler.Instance.GameTime;
+            var gameTime = GameHandler.Instance.GameTimeHandler.CurrentGameTime;
             
             foreach (var enemy in _enemiesToSpawn.Reverse<Enemy>())
             {
-                if (gameTime.IsCurrentTimeEqual(enemy.SpawningTime))
+                if (gameTime.IsEqual(enemy.SpawningGameTime))
                 {
                     enemy.Spawn();
                     _enemiesToSpawn.Remove(enemy);
