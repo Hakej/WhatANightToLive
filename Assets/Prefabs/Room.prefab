@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc050ad3f264594408bc3a647b4ba53e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecurityCamera: {fileID: 0}
+  SecurityCamera: {fileID: 5879392079983950721}
   AdjacentRooms: []
 --- !u!1 &7833639004051263281
 GameObject:
@@ -208,6 +208,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144e47f8800a0eb40b9f1e47f51cc600, type: 3}
+--- !u!1 &5879392079983950721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8343255943492227004, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+    type: 3}
+  m_PrefabInstance: {fileID: 2476690491303097405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4556445677079319977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2118178171245830548, guid: 144e47f8800a0eb40b9f1e47f51cc600,

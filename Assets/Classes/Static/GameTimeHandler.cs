@@ -10,6 +10,7 @@ namespace Classes.Static
         public GameTime StartingGameTime;
         public GameTime WinningGameTime;
 
+        [HideInInspector]
         public GameTime CurrentGameTime;
 
         private GameTime _sunriseStartGameTime;

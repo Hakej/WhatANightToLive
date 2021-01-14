@@ -1,4 +1,5 @@
-﻿using Handlers;
+﻿using GameObjects;
+using Handlers;
 using UnityEngine;
 
 namespace Classes.Abstracts
@@ -6,7 +7,7 @@ namespace Classes.Abstracts
     public abstract class Enemy : MonoBehaviour
     {
         [Header("Spawn information")]
-        public GameObject StartingRoom;
+        public Room StartingRoom;
         public GameTime SpawningGameTime;
 
         [Header("Enemy AI")]
@@ -25,7 +26,7 @@ namespace Classes.Abstracts
         public float AttackingTime;
 
         [HideInInspector]
-        public GameObject CurrentRoom;
+        public Room CurrentRoom;
         [HideInInspector]
         public bool IsAttacking = false;
         [HideInInspector]
@@ -76,7 +77,7 @@ namespace Classes.Abstracts
             CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow1 : ChanceOnSanityBelow25;
         }
         
-        protected void ChangeRoom(GameObject newRoom)
+        protected void ChangeRoom(Room newRoom)
         {
             EventHandler.Instance.EnemyChangingRoom(CurrentRoom, newRoom);
 
