@@ -10,10 +10,13 @@ namespace Classes.Abstracts
         public Room StartingRoom;
         public GameTime SpawningGameTime;
 
-        [Header("Enemy AI")]
-        [Range(0, 20)]
+        [Header("Enemy AI")] 
+        [Range(0, 20)] 
         public int StartingDifficulty;
         public float MoveCooldown;
+        
+        [HideInInspector]
+        public int CurrentDifficulty;
         
         [Header("Chance of successful attack on a failed attack")]
         public float ChanceOnSanityAbove50 = 0f;
@@ -45,8 +48,9 @@ namespace Classes.Abstracts
                 Destroy(gameObject);
                 return;
             }
-        
+
             CurrentRoom = StartingRoom;
+            CurrentDifficulty = StartingDifficulty;
             transform.position = StartingRoom.transform.position;
 
             EventHandler.Instance.OnPlayerSanityCrossing50 += OnPlayerSanityCrossing50;
@@ -57,24 +61,25 @@ namespace Classes.Abstracts
 
             CurrentChanceOfPowerAttack = ChanceOnSanityAbove50;
             
-            DebugHandler.Instance.SpawnedEnemies.Add(this);
-        
-            Debug.Log($"{gameObject.name}: I've spawned in {StartingRoom.name}.");
+            EventHandler.Instance.EnemySpawn(this);
         }
 
         private void OnPlayerSanityCrossing50(bool isBelow)
         {
             CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow50 : ChanceOnSanityAbove50;
+            CurrentDifficulty = isBelow ? CurrentDifficulty + 1 : CurrentDifficulty - 1;
         }
         
         private void OnPlayerSanityCrossing25(bool isBelow)
         {
             CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow25 : ChanceOnSanityBelow50;
+            CurrentDifficulty = isBelow ? CurrentDifficulty + 1 : CurrentDifficulty - 1;
         }
         
         private void OnPlayerSanityCrossing1(bool isBelow)
         {
             CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow1 : ChanceOnSanityBelow25;
+            CurrentDifficulty = isBelow ? CurrentDifficulty + 1 : CurrentDifficulty - 1;
         }
         
         protected void ChangeRoom(Room newRoom)
@@ -94,8 +99,8 @@ namespace Classes.Abstracts
         {
             EventHandler.Instance.Lose();     
         }
-    
-        public void FailAttack()
+
+        private void FailAttack()
         {
             IsAttacking = false;
             ChangeRoom(StartingRoom);
@@ -126,11 +131,19 @@ namespace Classes.Abstracts
 
             CurrentAttackingTime += Time.deltaTime;
 
-            if (CurrentAttackingTime >= AttackingTime)
+            if (CurrentAttackingTime < AttackingTime)
             {
-                var chance = Random.Range(0f, 100f);
-                
-                
+                return;
+            }
+
+            var chance = Random.Range(0f, 100f);
+
+            if (chance < CurrentChanceOfPowerAttack)
+            {
+                SuccessfulAttack();
+            }
+            else
+            {
                 FailAttack();
             }
         }
@@ -148,7 +161,7 @@ namespace Classes.Abstracts
         
             var randomNumber = Random.Range(1, 20);
 
-            if (StartingDifficulty <= randomNumber)
+            if (CurrentDifficulty <= randomNumber)
             {
                 Debug.Log($"{gameObject.name}: I've failed my movement.");
                 return;

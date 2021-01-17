@@ -16,6 +16,8 @@ namespace Handlers
 
         private void Start()
         {
+            EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
+            
             SpawnedEnemies = new List<Enemy>();
             
             UpdateDebug();
@@ -65,6 +67,11 @@ namespace Handlers
         private void UpdateDebug()
         {
             DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+        }
+
+        private void OnEnemySpawn(Enemy enemy)
+        {
+            SpawnedEnemies.Add(enemy);
         }
     }
 }

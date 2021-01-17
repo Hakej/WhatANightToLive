@@ -1,4 +1,5 @@
-﻿using Controllers;
+﻿using Classes.Abstracts;
+using Controllers;
 using Handlers;
 using UnityEngine;
 
@@ -24,6 +25,15 @@ namespace GameObjects
             _securityCameraScript = SecurityCamera.GetComponent<SecurityCamera>();
             
             EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
+            EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
+        }
+
+        private void OnEnemySpawn(Enemy enemy)
+        {
+            if (enemy.StartingRoom == this)
+            {
+                _securityCameraScript.StartDistortion();
+            }
         }
 
         private void OnEnemyChangingRoom(Room oldRoom, Room newRoom)
