@@ -8,7 +8,7 @@ public class MiniGame : MonoBehaviour
     
     public void FinishMiniGame()
     {
-        GameHandler.Instance.Sanity.GainSanity(SanityGainOnFinish);
+        GameHandler.Instance.SanityHandler.GainSanity(SanityGainOnFinish);
         MiniGameHandler.Instance.FinishMiniGame(gameObject);
     }
 }

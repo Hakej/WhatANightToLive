@@ -1,43 +1,61 @@
-﻿using Controllers;
+﻿using Classes.Abstracts;
+using Controllers;
 using Handlers;
 using UnityEngine;
 
-public class Room : MonoBehaviour
+namespace GameObjects
 {
-    public GameObject SecurityCamera;
-    public GameObject[] AdjacentRooms;
-
-    private SecurityCamera _securityCameraScript;
-
-    private void Start()
+    public class Room : MonoBehaviour
     {
-        var secCam = gameObject.transform.Find("SecurityCamera");
+        public GameObject SecurityCamera;
+        public Room[] AdjacentRooms;
 
-        if (secCam == null)
+        private SecurityCamera _securityCameraScript;
+
+        private void Start()
         {
-            return;
-        }
+            var secCam = gameObject.transform.Find("SecurityCamera");
 
-        SecurityCamera = secCam.gameObject;
-        _securityCameraScript = SecurityCamera.GetComponent<SecurityCamera>();
+            if (secCam == null)
+            {
+                return;
+            }
+
+            SecurityCamera = secCam.gameObject;
+            _securityCameraScript = SecurityCamera.GetComponent<SecurityCamera>();
             
-        EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
-    }
-
-    private void OnEnemyChangingRoom(GameObject oldRoom, GameObject newRoom)
-    {
-        if (gameObject != oldRoom && gameObject != newRoom)
-        {
-            return;
+            EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
+            EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
         }
 
-        var curCam = SecurityCamerasController.Instance.Cameras.Current;
-
-        if (curCam != SecurityCamera)
+        private void OnEnemySpawn(Enemy enemy)
         {
-            return;
+            if (enemy.StartingRoom == this)
+            {
+                _securityCameraScript.StartDistortion();
+            }
         }
+
+        private void OnEnemyChangingRoom(Room oldRoom, Room newRoom)
+        {
+            if (SecurityCamera == null)
+            {
+                return;
+            }
         
-        _securityCameraScript.StartDistortion();
+            if (this != oldRoom && this != newRoom)
+            {
+                return;
+            }
+
+            var curCam = SecurityCamerasController.Instance.Cameras.Current;
+
+            if (curCam != SecurityCamera)
+            {
+                return;
+            }
+        
+            _securityCameraScript.StartDistortion();
+        }
     }
 }

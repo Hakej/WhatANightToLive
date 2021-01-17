@@ -6,8 +6,7 @@ public class GenericEnemy : Enemy
 {
     protected override void Move()
     {
-        var curRoom = CurrentRoom.GetComponent<Room>();
-        var adjRooms = curRoom.AdjacentRooms;
+        var adjRooms = CurrentRoom.AdjacentRooms;
         var newRoom = adjRooms[Random.Range(0, adjRooms.Length)];
 
         ChangeRoom(newRoom);

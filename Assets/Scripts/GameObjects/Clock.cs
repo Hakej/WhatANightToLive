@@ -2,12 +2,15 @@
 using TMPro;
 using UnityEngine;
 
-public class Clock : MonoBehaviour
+namespace GameObjects
 {
-    public TextMeshPro TimeText;
-    
-    private void Update()
+    public class Clock : MonoBehaviour
     {
-        TimeText.text = GameHandler.Instance.GameTime.CurrentTime.ToString();
+        public TextMeshPro TimeText;
+    
+        private void Update()
+        {
+            TimeText.text = GameHandler.Instance.GameTimeHandler.CurrentGameTime.ToString();
+        }
     }
 }

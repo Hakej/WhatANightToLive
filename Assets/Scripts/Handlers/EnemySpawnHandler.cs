@@ -8,36 +8,29 @@ namespace Handlers
     public class EnemySpawnHandler : MonoBehaviour
     {
         public bool DisableEnemies;
-        public GameObject EnemiesGameObject;
         
-        private List<Enemy> _enemiesToSpawn;
+        public List<Enemy> EnemiesToSpawn;
     
         private void Start()
         {
-            if (DisableEnemies)
+            if (!DisableEnemies)
             {
-                Destroy(this);
                 return;
             }
-            
-            _enemiesToSpawn = new List<Enemy>();
-        
-            foreach (Transform child in EnemiesGameObject.transform)
-            {
-                _enemiesToSpawn.Add(child.GetComponent<Enemy>()); 
-            }
+
+            Destroy(this);
         }
 
         private void Update()
         {
-            var gameTime = GameHandler.Instance.GameTime;
+            var gameTime = GameHandler.Instance.GameTimeHandler.CurrentGameTime;
             
-            foreach (var enemy in _enemiesToSpawn.Reverse<Enemy>())
+            foreach (var enemy in EnemiesToSpawn.Reverse<Enemy>())
             {
-                if (gameTime.IsCurrentTimeEqual(enemy.SpawningTime))
+                if (gameTime.IsEqual(enemy.SpawningGameTime))
                 {
                     enemy.Spawn();
-                    _enemiesToSpawn.Remove(enemy);
+                    EnemiesToSpawn.Remove(enemy);
                 }
             }
         }

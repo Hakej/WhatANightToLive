@@ -11,50 +11,31 @@ namespace Handlers
         public SceneHandler SceneHandler;
         public SceneAsset WinScene;
         public SceneAsset LoseScene;
-
-        [Header("Sanity")]
-        public Sanity Sanity;
         
-        [Header("Game time")] 
-        public GameTime GameTime;
+        [Header("Handlers")] 
+        public SanityHandler SanityHandler;
+        public GameTimeHandler GameTimeHandler;
 
         [Header("Player's Room's Power")]
         public bool IsPlayersPowerOn = true;
         public GameObject PlayerPowerSwitch;
 
-        public GameObject UI;
-        public GameObject Ambient;
+        [Header("Objects to destroy on finish")]
+        public List<GameObject> ObjectsToDestroyOnFinish;
+        
+        [Header("Object to activate on win")]
         public GameObject EndScreen;
-        public GameObject Environment;
         
         [HideInInspector]
         public int CurrentDangerLevel = 1;
-        
-        private readonly List<IUpdateable> _updateables = new List<IUpdateable>();
 
         private void Start()
         {
-            _updateables.Add(Sanity);
-            _updateables.Add(GameTime);
-
-            foreach (var updateable in _updateables)
-            {
-                updateable.Start();
-            }
-            
             EventHandler.Instance.OnWin += OnWin;
             EventHandler.Instance.OnLose += OnLose;
             EventHandler.Instance.OnPowerToggle += OnPowerToggle;
             EventHandler.Instance.OnPlayerSanityCrossing50 += OnPlayerSanityCrossing50;
             EventHandler.Instance.OnPlayerSanityCrossing25 += OnPlayerSanityCrossing25;
-        }
-
-        private void Update()
-        {
-            foreach (var updateable in _updateables)
-            {
-                updateable.Update(Time.deltaTime);
-            }
         }
 
         private void OnWin()
@@ -66,9 +47,10 @@ namespace Handlers
                 Destroy(enemy);
             }
 
-            Destroy(UI);
-            Destroy(Ambient);
-            Destroy(Environment);
+            foreach (var objectToDestroy in ObjectsToDestroyOnFinish)
+            {
+                Destroy(objectToDestroy);
+            }
             
             EndScreen.SetActive(true);
         }
@@ -90,12 +72,12 @@ namespace Handlers
 
             if (areLightsOn)
             {
-                Sanity.CurrentFearLevel--;
+                SanityHandler.CurrentFearLevel--;
                 CurrentDangerLevel++;
             }
             else
             {
-                Sanity.CurrentFearLevel++;
+                SanityHandler.CurrentFearLevel++;
                 CurrentDangerLevel--;
             }
         }

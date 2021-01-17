@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using Classes.Static;
+using UnityEngine;
 using UnityEngine.Rendering;
 
 public class Sunrise : Singleton<Sunrise>
 {
+    public float SunriseLengthInGameMinutes;
+    
     public GameObject Sun;
     public Sun SunScript;
 

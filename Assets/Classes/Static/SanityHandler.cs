@@ -1,11 +1,12 @@
 ﻿using System;
 using Classes.Interfaces;
+using UnityEngine;
 using EventHandler = Handlers.EventHandler;
 
 namespace Classes.Static
 {
     [Serializable]
-    public class Sanity : IUpdateable
+    public class SanityHandler : Singleton<SanityHandler>
     {
         public float BaseSanityDrop = 0.3f;
         public float StartingSanity = 100f;
@@ -20,7 +21,7 @@ namespace Classes.Static
             CurrentSanity = StartingSanity;
         }
 
-        public void Update(float deltaTime)
+        public void Update()
         {
             var oldSanity = CurrentSanity;
             
@@ -28,7 +29,7 @@ namespace Classes.Static
             
             if (CurrentSanity > 0f)
             {
-                CurrentSanity -= CurrentSanityDrop * deltaTime;
+                CurrentSanity -= CurrentSanityDrop * Time.deltaTime;
             }
 
             if (CurrentSanity > StartingSanity)
@@ -36,6 +37,11 @@ namespace Classes.Static
                 CurrentSanity = StartingSanity;
             }
 
+            if (oldSanity > 50f && CurrentSanity > 50f)
+            {
+                return;
+            }
+            
             if (oldSanity >= 50f && CurrentSanity < 50f)
             {
                 EventHandler.Instance.PlayerSanityCrossing50(true);
@@ -52,6 +58,15 @@ namespace Classes.Static
             else if (oldSanity < 25f && CurrentSanity >= 25f)
             {
                 EventHandler.Instance.PlayerSanityCrossing25(false);
+            }
+            
+            if (oldSanity >= 1f && CurrentSanity < 1f)
+            {
+                EventHandler.Instance.PlayerSanityCrossing1(true);
+            }
+            else if (oldSanity < 1f && CurrentSanity >= 1f)
+            {
+                EventHandler.Instance.PlayerSanityCrossing1(false);
             }
         }
 

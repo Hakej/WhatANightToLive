@@ -16,6 +16,8 @@ namespace Handlers
 
         private void Start()
         {
+            EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
+            
             SpawnedEnemies = new List<Enemy>();
             
             UpdateDebug();
@@ -30,9 +32,9 @@ namespace Handlers
 
             var gh = GameHandler.Instance;
         
-            PlayerInfo.text = $"Current sanity level: {gh.Sanity.CurrentSanity}\n" +
-                             $"Current fear level: {gh.Sanity.CurrentFearLevel}\n" +
-                             $"Current sanity drop: {gh.Sanity.CurrentSanityDrop}\n" +
+            PlayerInfo.text = $"Current sanity level: {gh.SanityHandler.CurrentSanity}\n" +
+                             $"Current fear level: {gh.SanityHandler.CurrentFearLevel}\n" +
+                             $"Current sanity drop: {gh.SanityHandler.CurrentSanityDrop}\n" +
                              $"Current danger level: {gh.CurrentDangerLevel}";
             
             var enemies = new StringBuilder();
@@ -65,6 +67,11 @@ namespace Handlers
         private void UpdateDebug()
         {
             DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+        }
+
+        private void OnEnemySpawn(Enemy enemy)
+        {
+            SpawnedEnemies.Add(enemy);
         }
     }
 }
