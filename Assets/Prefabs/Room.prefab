@@ -230,7 +230,37 @@ PrefabInstance:
     - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: field of view
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_projectionMatrixMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_FocalLength
+      value: 17.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_SensorSize.x
+      value: 42.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_LensShift.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_GateFitMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8343255943492227004, guid: 144e47f8800a0eb40b9f1e47f51cc600,
         type: 3}
@@ -240,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 8343255943492227004, guid: 144e47f8800a0eb40b9f1e47f51cc600,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144e47f8800a0eb40b9f1e47f51cc600, type: 3}
