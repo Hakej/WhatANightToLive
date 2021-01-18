@@ -2,17 +2,28 @@
 using System.Text;
 using Classes.Abstracts;
 using TMPro;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 namespace Handlers
 {
     public class DebugHandler : Singleton<DebugHandler>
     {
+        [Header("Configuration")]
         public bool IsDebugModeOn = true;
         public Canvas DebugUICanvas;
+        
+        [Header("Infos")]
         public TextMeshProUGUI PlayerInfo;
         public TextMeshProUGUI EnemyInfo;
+        
+        [HideInInspector]
         public List<Enemy> SpawnedEnemies;
+        
+        [Header("Debug on minimap")]
+        public Camera MinimapCamera;
+
+        public string DebugMinimapLayer;
 
         private void Start()
         {
@@ -67,6 +78,15 @@ namespace Handlers
         private void UpdateDebug()
         {
             DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+
+            if (IsDebugModeOn)
+            {     
+                MinimapCamera.cullingMask |= 1 << LayerMask.NameToLayer(DebugMinimapLayer);
+            }
+            else
+            {          
+                MinimapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer(DebugMinimapLayer));
+            }
         }
 
         private void OnEnemySpawn(Enemy enemy)

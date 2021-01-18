@@ -7,10 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1213076846429966264, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213076846429966264, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213076846429966264, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: StartingDifficulty
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
@@ -26,6 +41,16 @@ PrefabInstance:
         type: 3}
       propertyPath: AttackingTime
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: SpawningGameTime.Hour
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: SpawningGameTime.Minutes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
