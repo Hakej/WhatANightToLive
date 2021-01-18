@@ -12,7 +12,7 @@ public class Minimap : MonoBehaviour
 
     public GameObject MinimapButtonsParent;
     public SecurityCamerasController SecCamController;
-    
+
     public void Start()
     {
         var cameras = GameObject.FindGameObjectsWithTag(SecurityCamTag);
@@ -25,7 +25,7 @@ public class Minimap : MonoBehaviour
             }
 
             var roomName = cam.transform.parent.name;
-            var camPos = RectTransformUtility.WorldToScreenPoint(MinimapCamera, cam.transform.position);
+            var camPos = RectTransformUtility.WorldToScreenPoint(MinimapCamera, cam.transform.position) * 1.75f;
             var buttonObject = Instantiate(MinimapButton, MinimapButtonsParent.transform);
             buttonObject.transform.localPosition = camPos;
             buttonObject.name = roomName + "_SecCamBut";
