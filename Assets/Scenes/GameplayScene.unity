@@ -1637,6 +1637,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -2471,6 +2476,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
       objectReference: {fileID: 1920434593}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -2613,6 +2623,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[2]
       value: 
       objectReference: {fileID: 1989497515}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -2759,6 +2774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -3584,6 +3604,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[2]
       value: 
       objectReference: {fileID: 1315325225}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -4075,6 +4100,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[2]
       value: 
       objectReference: {fileID: 2767942183961668558}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -4911,6 +4941,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[2]
       value: 
       objectReference: {fileID: 2116704195}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -6022,6 +6057,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[0]
       value: 
       objectReference: {fileID: 1459521493}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -10461,6 +10501,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
       objectReference: {fileID: 7182219562302035432}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -11808,6 +11853,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
       objectReference: {fileID: 586288733}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -12160,6 +12210,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
       objectReference: {fileID: 1315325224}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -12385,6 +12440,11 @@ PrefabInstance:
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
       objectReference: {fileID: 471970254}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: IsCameraDisabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -12424,6 +12484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.497
+      objectReference: {fileID: 0}
+    - target: {fileID: 7254520881180471135, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}

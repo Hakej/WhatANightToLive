@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SecurityCamera: {fileID: 5879392079983950721}
   AdjacentRooms: []
+  IsCameraDisabled: 0
 --- !u!1 &7833639004051263281
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,6 +147,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7389689634179117291}
     m_Modifications:
+    - target: {fileID: 109566344456722294, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 109566344456722294, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 109566344456722294, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084663231593083837, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2118178171245830548, guid: 144e47f8800a0eb40b9f1e47f51cc600,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -206,10 +227,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5112646258210577250, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8343255943492227004, guid: 144e47f8800a0eb40b9f1e47f51cc600,
         type: 3}
       propertyPath: m_Name
       value: SecurityCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343255943492227004, guid: 144e47f8800a0eb40b9f1e47f51cc600,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144e47f8800a0eb40b9f1e47f51cc600, type: 3}

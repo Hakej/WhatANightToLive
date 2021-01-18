@@ -13,13 +13,13 @@ public class Minimap : MonoBehaviour
     public GameObject MinimapButtonsParent;
     public SecurityCamerasController SecCamController;
 
-    public void Start()
+    private void Start()
     {
         var cameras = GameObject.FindGameObjectsWithTag(SecurityCamTag);
 
         foreach (var cam in  cameras)
         {
-            if (cam.activeSelf == false)
+            if (cam == null)
             {
                 continue;
             }
