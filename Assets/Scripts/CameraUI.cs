@@ -8,7 +8,7 @@ public class CameraUI : MonoBehaviour
 
     private void Update()
     {
-        var currentCamera = SecurityCamerasController.Instance.Cameras.Current;
+        var currentCamera = SecurityCamerasController.Instance.CurrentCamera;
         CurrentCameraText.text = currentCamera.transform.parent.name;
     }
 }

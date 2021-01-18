@@ -48,7 +48,7 @@ namespace GameObjects
                 return;
             }
 
-            var curCam = SecurityCamerasController.Instance.Cameras.Current;
+            var curCam = SecurityCamerasController.Instance.CurrentCamera;
 
             if (curCam != SecurityCamera)
             {
