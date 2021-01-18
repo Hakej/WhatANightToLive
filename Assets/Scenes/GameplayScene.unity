@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2e199c8bb5c334eb8bc12bc1df5ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisableEnemies: 0
+  DisableEnemies: 1
   EnemiesToSpawn:
   - {fileID: 1196548149}
   - {fileID: 2075012001}
@@ -3479,7 +3479,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -300, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573195592
 MonoBehaviour:
@@ -3544,8 +3544,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2bbe5270aa81644fb834beb39252309, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: db4c4c389ca8eed40a33fc2d499ba664, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
