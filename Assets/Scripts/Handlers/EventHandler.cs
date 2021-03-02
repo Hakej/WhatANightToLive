@@ -38,7 +38,7 @@ namespace Handlers
             OnPlayerFocusChangeStop?.Invoke(isFocused);
         }
 
-        public void PlayersLightsToggle(bool isPowerOn, string gameObjectTag)
+        public void PowerToggle(bool isPowerOn, string gameObjectTag)
         {
             OnPowerToggle?.Invoke(isPowerOn, gameObjectTag);
         }

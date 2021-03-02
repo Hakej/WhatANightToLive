@@ -30,6 +30,6 @@ public class PowerSwitch : MonoBehaviour
         
         LightSwitchSound.Play();
 
-        EventHandler.Instance.PlayersLightsToggle(_isLightSwitchOn, tag);
+        EventHandler.Instance.PowerToggle(_isLightSwitchOn, tag);
     }
 }
