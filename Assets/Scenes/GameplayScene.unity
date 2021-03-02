@@ -3502,6 +3502,8 @@ MonoBehaviour:
   SecurityCamTag: SecurityCamera
   MinimapButtonsParent: {fileID: 994721219}
   SecCamController: {fileID: 2018936516}
+  SelectedCameraButtonAnimationLength: 0.1
+  SelectedCameraButtonColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &563178000
 GameObject:
   m_ObjectHideFlags: 0

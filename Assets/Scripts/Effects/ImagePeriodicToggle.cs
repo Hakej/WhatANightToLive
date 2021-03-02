@@ -1,31 +1,34 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ImagePeriodicToggle : MonoBehaviour
+namespace Effects
 {
-    public Image ImageToToggle;
-    public float Interval;
-
-    private float _currentTime;
-
-    private bool _toggleState;
-
-    private void Start()
+    public class ImagePeriodicToggle : MonoBehaviour
     {
-        _toggleState = ImageToToggle.enabled;
-    }
+        public Image ImageToToggle;
+        public float Interval;
 
-    private void Update()
-    {
-        _currentTime += Time.deltaTime;
+        private float _currentTime;
 
-        if (_currentTime < Interval)
+        private bool _toggleState;
+
+        private void Start()
         {
-            return;
+            _toggleState = ImageToToggle.enabled;
         }
 
-        _currentTime = 0f;
-        _toggleState = !_toggleState;
-        ImageToToggle.enabled = _toggleState;
+        private void Update()
+        {
+            _currentTime += Time.deltaTime;
+
+            if (_currentTime < Interval)
+            {
+                return;
+            }
+
+            _currentTime = 0f;
+            _toggleState = !_toggleState;
+            ImageToToggle.enabled = _toggleState;
+        }
     }
 }
