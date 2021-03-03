@@ -12033,6 +12033,7 @@ GameObject:
   - component: {fileID: 2047425844}
   - component: {fileID: 2047425846}
   - component: {fileID: 2047425845}
+  - component: {fileID: 2047425847}
   m_Layer: 0
   m_Name: Flashlight
   m_TagString: Untagged
@@ -12227,6 +12228,20 @@ MonoBehaviour:
   FlashlightOnSound: {fileID: 8300000, guid: 29e5a71c8390c5045b9d3dcbb237ba82, type: 3}
   FlashlightOffSound: {fileID: 8300000, guid: 487fbf40896e35b44a9655f8cbafb2c3, type: 3}
   FlashLight: {fileID: 2047425844}
+--- !u!114 &2047425847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047425842}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e751bb0e9e80fb4ba53640266586215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Light: {fileID: 2047425844}
+  LowIntensity: 5
 --- !u!1 &2057349721
 GameObject:
   m_ObjectHideFlags: 0
