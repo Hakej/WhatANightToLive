@@ -2114,7 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2e199c8bb5c334eb8bc12bc1df5ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisableEnemies: 0
+  DisableEnemies: 1
   EnemiesToSpawn:
   - {fileID: 1196548149}
   - {fileID: 2075012001}
@@ -6271,11 +6271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ccfcf70e8401b64a8e6ab0ccc71fb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 27472587}
-  FocusedFOV: 12
-  UnfocusedFOV: 60
-  FocusingSpeed: 0.25
-  FocusedCameraRotationX: 3
   FocusedAudioVolume: 0.5
   UnfocusedAudioVolume: 1
   IsFocused: 0

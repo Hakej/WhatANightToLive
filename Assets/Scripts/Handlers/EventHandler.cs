@@ -9,8 +9,7 @@ namespace Handlers
     {
         public event Action OnWin;
         public event Action OnLose;
-        public event Action<bool> OnPlayerFocusChangeStart;
-        public event Action<bool> OnPlayerFocusChangeStop;
+        public event Action<bool> OnPlayerFocusChange;
         public event Action<bool, string> OnPowerToggle;
         public event Action<bool> OnPlayerSanityCrossing50;
         public event Action<bool> OnPlayerSanityCrossing25;
@@ -28,14 +27,9 @@ namespace Handlers
             OnLose?.Invoke();
         }
 
-        public void PlayerFocusChangeStart(bool isFocused)
+        public void PlayerFocusChange(bool isFocused)
         {
-            OnPlayerFocusChangeStart?.Invoke(isFocused);
-        }
-    
-        public void PlayerFocusChangeStop(bool isFocused)
-        {
-            OnPlayerFocusChangeStop?.Invoke(isFocused);
+            OnPlayerFocusChange?.Invoke(isFocused);
         }
 
         public void PowerToggle(bool isPowerOn, string gameObjectTag)
@@ -47,22 +41,22 @@ namespace Handlers
         {
             OnPlayerSanityCrossing50?.Invoke(isBelow);
         }
-    
+
         public void PlayerSanityCrossing25(bool isBelow)
         {
             OnPlayerSanityCrossing25?.Invoke(isBelow);
         }
-        
+
         public void PlayerSanityCrossing1(bool isBelow)
         {
             OnPlayerSanityCrossing1?.Invoke(isBelow);
         }
-        
+
         public void EnemySpawn(Enemy enemy)
         {
             OnEnemySpawn?.Invoke(enemy);
         }
-        
+
         public void EnemyChangingRoom(Room oldRoom, Room newRoom)
         {
             OnEnemyChangingRoom?.Invoke(oldRoom, newRoom);

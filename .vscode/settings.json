@@ -70,9 +70,8 @@
             "property": "#66C3CC",
             "plainKeyword": "#6C95EB",
             "number": "#ED94C0",
-            "member": "#33CC8F",
+            "method": "#33CC8F",
             "local": "#FFFFFF"
-        },
-        "notebook.kernelProviderAssociations": [],
-        "csharp.semanticHighlighting.enabled": true
+        }
     }
+}
