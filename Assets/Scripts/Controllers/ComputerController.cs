@@ -7,6 +7,8 @@ namespace Controllers
 {
     public class ComputerController : Singleton<ComputerController>
     {
+        public GameObject PlayerCamera;
+        public GameObject ComputerCamera;
 
         public AudioSource ComputerAudioSource;
 
@@ -19,32 +21,34 @@ namespace Controllers
         public float OffComputerAudioVolume = 1f;
 
         [HideInInspector]
-        public bool IsOnLaptop = false;
+        public bool IsOnComputer = false;
 
         private void Start()
         {
-            UIHandler.Instance.ToggleCameraUI(IsOnLaptop);
-            UIHandler.Instance.TogglePlayerUI(!IsOnLaptop);
+            ComputerCamera.SetActive(IsOnComputer);
+            PlayerCamera.SetActive(!IsOnComputer);
+
+            ComputerAudioSource.volume = IsOnComputer ? OnComputerAudioVolume : OffComputerAudioVolume;
         }
 
         public void ToggleFocus(bool isOnComputer)
         {
-            IsOnLaptop = isOnComputer;
+            IsOnComputer = isOnComputer;
 
-            UIHandler.Instance.ToggleCameraUI(IsOnLaptop);
-            UIHandler.Instance.TogglePlayerUI(!IsOnLaptop);
+            ComputerCamera.SetActive(IsOnComputer);
+            PlayerCamera.SetActive(!IsOnComputer);
 
-            AudioListener.volume = IsOnLaptop ? OnComputerAudioVolume : OffComputerAudioVolume;
+            ComputerAudioSource.volume = IsOnComputer ? OnComputerAudioVolume : OffComputerAudioVolume;
 
-            ComputerAudioSource.clip = isOnComputer ? ComputerEnterSound : ComputerLeaveSound;
+            ComputerAudioSource.clip = IsOnComputer ? ComputerEnterSound : ComputerLeaveSound;
             ComputerAudioSource.Play();
 
             foreach (var computerNoise in ComputerNoises)
             {
-                computerNoise.SetActive(isOnComputer);
+                computerNoise.SetActive(IsOnComputer);
             }
 
-            EventHandler.Instance.PlayerFocusChange(IsOnLaptop);
+            EventHandler.Instance.PlayerFocusChange(IsOnComputer);
         }
     }
 }
