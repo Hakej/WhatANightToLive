@@ -6,9 +6,15 @@ namespace Controllers
 {
     public class ComputerController : Singleton<ComputerController>
     {
-        public AudioSource LaptopEnterSound;
-        public float OnLaptopAudioVolume = 0.5f;
-        public float OffLaptopAudioVolume = 1f;
+
+        public AudioSource ComputerAudioSource;
+        public AudioSource ComputerNoiseAudioSource;
+
+        public AudioClip ComputerEnterSound;
+        public AudioClip ComputerLeaveSound;
+
+        public float OnComputerAudioVolume = 0.5f;
+        public float OffComputerAudioVolume = 1f;
 
         [HideInInspector]
         public bool IsOnLaptop = false;
@@ -19,18 +25,26 @@ namespace Controllers
             UIHandler.Instance.TogglePlayerUI(!IsOnLaptop);
         }
 
-        public void ToggleFocus(bool isOnLaptop)
+        public void ToggleFocus(bool isOnComputer)
         {
-            IsOnLaptop = isOnLaptop;
+            IsOnLaptop = isOnComputer;
 
             UIHandler.Instance.ToggleCameraUI(IsOnLaptop);
             UIHandler.Instance.TogglePlayerUI(!IsOnLaptop);
 
-            AudioListener.volume = IsOnLaptop ? OnLaptopAudioVolume : OffLaptopAudioVolume;
+            AudioListener.volume = IsOnLaptop ? OnComputerAudioVolume : OffComputerAudioVolume;
 
-            if (IsOnLaptop)
+            ComputerAudioSource.clip = isOnComputer ? ComputerEnterSound : ComputerLeaveSound;
+
+            ComputerAudioSource.Play();
+
+            if (ComputerNoiseAudioSource.isPlaying)
             {
-                LaptopEnterSound.Play();
+                ComputerNoiseAudioSource.Stop();
+            }
+            else
+            {
+                ComputerNoiseAudioSource.PlayDelayed(0.5f);
             }
 
             EventHandler.Instance.PlayerFocusChange(IsOnLaptop);
