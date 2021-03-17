@@ -11952,7 +11952,12 @@ PrefabInstance:
         type: 3}
       propertyPath: StartingRoom
       value: 
-      objectReference: {fileID: 1459521493}
+      objectReference: {fileID: 7182219562302035434}
+    - target: {fileID: 445099068785672400, guid: 405a9ff4e2aa1f441b32e8d2e6a59b06,
+        type: 3}
+      propertyPath: StartingDifficulty
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2611223032494730253, guid: 405a9ff4e2aa1f441b32e8d2e6a59b06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13127,7 +13132,7 @@ PrefabInstance:
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -13335,7 +13340,7 @@ PrefabInstance:
     - target: {fileID: 7941905352758590236, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7941905352758590237, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}

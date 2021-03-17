@@ -20,11 +20,11 @@ namespace Handlers
         {
             StartCoroutine(LoadLevel(scene.name));
         }
-    
+
         private IEnumerator LoadLevel(string sceneName)
         {
             Transition.SetTrigger("Start");
-        
+
             yield return new WaitForSeconds(_transitionTime);
 
             SceneManager.LoadScene(sceneName);
