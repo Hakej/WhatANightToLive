@@ -6,13 +6,13 @@ public class PoweredDevice : MonoBehaviour
 {
     public GameObject[] GameObjectsToToggle;
 
-    public AudioSource PowerSound;
+    public AudioSource PowerAudioSource;
     public AudioClip PowerOn;
     public AudioClip PowerRunning;
     public AudioClip PowerOff;
 
     public bool IsMuted = true;
-    
+
     private void Awake()
     {
         EventHandler.Instance.OnPowerToggle += OnToggle;
@@ -29,7 +29,7 @@ public class PoweredDevice : MonoBehaviour
         {
             PlayAudio(isRunning);
         }
-            
+
         foreach (var component in GameObjectsToToggle)
         {
             component.gameObject.SetActive(isRunning);
@@ -38,28 +38,28 @@ public class PoweredDevice : MonoBehaviour
 
     private void PlayAudio(bool isRunning)
     {
-        PowerSound.loop = false;
-        
+        PowerAudioSource.loop = false;
+
         if (isRunning)
         {
-            PowerSound.clip = PowerOn;
-            PowerSound.Play();
+            PowerAudioSource.clip = PowerOn;
+            PowerAudioSource.Play();
             StartCoroutine(PlayAfterPowerOn());
         }
         else
         {
             StopAllCoroutines();
-            PowerSound.clip = PowerOff;
-            PowerSound.Play();
+            PowerAudioSource.clip = PowerOff;
+            PowerAudioSource.Play();
         }
     }
-    
+
     private IEnumerator PlayAfterPowerOn()
     {
         yield return new WaitForSeconds(PowerOn.length);
 
-        PowerSound.clip = PowerRunning;
-        PowerSound.loop = true;
-        PowerSound.Play();
+        PowerAudioSource.clip = PowerRunning;
+        PowerAudioSource.loop = true;
+        PowerAudioSource.Play();
     }
 }
