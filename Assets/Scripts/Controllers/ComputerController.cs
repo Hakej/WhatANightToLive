@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Handlers;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ namespace Controllers
     {
 
         public AudioSource ComputerAudioSource;
-        public AudioSource ComputerNoiseAudioSource;
+
+        public List<GameObject> ComputerNoises;
 
         public AudioClip ComputerEnterSound;
         public AudioClip ComputerLeaveSound;
@@ -35,16 +37,11 @@ namespace Controllers
             AudioListener.volume = IsOnLaptop ? OnComputerAudioVolume : OffComputerAudioVolume;
 
             ComputerAudioSource.clip = isOnComputer ? ComputerEnterSound : ComputerLeaveSound;
-
             ComputerAudioSource.Play();
 
-            if (ComputerNoiseAudioSource.isPlaying)
+            foreach (var computerNoise in ComputerNoises)
             {
-                ComputerNoiseAudioSource.Stop();
-            }
-            else
-            {
-                ComputerNoiseAudioSource.PlayDelayed(0.5f);
+                computerNoise.SetActive(isOnComputer);
             }
 
             EventHandler.Instance.PlayerFocusChange(IsOnLaptop);
