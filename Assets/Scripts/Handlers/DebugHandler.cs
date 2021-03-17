@@ -93,15 +93,6 @@ namespace Handlers
         private void UpdateDebug()
         {
             DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
-
-            if (IsDebugModeOn)
-            {
-                MinimapCamera.cullingMask |= 1 << LayerMask.NameToLayer(DebugMinimapLayer);
-            }
-            else
-            {
-                MinimapCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(DebugMinimapLayer));
-            }
         }
 
         private void OnEnemySpawn(Enemy enemy)
