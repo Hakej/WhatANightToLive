@@ -33,7 +33,7 @@ namespace Controllers
             PlayerCamera.GetComponent<Camera>().enabled = !isFocused;
             CurrentCamera.GetComponent<Camera>().enabled = isFocused;
 
-            var focus = LaptopController.Instance;
+            var focus = ComputerController.Instance;
         }
     }
 }

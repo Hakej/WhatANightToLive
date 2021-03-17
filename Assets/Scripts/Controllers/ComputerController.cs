@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class LaptopController : Singleton<LaptopController>
+    public class ComputerController : Singleton<ComputerController>
     {
         public AudioSource LaptopEnterSound;
         public float OnLaptopAudioVolume = 0.5f;
