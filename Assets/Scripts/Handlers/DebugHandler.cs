@@ -11,14 +11,14 @@ namespace Handlers
         [Header("Configuration")]
         public bool IsDebugModeOn = true;
         public Canvas DebugUICanvas;
-        
+
         [Header("Infos")]
         public TextMeshProUGUI PlayerInfo;
         public TextMeshProUGUI EnemyInfo;
-        
+
         [HideInInspector]
         public List<Enemy> SpawnedEnemies;
-        
+
         [Header("Debug on minimap")]
         public Camera MinimapCamera;
 
@@ -27,9 +27,9 @@ namespace Handlers
         private void Start()
         {
             EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
-            
+
             SpawnedEnemies = new List<Enemy>();
-            
+
             UpdateDebug();
         }
 
@@ -41,12 +41,12 @@ namespace Handlers
             }
 
             var gh = GameHandler.Instance;
-        
+
             PlayerInfo.text = $"Current sanity level: {gh.SanityHandler.CurrentSanity}\n" +
                              $"Current fear level: {gh.SanityHandler.CurrentFearLevel}\n" +
                              $"Current sanity drop: {gh.SanityHandler.CurrentSanityDrop}\n" +
                              $"Current danger level: {gh.CurrentDangerLevel}";
-            
+
             var enemies = new StringBuilder();
 
             foreach (var enemy in SpawnedEnemies)
@@ -55,7 +55,7 @@ namespace Handlers
                 enemies.Append($"Current room: {enemy.CurrentRoom.name}\n");
                 enemies.Append($"Chance of power attack: {enemy.CurrentChanceOfPowerAttack}\n");
                 enemies.Append($"Is attacking: {enemy.IsAttacking}\n");
-                
+
                 if (enemy.IsAttacking)
                 {
                     enemies.Append($"Current attack power: {enemy.CurrentAttackPower}\n");
@@ -79,12 +79,12 @@ namespace Handlers
             DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
 
             if (IsDebugModeOn)
-            {     
+            {
                 MinimapCamera.cullingMask |= 1 << LayerMask.NameToLayer(DebugMinimapLayer);
             }
             else
-            {          
-                MinimapCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer(DebugMinimapLayer));
+            {
+                MinimapCamera.cullingMask &= ~(1 << LayerMask.NameToLayer(DebugMinimapLayer));
             }
         }
 

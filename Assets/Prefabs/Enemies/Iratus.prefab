@@ -57,6 +57,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Iratus
       objectReference: {fileID: 0}
+    - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8277398045375427700, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: m_LocalPosition.x

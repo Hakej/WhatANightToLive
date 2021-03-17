@@ -11,6 +11,6 @@ public class Logger : Singleton<Logger>
 
     private void OnEnemySpawn(Enemy enemy)
     {
-        Debug.Log($"{enemy.name} has spawned in {enemy.StartingRoom.name}.");
+        Debug.Log($"{enemy.name} has spawned in {enemy.SpawnRoom.name}.");
     }
 }

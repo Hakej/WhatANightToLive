@@ -73,5 +73,8 @@
             "method": "#33CC8F",
             "local": "#FFFFFF"
         }
-    }
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
 }

@@ -6,24 +6,23 @@ namespace Classes.Abstracts
 {
     public abstract class Enemy : MonoBehaviour
     {
-        [Header("Spawn information")]
-        public Room StartingRoom;
-        public GameTime SpawningGameTime;
 
-        [Header("Enemy AI")] 
-        [Range(0, 20)] 
+        [Header("Enemy AI")]
+        [Range(0, 20)]
         public int StartingDifficulty;
         public float MoveCooldown;
-        
+
         [HideInInspector]
         public int CurrentDifficulty;
-        
+        [HideInInspector]
+        public Room SpawnRoom;
+
         [Header("Chance of successful attack on a failed attack")]
         public float ChanceOnSanityAbove50 = 0f;
         public float ChanceOnSanityBelow50 = 1f;
         public float ChanceOnSanityBelow25 = 2f;
         public float ChanceOnSanityBelow1 = 100f;
-        
+
         [Header("Enemy attack's strength")]
         public float AttackPower;
         public float AttackingTime;
@@ -36,12 +35,12 @@ namespace Classes.Abstracts
         public float CurrentAttackPower = 0f;
         [HideInInspector]
         public float CurrentAttackingTime = 0f;
-        
+
         private float _currentCooldown = 0f;
-        
+
         public float CurrentChanceOfPowerAttack { get; private set; }
 
-        public void Spawn()
+        public void Spawn(EnemySpawnInfo enemySpawnInfo)
         {
             if (StartingDifficulty == 0)
             {
@@ -49,9 +48,11 @@ namespace Classes.Abstracts
                 return;
             }
 
-            CurrentRoom = StartingRoom;
+            SpawnRoom = enemySpawnInfo.SpawnRoom;
+
+            CurrentRoom = SpawnRoom;
             CurrentDifficulty = StartingDifficulty;
-            transform.position = StartingRoom.transform.position;
+            transform.position = SpawnRoom.transform.position;
 
             EventHandler.Instance.OnPlayerSanityCrossing50 += OnPlayerSanityCrossing50;
             EventHandler.Instance.OnPlayerSanityCrossing25 += OnPlayerSanityCrossing25;
@@ -60,8 +61,6 @@ namespace Classes.Abstracts
             gameObject.SetActive(true);
 
             CurrentChanceOfPowerAttack = ChanceOnSanityAbove50;
-            
-            EventHandler.Instance.EnemySpawn(this);
         }
 
         private void OnPlayerSanityCrossing50(bool isBelow)
@@ -69,19 +68,19 @@ namespace Classes.Abstracts
             CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow50 : ChanceOnSanityAbove50;
             CurrentDifficulty = isBelow ? CurrentDifficulty + 1 : CurrentDifficulty - 1;
         }
-        
+
         private void OnPlayerSanityCrossing25(bool isBelow)
         {
             CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow25 : ChanceOnSanityBelow50;
             CurrentDifficulty = isBelow ? CurrentDifficulty + 1 : CurrentDifficulty - 1;
         }
-        
+
         private void OnPlayerSanityCrossing1(bool isBelow)
         {
             CurrentChanceOfPowerAttack = isBelow ? ChanceOnSanityBelow1 : ChanceOnSanityBelow25;
             CurrentDifficulty = isBelow ? CurrentDifficulty + 1 : CurrentDifficulty - 1;
         }
-        
+
         protected void ChangeRoom(Room newRoom)
         {
             EventHandler.Instance.EnemyChangingRoom(CurrentRoom, newRoom);
@@ -97,16 +96,16 @@ namespace Classes.Abstracts
 
         private void SuccessfulAttack()
         {
-            EventHandler.Instance.Lose();     
+            EventHandler.Instance.Lose();
         }
 
         private void FailAttack()
         {
             IsAttacking = false;
-            ChangeRoom(StartingRoom);
-            Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {StartingRoom.name}.");
+            ChangeRoom(SpawnRoom);
+            Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {SpawnRoom.name}.");
         }
-        
+
         private void Update()
         {
             if (IsAttacking)
@@ -147,7 +146,7 @@ namespace Classes.Abstracts
                 FailAttack();
             }
         }
-        
+
         private void CheckMove()
         {
             _currentCooldown += Time.deltaTime;
@@ -158,7 +157,7 @@ namespace Classes.Abstracts
             }
 
             _currentCooldown = 0f;
-        
+
             var randomNumber = Random.Range(1, 20);
 
             if (CurrentDifficulty <= randomNumber)

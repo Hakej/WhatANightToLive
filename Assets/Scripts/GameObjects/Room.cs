@@ -21,27 +21,13 @@ namespace GameObjects
                 {
                     SecurityCamera.SetActive(false);
                 }
-                
+
                 return;
             }
 
             _securityCameraScript = SecurityCamera.GetComponent<SecurityCamera>();
-            
-            EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
-            EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
-        }
 
-        private void OnEnemySpawn(Enemy enemy)
-        {
-            if (IsCameraDisabled)
-            {
-                return;
-            }
-            
-            if (enemy.StartingRoom == this)
-            {
-                _securityCameraScript.StartDistortion();
-            }
+            EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
         }
 
         private void OnEnemyChangingRoom(Room oldRoom, Room newRoom)
@@ -50,7 +36,7 @@ namespace GameObjects
             {
                 return;
             }
-        
+
             if (this != oldRoom && this != newRoom)
             {
                 return;
@@ -62,7 +48,7 @@ namespace GameObjects
             {
                 return;
             }
-        
+
             _securityCameraScript.StartDistortion();
         }
     }
