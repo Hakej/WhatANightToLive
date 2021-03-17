@@ -12,10 +12,10 @@ namespace Classes.Static
         public float StartingSanity = 100f;
 
         public int CurrentFearLevel = 0;
-        
+
         public float CurrentSanity { get; private set; }
         public float CurrentSanityDrop { get; private set; }
-        
+
         public void Start()
         {
             CurrentSanity = StartingSanity;
@@ -24,9 +24,9 @@ namespace Classes.Static
         public void Update()
         {
             var oldSanity = CurrentSanity;
-            
+
             CurrentSanityDrop = BaseSanityDrop + BaseSanityDrop * CurrentFearLevel;
-            
+
             if (CurrentSanity > 0f)
             {
                 CurrentSanity -= CurrentSanityDrop * Time.deltaTime;
@@ -41,7 +41,7 @@ namespace Classes.Static
             {
                 return;
             }
-            
+
             if (oldSanity >= 50f && CurrentSanity < 50f)
             {
                 EventHandler.Instance.PlayerSanityCrossing50(true);
@@ -50,7 +50,7 @@ namespace Classes.Static
             {
                 EventHandler.Instance.PlayerSanityCrossing50(false);
             }
-            
+
             if (oldSanity >= 25f && CurrentSanity < 25f)
             {
                 EventHandler.Instance.PlayerSanityCrossing25(true);
@@ -59,7 +59,7 @@ namespace Classes.Static
             {
                 EventHandler.Instance.PlayerSanityCrossing25(false);
             }
-            
+
             if (oldSanity >= 1f && CurrentSanity < 1f)
             {
                 EventHandler.Instance.PlayerSanityCrossing1(true);

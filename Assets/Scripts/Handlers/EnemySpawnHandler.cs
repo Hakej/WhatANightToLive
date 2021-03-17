@@ -30,19 +30,23 @@ namespace Handlers
 
             foreach (var enemySpawnInfo in EnemiesToSpawn.Reverse<EnemySpawnInfo>())
             {
-                var info = enemySpawnInfo;
-                if (gameTime.IsEqual(info.SpawnTime))
+                if (gameTime.IsGreaterOrEqual(enemySpawnInfo.SpawnTime))
                 {
-                    var spawnedEnemy = Instantiate(info.EnemyPrefab, EnemiesContainer.transform);
-                    spawnedEnemy.name = info.EnemyPrefab.name;
-
-                    var spawnedEnemyScript = spawnedEnemy.GetComponent<Enemy>();
-                    spawnedEnemyScript.Spawn(enemySpawnInfo);
-
+                    SpawnEnemy(enemySpawnInfo);
                     EnemiesToSpawn.Remove(enemySpawnInfo);
-                    EventHandler.Instance.EnemySpawn(spawnedEnemyScript);
                 }
             }
+        }
+
+        private void SpawnEnemy(EnemySpawnInfo info)
+        {
+            var spawnedEnemy = Instantiate(info.EnemyPrefab, EnemiesContainer.transform);
+            spawnedEnemy.name = info.EnemyPrefab.name;
+
+            var spawnedEnemyScript = spawnedEnemy.GetComponent<Enemy>();
+            spawnedEnemyScript.Spawn(info);
+
+            EventHandler.Instance.EnemySpawn(spawnedEnemyScript);
         }
     }
 }

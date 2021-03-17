@@ -49,23 +49,39 @@ namespace Handlers
 
             var enemies = new StringBuilder();
 
+            var isAnyoneAttacking = false;
+
             foreach (var enemy in SpawnedEnemies)
             {
                 enemies.Append($"{enemy.gameObject.name}\n");
                 enemies.Append($"Current room: {enemy.CurrentRoom.name}\n");
-                enemies.Append($"Chance of power attack: {enemy.CurrentChanceOfPowerAttack}\n");
                 enemies.Append($"Is attacking: {enemy.IsAttacking}\n");
 
                 if (enemy.IsAttacking)
                 {
-                    enemies.Append($"Current attack power: {enemy.CurrentAttackPower}\n");
-                    enemies.Append($"Current attacking time: {enemy.CurrentAttackingTime}\n");
+                    enemies.Append($"Current attack power: {enemy.CurrentAttackPower.ToString("0.00")}\n");
+                    enemies.Append($"Current attacking time: {enemy.CurrentAttackingTime.ToString("0.00")}\n");
+
+                    isAnyoneAttacking = true;
+                }
+                else
+                {
+                    enemies.Append($"Current move cooldown: {enemy.CurrentMoveCooldown.ToString("0.00")}\n");
                 }
 
                 enemies.Append("\n");
             }
 
             EnemyInfo.text = enemies.ToString();
+
+            if (isAnyoneAttacking)
+            {
+                EnemyInfo.color = new Color(255, 0, 0);
+            }
+            else
+            {
+                EnemyInfo.color = new Color(255, 255, 255);
+            }
         }
 
         public void ToggleDebugMode()
