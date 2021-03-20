@@ -11227,7 +11227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1727490079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12986,8 +12986,9 @@ GameObject:
   - component: {fileID: 2027518751}
   - component: {fileID: 2027518753}
   - component: {fileID: 2027518752}
+  - component: {fileID: 2027518754}
   m_Layer: 0
-  m_Name: Sphere Volume
+  m_Name: ComputerUI_PostProcessing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13037,6 +13038,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2027518754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027518750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbde8e64a5812b5419cc637c33e05de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Delay: 0.2
+  LoweringTime: 0.5
+  Volume: {fileID: 2027518752}
 --- !u!1 &2047425842
 GameObject:
   m_ObjectHideFlags: 0
