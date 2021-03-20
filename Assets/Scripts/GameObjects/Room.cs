@@ -8,5 +8,6 @@ namespace GameObjects
     public class Room : MonoBehaviour
     {
         public Room[] AdjacentRooms;
+        public int Weight;
     }
 }

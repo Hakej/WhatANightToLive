@@ -206,6 +206,7 @@ Transform:
   - {fileID: 374355146}
   - {fileID: 968832187}
   - {fileID: 1372258532}
+  - {fileID: 695487786}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -798,7 +799,7 @@ Transform:
   - {fileID: 1536784760}
   - {fileID: 1738290513}
   m_Father: {fileID: 2128700273}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &197897310
 GameObject:
@@ -1593,9 +1594,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
+      propertyPath: AdjacentRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
       propertyPath: IsCameraDisabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 497193764}
+    - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+        type: 3}
+      propertyPath: AdjacentRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 2767942183961668560}
     - target: {fileID: 1772571677009611500, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_IsActive
@@ -1718,18 +1734,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2286d68ca9a40a34899333b65c4ea2a9, type: 3}
---- !u!1 &345050814 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 345050813}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &345050815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7389689634179117291, guid: 2286d68ca9a40a34899333b65c4ea2a9,
     type: 3}
   m_PrefabInstance: {fileID: 345050813}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &345050816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 345050813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc050ad3f264594408bc3a647b4ba53e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &370089106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,18 +2801,18 @@ PrefabInstance:
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 345050816}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7182219562302035434}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: IsCameraDisabled
@@ -3887,8 +3909,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 695487786}
+  - component: {fileID: 695487787}
   m_Layer: 0
-  m_Name: Rooms
+  m_Name: RoomsHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3923,9 +3946,22 @@ Transform:
   - {fileID: 899728716}
   - {fileID: 1532365083}
   - {fileID: 1315325223}
-  m_Father: {fileID: 2128700273}
-  m_RootOrder: 0
+  m_Father: {fileID: 16503766}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695487787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695487785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde36efcc90e54c4a9b37b02b2cb1b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destination: {fileID: 345050816}
 --- !u!1 &703134267
 GameObject:
   m_ObjectHideFlags: 0
@@ -8286,19 +8322,13 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1315325222}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1315325224 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1315325222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1315325225 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
     type: 3}
   m_PrefabInstance: {fileID: 1315325222}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315325224}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc050ad3f264594408bc3a647b4ba53e, type: 3}
@@ -12843,7 +12873,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 695487786}
   - {fileID: 189204189}
   - {fileID: 1133129427}
   m_Father: {fileID: 0}
@@ -13049,18 +13078,18 @@ PrefabInstance:
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.data[0]
       value: 
-      objectReference: {fileID: 345050814}
+      objectReference: {fileID: 345050816}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.data[1]
       value: 
-      objectReference: {fileID: 1315325224}
+      objectReference: {fileID: 1315325225}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: IsCameraDisabled
@@ -13289,7 +13318,7 @@ PrefabInstance:
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: AdjacentRooms.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 973124914978472994, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
