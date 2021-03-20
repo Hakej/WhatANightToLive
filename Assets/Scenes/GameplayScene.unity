@@ -3274,7 +3274,7 @@ GameObject:
   - component: {fileID: 559070667}
   - component: {fileID: 559070666}
   - component: {fileID: 559070668}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Map_AUDIO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3301,7 +3301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 67, y: -0}
+  m_AnchoredPosition: {x: 67, y: 0}
   m_SizeDelta: {x: 300, y: 306}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &559070666
@@ -4137,6 +4137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EastStorage_DECOY
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492351970905429260, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429262, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
@@ -5783,7 +5788,7 @@ GameObject:
   - component: {fileID: 909336601}
   - component: {fileID: 909336603}
   - component: {fileID: 909336602}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6407,7 +6412,7 @@ GameObject:
   - component: {fileID: 995417221}
   - component: {fileID: 995417223}
   - component: {fileID: 995417222}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: MinimapBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8577,6 +8582,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallRoom_DECOY
       objectReference: {fileID: 0}
+    - target: {fileID: 7492351970905429260, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429262, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -9166,7 +9176,7 @@ GameObject:
   - component: {fileID: 1390997434}
   - component: {fileID: 1390997433}
   - component: {fileID: 1390997432}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: ComputerUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9221,8 +9231,8 @@ Canvas:
   m_GameObject: {fileID: 1390997431}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1727490080}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -10083,7 +10093,7 @@ GameObject:
   - component: {fileID: 1510304670}
   - component: {fileID: 1510304669}
   - component: {fileID: 1510304668}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: You
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10106,7 +10116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -21.9, y: -102.2}
+  m_AnchoredPosition: {x: -21.899994, y: -102.2}
   m_SizeDelta: {x: 45, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1510304668
@@ -10532,7 +10542,7 @@ GameObject:
   - component: {fileID: 1641516386}
   - component: {fileID: 1641516388}
   - component: {fileID: 1641516387}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10825,7 +10835,7 @@ GameObject:
   - component: {fileID: 1693146245}
   - component: {fileID: 1693146244}
   - component: {fileID: 1693146246}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11153,13 +11163,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1710491513}
   - component: {fileID: 1710491514}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Loading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1710491513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11240,7 +11250,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -11300,10 +11310,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727490078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1000, y: 1000, z: 1000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1390997435}
+  - {fileID: 2027518751}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11414,7 +11425,7 @@ GameObject:
   - component: {fileID: 1741994983}
   - component: {fileID: 1741994985}
   - component: {fileID: 1741994984}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12065,7 +12076,7 @@ GameObject:
   - component: {fileID: 1922881505}
   - component: {fileID: 1922881504}
   - component: {fileID: 1922881506}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: RecordingCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12937,7 +12948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2026680157}
-  m_Layer: 5
+  m_Layer: 15
   m_Name: Buttons_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12964,6 +12975,68 @@ RectTransform:
   m_AnchoredPosition: {x: -200, y: 200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!1 &2027518750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2027518751}
+  - component: {fileID: 2027518753}
+  - component: {fileID: 2027518752}
+  m_Layer: 0
+  m_Name: Sphere Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2027518751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027518750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1727490081}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2027518752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027518750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 0
+  priority: 0
+  blendDistance: 1
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: aa971f0370b73f448a95347e1bc65b4a, type: 2}
+--- !u!135 &2027518753
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027518750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2047425842
 GameObject:
   m_ObjectHideFlags: 0
@@ -13902,6 +13975,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_LEAVE
       objectReference: {fileID: 0}
+    - target: {fileID: 1296731818467580436, guid: 98013e06372a5cf49b2962339c63ed78,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815020615231855320, guid: 98013e06372a5cf49b2962339c63ed78,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7551632953340634499, guid: 98013e06372a5cf49b2962339c63ed78,
         type: 3}
       propertyPath: m_text
@@ -14410,6 +14493,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bathroom_DECOY
       objectReference: {fileID: 0}
+    - target: {fileID: 7492351970905429260, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429262, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -14483,7 +14571,7 @@ PrefabInstance:
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -21.72
+      value: -21.720001
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
