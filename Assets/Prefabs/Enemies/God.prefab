@@ -1,66 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6261081182993635449
+--- !u!1001 &282362945422698866
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1213076846429966264, guid: 97692ca8b6aab7644abc6487d90acbdc,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213076846429966264, guid: 97692ca8b6aab7644abc6487d90acbdc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213076846429966264, guid: 97692ca8b6aab7644abc6487d90acbdc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093571188835735974, guid: 97692ca8b6aab7644abc6487d90acbdc,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a55fb29aa56dc3343a48b15067dba551, type: 2}
-    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
-        type: 3}
-      propertyPath: StartingDifficulty
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
-        type: 3}
-      propertyPath: MoveCooldown
-      value: 3.864
-      objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: AttackPower
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: AttackingTime
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
-      propertyPath: SpawningGameTime.Hour
-      value: 18
+      propertyPath: MoveCooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
-      propertyPath: SpawningGameTime.Minutes
+      propertyPath: StartingDifficulty
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: BaseSmartMoveChance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: m_Name
-      value: Vagus
+      value: God
       objectReference: {fileID: 0}
     - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}

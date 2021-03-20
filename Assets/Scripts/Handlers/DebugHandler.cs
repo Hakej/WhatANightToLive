@@ -60,7 +60,7 @@ namespace Handlers
                 if (enemy.IsAttacking)
                 {
                     enemies.Append($"Current attack power: {enemy.CurrentAttackPower.ToString("0.00")}\n");
-                    enemies.Append($"Current attacking time: {enemy.CurrentAttackingTime.ToString("0.00")}\n");
+                    enemies.Append($"Attacking time left: {(enemy.AttackingTime - enemy.CurrentAttackingTime).ToString("0.00")}\n");
 
                     isAnyoneAttacking = true;
                 }

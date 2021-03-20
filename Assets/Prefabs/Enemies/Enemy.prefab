@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1213076846429966264
 Transform:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5649409643441935382
 Transform:
   m_ObjectHideFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8277398045375427700
 Transform:
   m_ObjectHideFlags: 0
@@ -225,14 +225,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingDifficulty: 0
   MoveCooldown: 0
-  CurrentDifficulty: 0
-  ChanceOnSanityAbove50: 0
-  ChanceOnSanityBelow50: 1
-  ChanceOnSanityBelow25: 2
-  ChanceOnSanityBelow1: 100
+  BaseSmartMoveChance: 0.66
+  MaxSmartMoveChance: 1
   AttackPower: 0
   AttackingTime: 0
+  CurrentDifficulty: 0
+  SpawnRoom: {fileID: 0}
   CurrentRoom: {fileID: 0}
   IsAttacking: 0
   CurrentAttackPower: 0
   CurrentAttackingTime: 0
+  CurrentMoveCooldown: 0

@@ -11,6 +11,10 @@ namespace Classes.Abstracts
         [Range(0, 20)]
         public int StartingDifficulty;
         public float MoveCooldown;
+        [Range(0, 1)]
+        public float BaseSmartMoveChance;
+        [Range(0, 1)]
+        public float MaxSmartMoveChance;
 
         [Header("Enemy attack's strength")]
         public float AttackPower;
@@ -75,9 +79,9 @@ namespace Classes.Abstracts
 
             CurrentMoveCooldown = 0f;
 
-            var randomNumber = Random.Range(1, 20);
+            var randomNumber = Random.Range(1, 21);
 
-            if (CurrentDifficulty <= randomNumber)
+            if (CurrentDifficulty < randomNumber)
             {
                 Debug.Log($"{gameObject.name}: I've failed my movement.");
                 return;
@@ -101,9 +105,9 @@ namespace Classes.Abstracts
 
         protected void ChangeRoom(Room newRoom)
         {
-            EventHandler.Instance.EnemyChangingRoom(CurrentRoom, newRoom);
-
+            EventHandler.Instance.EnemyChangingRoom(this, CurrentRoom, newRoom);
             CurrentRoom = newRoom;
+            transform.position = newRoom.transform.position;
         }
 
         protected void ChangeToAttackMode()
@@ -120,6 +124,8 @@ namespace Classes.Abstracts
         {
             IsAttacking = false;
             ChangeRoom(SpawnRoom);
+            CurrentAttackPower = 0f;
+            CurrentAttackingTime = 0f;
             Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {SpawnRoom.name}.");
         }
 

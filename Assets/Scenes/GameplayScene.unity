@@ -207,6 +207,7 @@ Transform:
   - {fileID: 968832187}
   - {fileID: 1372258532}
   - {fileID: 695487786}
+  - {fileID: 1452716873}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1896,21 +1897,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2e199c8bb5c334eb8bc12bc1df5ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisableEnemies: 1
+  DisableEnemies: 0
   EnemiesContainer: {fileID: 1101431402}
   EnemiesToSpawn:
-  - EnemyPrefab: {fileID: 3864044535442055448, guid: 405a9ff4e2aa1f441b32e8d2e6a59b06,
-      type: 3}
-    SpawnRoom: {fileID: 7182219562302035434}
-    SpawnTime:
-      Hour: 18
-      Minutes: 1
-  - EnemyPrefab: {fileID: 5691349400541302450, guid: 60788d9ed841c964ab414e2aec74810f,
+  - EnemyPrefab: {fileID: 6960079834886230035, guid: 376122b047b39ae4ba3d2ebcbe26797f,
       type: 3}
     SpawnRoom: {fileID: 1459521493}
     SpawnTime:
       Hour: 18
-      Minutes: 2
+      Minutes: 1
 --- !u!114 &376669244 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3075185056239619879, guid: b8cce44429994cd4886b57e4cb3af51a,
@@ -8207,7 +8202,7 @@ PrefabInstance:
     - target: {fileID: 3128860665140611808, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
       propertyPath: m_Name
-      value: 'Big Hallway '
+      value: Big Hallway
       objectReference: {fileID: 0}
     - target: {fileID: 4556445677079319977, guid: 2286d68ca9a40a34899333b65c4ea2a9,
         type: 3}
@@ -9060,6 +9055,49 @@ MonoBehaviour:
   BaseSanityDrop: 0.3
   StartingSanity: 100
   CurrentFearLevel: 0
+--- !u!1 &1452716872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452716873}
+  - component: {fileID: 1452716874}
+  m_Layer: 0
+  m_Name: Logger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1452716873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452716872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 16503766}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452716874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452716872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a6984f768d4cb181ebc813ea5a0d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1459521490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13274,7 +13312,7 @@ PrefabInstance:
     - target: {fileID: 6659341421344192380, guid: 2b14c5a19626d324d9fcfe5a160c4c5f,
         type: 3}
       propertyPath: m_Name
-      value: Toast
+      value: ToastHandler
       objectReference: {fileID: 0}
     - target: {fileID: 6659341421344192380, guid: 2b14c5a19626d324d9fcfe5a160c4c5f,
         type: 3}

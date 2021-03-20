@@ -11,8 +11,8 @@ namespace Handlers
         public SceneHandler SceneHandler;
         public SceneAsset WinScene;
         public SceneAsset LoseScene;
-        
-        [Header("Handlers")] 
+
+        [Header("Handlers")]
         public SanityHandler SanityHandler;
         public GameTimeHandler GameTimeHandler;
 
@@ -22,10 +22,10 @@ namespace Handlers
 
         [Header("Objects to destroy on finish")]
         public List<GameObject> ObjectsToDestroyOnFinish;
-        
+
         [Header("Object to activate on win")]
         public GameObject EndScreen;
-        
+
         [HideInInspector]
         public int CurrentDangerLevel = 1;
 
@@ -51,7 +51,7 @@ namespace Handlers
             {
                 Destroy(objectToDestroy);
             }
-            
+
             EndScreen.SetActive(true);
         }
 
@@ -60,14 +60,14 @@ namespace Handlers
             // TODO: Add losing logic
             SceneHandler.LoadScene(LoseScene);
         }
-        
+
         private void OnPowerToggle(bool areLightsOn, string poweredTag)
         {
             if (!PlayerPowerSwitch.CompareTag(poweredTag))
             {
                 return;
             }
-            
+
             IsPlayersPowerOn = areLightsOn;
 
             if (areLightsOn)
@@ -93,7 +93,7 @@ namespace Handlers
                 CurrentDangerLevel--;
             }
         }
-        
+
         private void OnPlayerSanityCrossing25(bool isBelow)
         {
             if (isBelow)
