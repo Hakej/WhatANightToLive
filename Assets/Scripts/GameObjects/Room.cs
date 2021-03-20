@@ -9,5 +9,9 @@ namespace GameObjects
     {
         public Room[] AdjacentRooms;
         public int Weight;
+
+        [Header("Audio Decoy")]
+        public GameObject AudioDecoy;
+
     }
 }
