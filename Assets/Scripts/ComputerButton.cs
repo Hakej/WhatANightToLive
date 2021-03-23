@@ -1,4 +1,5 @@
-﻿using Handlers;
+﻿using Controllers;
+using Handlers;
 using TMPro;
 using UnityEngine;
 
@@ -41,18 +42,27 @@ public class ComputerButton : MonoBehaviour
         Text.text = Text.text.Replace(">", string.Empty);
     }
 
-    public void HoverIn()
+    public void PointerIn()
     {
         Text.text = ">" + Text.text;
+        ButtonsMenu.Instance.PlayHover();
     }
 
-    public void HoverOut()
+    public void PointerOut()
     {
         Text.text = Text.text.Replace(">", string.Empty);
     }
 
-    public void ChangeFeature()
+    public void PointerDown()
     {
-        FeaturesController.Instance.ChangeFeature(Feature);
+        if (Feature != null)
+        {
+            FeaturesController.Instance.ChangeFeature(Feature);
+            ButtonsMenu.Instance.PlayConfirm();
+        }
+        else
+        {
+            ComputerController.Instance.ToggleFocus(false);
+        }
     }
 }
