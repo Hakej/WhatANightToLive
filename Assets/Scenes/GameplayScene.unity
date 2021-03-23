@@ -11357,8 +11357,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c1b5dfe310e42409f4afaec786cdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WhiteNoise: {fileID: 516428418}
   SanityText: {fileID: 1920473636}
+  WhiteNoiseHider: {fileID: 728858856}
+  MaxAlpha: 0.5
+  MinAlpha: 0
+  WhiteNoiseSource: {fileID: 516428418}
   MaxWhiteNoiseVolume: 0.1
   WhiteNoiseStartingSanity: 50
 --- !u!114 &1468208223
