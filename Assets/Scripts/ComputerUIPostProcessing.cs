@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Handlers;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -8,6 +9,17 @@ public class ComputerUIPostProcessing : MonoBehaviour
     public float Delay;
     public float LoweringTime;
     public Volume Volume;
+
+    private void Start()
+    {
+        EventHandler.Instance.OnComputerUIActiveFeatureChange += OnComputerUIActiveFeatureChange;
+    }
+
+    private void OnComputerUIActiveFeatureChange(GameObject feature)
+    {
+        // TODO: Add some visual effect for changing current feature
+        //LowerChromaticAberration();
+    }
 
     private void OnEnable()
     {

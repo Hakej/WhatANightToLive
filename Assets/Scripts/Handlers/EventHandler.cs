@@ -16,6 +16,7 @@ namespace Handlers
         public event Action<bool> OnPlayerSanityCrossing1;
         public event Action<Enemy> OnEnemySpawn;
         public event Action<Enemy, Room, Room> OnEnemyChangingRoom;
+        public event Action<GameObject> OnComputerUIActiveFeatureChange;
 
         public void Win()
         {
@@ -60,6 +61,11 @@ namespace Handlers
         public void EnemyChangingRoom(Enemy enemy, Room oldRoom, Room newRoom)
         {
             OnEnemyChangingRoom?.Invoke(enemy, oldRoom, newRoom);
+        }
+
+        public void ComputerUIActiveFeatureChange(GameObject feature)
+        {
+            OnComputerUIActiveFeatureChange?.Invoke(feature);
         }
     }
 }
