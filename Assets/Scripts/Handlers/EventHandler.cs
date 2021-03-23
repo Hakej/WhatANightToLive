@@ -17,6 +17,7 @@ namespace Handlers
         public event Action<Enemy> OnEnemySpawn;
         public event Action<Enemy, Room, Room> OnEnemyChangingRoom;
         public event Action<GameObject> OnComputerUIActiveFeatureChange;
+        public event Action<bool> OnEyesToggle;
 
         public void Win()
         {
@@ -66,6 +67,11 @@ namespace Handlers
         public void ComputerUIActiveFeatureChange(GameObject feature)
         {
             OnComputerUIActiveFeatureChange?.Invoke(feature);
+        }
+
+        public void EyesToggle(bool areAyesClosed)
+        {
+            OnEyesToggle?.Invoke(areAyesClosed);
         }
     }
 }

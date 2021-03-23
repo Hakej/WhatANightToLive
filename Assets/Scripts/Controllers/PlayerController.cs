@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Controllers
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : Singleton<PlayerController>
     {
         public float RotationSpeed = 0.5f;
 
-        public GameObject UICanvas;
+        public GameObject MovementUI;
         public GameObject FlashlightButton;
         public AudioSource MoveSound;
 
@@ -30,16 +30,16 @@ namespace Controllers
             if (_isTurning) return;
             StartCoroutine(RotateMe(Vector3.up * 180));
         }
-    
+
         private IEnumerator RotateMe(Vector3 byAngles)
         {
             _isTurning = true;
-            UICanvas.SetActive(false);
+            MovementUI.SetActive(false);
             MoveSound.Play();
-        
+
             var fromAngle = transform.rotation;
             var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
-        
+
             for (var t = 0f; t < 1; t += Time.deltaTime / RotationSpeed)
             {
                 transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
@@ -47,7 +47,7 @@ namespace Controllers
             }
 
             transform.rotation = toAngle;
-            UICanvas.SetActive(true);
+            MovementUI.SetActive(true);
             _isTurning = false;
 
             if ((int)toAngle.eulerAngles.y % 180 == 0)

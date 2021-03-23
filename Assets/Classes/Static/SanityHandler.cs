@@ -16,9 +16,20 @@ namespace Classes.Static
         public float CurrentSanity { get; private set; }
         public float CurrentSanityDrop { get; private set; }
 
+        [Header("Sanity Closed Eyes Gain")]
+        public float SanityGain = 0.4f;
+        public bool IsGainingSanity = false;
+
         public void Start()
         {
             CurrentSanity = StartingSanity;
+
+            EventHandler.Instance.OnEyesToggle += OnEyesToggle;
+        }
+
+        private void OnEyesToggle(bool areEyesClosed)
+        {
+            IsGainingSanity = areEyesClosed;
         }
 
         public void Update()
@@ -30,6 +41,11 @@ namespace Classes.Static
             if (CurrentSanity > 0f)
             {
                 CurrentSanity -= CurrentSanityDrop * Time.deltaTime;
+
+                if (IsGainingSanity)
+                {
+                    CurrentSanity += SanityGain * Time.deltaTime;
+                }
             }
 
             if (CurrentSanity > StartingSanity)
