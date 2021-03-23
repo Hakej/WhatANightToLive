@@ -14060,6 +14060,9 @@ MonoBehaviour:
   MinFrequency: 500
   MaxFrequency: 18000
   FilterChangeTime: 0.2
+  Image: {fileID: 1785743035}
+  OpenedEye: {fileID: 21300000, guid: 25d1789bd518d5746bc10fc8d82f94c0, type: 3}
+  ClosedEye: {fileID: 21300000, guid: 710ebd769e142754984700b58a852fbb, type: 3}
 --- !u!1 &1826134184
 GameObject:
   m_ObjectHideFlags: 0
