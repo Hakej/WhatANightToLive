@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TVScreenMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 1442a9a8f4fcf3d4092b7740b402056f,
+  m_Shader: {fileID: -6465566751694194690, guid: 5121151ed95306d489e9baf6712a6d66,
     type: 3}
   m_ShaderKeywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
   m_LightmapFlags: 2
