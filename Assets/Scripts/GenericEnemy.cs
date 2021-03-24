@@ -9,23 +9,27 @@ public class GenericEnemy : Enemy
     protected override void Move()
     {
         Room newRoom;
-        var sanity = SanityHandler.Instance;
         var smartMoveChance = Random.Range(0f, 1f);
-        var currentSmartMoveChance = Mathf.Lerp(MaxSmartMoveChance, BaseSmartMoveChance, sanity.CurrentSanity / sanity.StartingSanity);
+        var currentSanitySense = SanityHandler.Instance.CurrentSanitySense;
+        var currentSmartMoveChance = Mathf.Lerp(MaxSmartMoveChance, MinSmartMoveChance, currentSanitySense);
 
         var isNextRoomTheBest = smartMoveChance <= currentSmartMoveChance;
-        newRoom = GetNextBestRoom(CurrentRoom.AdjacentRooms, isNextRoomTheBest);
+        newRoom = GetNextRoom(isNextRoomTheBest || IsCurrentlyFooled);
 
-        if (isNextRoomTheBest)
+        ChangeRoom(newRoom);
+
+        if (isNextRoomTheBest && !IsCurrentlyFooled)
         {
             Debug.Log("That was the best move.");
         }
+        else if (!isNextRoomTheBest && !IsCurrentlyFooled)
+        {
+            Debug.Log("That was a bad move.");
+        }
         else
         {
-            Debug.Log("That was the worst move.");
+            Debug.Log("I was fooled into bad move.");
         }
-
-        ChangeRoom(newRoom);
 
         if (newRoom.CompareTag("PlayerAdjacentRoom"))
         {
@@ -33,33 +37,35 @@ public class GenericEnemy : Enemy
         }
     }
 
-    private Room GetNextBestRoom(Room[] rooms, bool isBest)
+    private Room GetNextRoom(bool isRoomBest)
     {
-        Room nextRoom = rooms[0];
+        var adjRooms = CurrentRoom.AdjacentRooms;
+        var nextRoom = adjRooms[0];
+        var nextRoomWeight = RoomsWeights[nextRoom];
 
-        for (int i = 1; i < rooms.Length; i++)
+        for (int i = 1; i < adjRooms.Length; i++)
         {
-            if (rooms[i].Weight == nextRoom.Weight)
+            if (RoomsWeights[adjRooms[i]] == RoomsWeights[nextRoom])
             {
-                var rn = Random.Range(0, 1);
+                var rn = Random.Range(0, 2);
 
                 if (rn == 1)
                 {
-                    nextRoom = rooms[i];
+                    nextRoom = adjRooms[i];
                 }
             }
-            else if (isBest)
+            else if (isRoomBest)
             {
-                if (rooms[i].Weight < nextRoom.Weight)
+                if (RoomsWeights[adjRooms[i]] < RoomsWeights[nextRoom])
                 {
-                    nextRoom = rooms[i];
+                    nextRoom = adjRooms[i];
                 }
             }
             else
             {
-                if (rooms[i].Weight > nextRoom.Weight)
+                if (RoomsWeights[adjRooms[i]] > RoomsWeights[nextRoom])
                 {
-                    nextRoom = rooms[i];
+                    nextRoom = adjRooms[i];
                 }
             }
         }

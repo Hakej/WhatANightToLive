@@ -2,28 +2,42 @@ using System.Collections.Generic;
 using GameObjects;
 using UnityEngine;
 
-public class RoomsHandler : MonoBehaviour
+public class RoomsHandler : Singleton<RoomsHandler>
 {
-    public Room Destination;
+    public Room PlayerRoom;
 
-    private void Start()
+    public Dictionary<Room, int> CalculateWeights(Room destination)
     {
-        CalculateWeights(Destination, null, 0);
+        var weightedRooms = new Dictionary<Room, int>();
+
+        return CalculateWeights(weightedRooms, destination, null);
     }
 
-    private void CalculateWeights(Room room, Room previous, int weight)
+    private Dictionary<Room, int> CalculateWeights(Dictionary<Room, int> weightedRooms, Room currentRoom, Room previousRoom, int currentWeight = 0)
     {
-        if (room.Weight <= weight)
-            return;
-
-        room.Weight = weight;
-
-        foreach (var adjRoom in room.AdjacentRooms)
+        // Check if current room doesn't already have a weight, and if it does - check if it is not smaller or equal already.
+        // This is to avoid situation, where AI has more than one path to reach its destination, and prefer the worse one,
+        // because it was overcalculated by the longer path.
+        if (weightedRooms.TryGetValue(currentRoom, out int currentRoomWeight))
         {
-            if (adjRoom == previous)
+            if (currentRoomWeight <= currentWeight)
+                return weightedRooms;
+            else
+                weightedRooms[currentRoom] = currentWeight;
+        }
+        else
+        {
+            weightedRooms.Add(currentRoom, currentWeight);
+        }
+
+        foreach (var adjRoom in currentRoom.AdjacentRooms)
+        {
+            if (adjRoom == previousRoom)
                 continue;
 
-            CalculateWeights(adjRoom, room, weight + 1);
+            weightedRooms = CalculateWeights(weightedRooms, adjRoom, currentRoom, currentWeight + 1);
         }
+
+        return weightedRooms;
     }
 }

@@ -15,6 +15,12 @@ namespace Classes.Static
 
         public float CurrentSanity { get; private set; }
         public float CurrentSanityDrop { get; private set; }
+        public float CurrentSanitySense
+        {
+            get => CurrentSanity / StartingSanity;
+            private set => CurrentSanitySense = value;
+        }
+
 
         [Header("Sanity Closed Eyes Gain")]
         public float SanityGain = 0.4f;

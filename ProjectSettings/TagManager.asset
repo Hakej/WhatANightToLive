@@ -10,6 +10,7 @@ TagManager:
   - SecurityCamera
   - Enemy
   - EnemySpawnRoom
+  - AudioDecoy
   layers:
   - Default
   - TransparentFX

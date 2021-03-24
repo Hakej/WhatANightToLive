@@ -188,6 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8277398045375427700}
   - component: {fileID: 5822761892982298793}
+  - component: {fileID: 6962799869906893397}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -203,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7168618044978624865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.03, y: 2.9, z: 2.71}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5649409643441935382}
@@ -225,8 +226,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingDifficulty: 0
   MoveCooldown: 0
-  BaseSmartMoveChance: 0.66
+  MinSmartMoveChance: 0
   MaxSmartMoveChance: 1
+  MinDecoyFoolChance: 0
+  MaxDecoyFoolChance: 1
+  IsCurrentlyFooled: 0
+  EnemyCollider: {fileID: 6962799869906893397}
+  AudioDecoyTag: AudioDecoy
+  AudioDecoyColliderInRange: {fileID: 0}
   AttackPower: 0
   AttackingTime: 0
   CurrentDifficulty: 0
@@ -236,3 +243,17 @@ MonoBehaviour:
   CurrentAttackPower: 0
   CurrentAttackingTime: 0
   CurrentMoveCooldown: 0
+  PlayerRoom: {fileID: 0}
+--- !u!65 &6962799869906893397
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7168618044978624865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: MoveCooldown
-      value: 3.952
+      value: 4.524
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
@@ -56,6 +56,16 @@ PrefabInstance:
         type: 3}
       propertyPath: ChanceOnSanityBelow25
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: MinSmartMoveChance
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: MaxDecoyFoolChance
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}

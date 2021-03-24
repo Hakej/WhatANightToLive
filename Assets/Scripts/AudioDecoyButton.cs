@@ -21,7 +21,7 @@ public class AudioDecoyButton : MonoBehaviour
 
     public void CheckSprite()
     {
-        if (AudioDecoy.DecoyAudioSource.isPlaying)
+        if (AudioDecoy.IsPlaying)
         {
             Image.sprite = SpriteDecoyPlaying;
         }

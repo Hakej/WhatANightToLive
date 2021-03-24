@@ -1,8 +1,20 @@
-﻿using UnityEngine;
+﻿using GameObjects;
+using UnityEngine;
 
 public class AudioDecoy : MonoBehaviour
 {
+    public Room Room;
     public AudioSource DecoyAudioSource;
+
+    [Header("Collider")]
+    public SphereCollider AudioDecoyCollider;
+
+    public bool IsPlaying { get => DecoyAudioSource.isPlaying; }
+
+    private void Start()
+    {
+        AudioDecoyCollider.enabled = IsPlaying;
+    }
 
     public void ToggleDecoy()
     {
@@ -14,6 +26,8 @@ public class AudioDecoy : MonoBehaviour
         {
             DecoyAudioSource.Play();
         }
+
+        AudioDecoyCollider.enabled = IsPlaying;
     }
 
     public void PlayAudioDecoy()
