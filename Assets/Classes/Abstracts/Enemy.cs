@@ -34,6 +34,9 @@ namespace Classes.Abstracts
         public float AttackPower;
         public float AttackingTime;
 
+        [Header("Other")]
+        public Sprite EnemyMinimapIcon;
+
         [HideInInspector]
         public int CurrentDifficulty;
         [HideInInspector]

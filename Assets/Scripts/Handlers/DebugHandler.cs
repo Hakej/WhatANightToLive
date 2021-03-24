@@ -19,10 +19,8 @@ namespace Handlers
         [HideInInspector]
         public List<Enemy> SpawnedEnemies;
 
-        [Header("Debug on minimap")]
-        public Camera MinimapCamera;
-
-        public string DebugMinimapLayer;
+        [Header("Debug minimap")]
+        public GameObject DebugMinimap;
 
         private void Start()
         {
@@ -93,6 +91,7 @@ namespace Handlers
         private void UpdateDebug()
         {
             DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+            DebugMinimap.SetActive(IsDebugModeOn);
         }
 
         private void OnEnemySpawn(Enemy enemy)
