@@ -1,0 +1,160 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="destroy_audio_decoy_data" version="1.3.0" audacityversion="2.2.2" sel0="-0.0587385204" sel1="2.0889691043" vpos="320" h="0.3181789074" zoom="408.5751663315" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="TITLE" value="11.12.17"/>
+		<tag name="ARTIST" value="InspectorJ"/>
+	</tags>
+	<wavetrack name="530486__rickplayer__metal-impact" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="-0.05873852" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="78336">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808cd6.au" len="78336" min="-0.436853" max="0.535226" rms="0.046828"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="1.71758801" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="490">
+				<waveblock start="0">
+					<simpleblockfile filename="e08085c0.au" len="490" min="-0.000514" max="0.000242" rms="0.000115"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="406562__anthousai__hit-metallic-01" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="96000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.01615731" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="65040">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808d50.au" len="65040" min="-0.204089" max="0.20056" rms="0.018467"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.69365731" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2016">
+				<waveblock start="0">
+					<simpleblockfile filename="e08081eb.au" len="2016" min="-0.000021" max="0.0" rms="0.000007"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="406562__anthousai__hit-metallic-01" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="96000" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.01615731" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="65040">
+				<waveblock start="0">
+					<simpleblockfile filename="e08081ca.au" len="65040" min="-0.193985" max="0.180172" rms="0.019304"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.69365731" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2016">
+				<waveblock start="0">
+					<simpleblockfile filename="e080896b.au" len="2016" min="-0.000004" max="0.000004" rms="0.000001"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="414436__inspectorj__dropping-metal-pin-on-wood-b" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.01615731" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="91411">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808c3b.au" len="91411" min="-0.820052" max="0.489615" rms="0.026777"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="414436__inspectorj__dropping-metal-pin-on-wood-b" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.01615731" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="91411">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808c8c.au" len="91411" min="-0.806211" max="0.681847" rms="0.024282"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="160045__jorickhoofd__metal-hit-with-metal-bar-resonance" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.01615944" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="41298">
+				<waveblock start="0">
+					<simpleblockfile filename="e08087af.au" len="41298" min="-0.809036" max="0.894715" rms="0.083873"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.95262202" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="492">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808fa8.au" len="492" min="-0.002496" max="0.002877" rms="0.000849"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="160045__jorickhoofd__metal-hit-with-metal-bar-resonance" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.01615944" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="41298">
+				<waveblock start="0">
+					<simpleblockfile filename="e080813a.au" len="41298" min="-0.943195" max="0.98329" rms="0.106597"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.95262202" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="492">
+				<waveblock start="0">
+					<simpleblockfile filename="e080837a.au" len="492" min="-0.001522" max="0.001239" rms="0.000433"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="178585__jorickhoofd__kicking-a-wheelbarrow-hard" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="-0.00855711" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="57582">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808818.au" len="57582" min="-0.789185" max="0.638062" rms="0.066313"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="178585__jorickhoofd__kicking-a-wheelbarrow-hard" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="-0.00855711" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="57582">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808773.au" len="57582" min="-0.624878" max="0.943787" rms="0.080151"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="178585__jorickhoofd__kicking-a-wheelbarrow-hard" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0"/>
+	<wavetrack name="178585__jorickhoofd__kicking-a-wheelbarrow-hard" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0"/>
+	<wavetrack name="488589__ronnyver__hard-metal-impact" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="-0.02080201" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="58375">
+				<waveblock start="0">
+					<simpleblockfile filename="e080848e.au" len="58375" min="-0.675209" max="0.958906" rms="0.04532"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="488589__ronnyver__hard-metal-impact" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="-0.02080201" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="58375">
+				<waveblock start="0">
+					<simpleblockfile filename="e08085b2.au" len="58375" min="-0.691398" max="0.9885" rms="0.045847"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

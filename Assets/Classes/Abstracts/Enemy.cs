@@ -157,6 +157,16 @@ namespace Classes.Abstracts
             EventHandler.Instance.EnemyChangingRoom(this, CurrentRoom, newRoom);
             CurrentRoom = newRoom;
             transform.position = newRoom.transform.position;
+
+            var audioDecoy = newRoom.AudioDecoy;
+
+            if (audioDecoy != null)
+            {
+                if (!audioDecoy.IsDestroyed && audioDecoy.IsPlaying)
+                {
+                    audioDecoy.DestroyDecoy();
+                }
+            }
         }
 
         protected void ChangeToAttackMode()

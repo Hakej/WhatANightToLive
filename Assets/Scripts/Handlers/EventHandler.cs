@@ -18,6 +18,8 @@ namespace Handlers
         public event Action<Enemy, Room, Room> OnEnemyChangingRoom;
         public event Action<GameObject> OnComputerUIActiveFeatureChange;
         public event Action<bool> OnEyesToggle;
+        public event Action<AudioDecoy> OnDestroyedAudioDecoy;
+        public event Action<AudioDecoy> OnFixedAudioDecoy;
 
         public void Win()
         {
@@ -72,6 +74,16 @@ namespace Handlers
         public void EyesToggle(bool areAyesClosed)
         {
             OnEyesToggle?.Invoke(areAyesClosed);
+        }
+
+        public void DestroyedAudioDecoy(AudioDecoy audioDecoy)
+        {
+            OnDestroyedAudioDecoy?.Invoke(audioDecoy);
+        }
+
+        public void FixedAudioDecoy(AudioDecoy audioDecoy)
+        {
+            OnFixedAudioDecoy?.Invoke(audioDecoy);
         }
     }
 }

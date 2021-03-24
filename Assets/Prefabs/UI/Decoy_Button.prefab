@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7492351970905429262}
   - component: {fileID: 633206525201244312}
   - component: {fileID: 6089828821155045871}
+  - component: {fileID: 9215033927787992003}
   m_Layer: 5
   m_Name: Decoy_Button
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.97911155, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -138,6 +139,9 @@ MonoBehaviour:
   SpriteDecoyPlaying: {fileID: 21300000, guid: 236ff04d638271042b9d1bfeeb7c6d0a, type: 3}
   SpriteDecoyNotPlaying: {fileID: 21300000, guid: ec5149ecfafba514fa592a5921dacdf0,
     type: 3}
+  SpriteDecoyDestroyed: {fileID: 21300000, guid: 00274fb63149f844083936cf450c46d7,
+    type: 3}
+  Animator: {fileID: 9215033927787992003}
 --- !u!114 &6089828821155045871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +171,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!95 &9215033927787992003
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7492351970905429260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 094c91c39855aeb4a95c53c09051faa5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

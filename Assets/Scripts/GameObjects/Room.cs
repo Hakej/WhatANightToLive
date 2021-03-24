@@ -10,6 +10,6 @@ namespace GameObjects
         public Room[] AdjacentRooms;
 
         [Header("Audio Decoy")]
-        public GameObject AudioDecoy;
+        public AudioDecoy AudioDecoy;
     }
 }
