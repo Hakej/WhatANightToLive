@@ -10,6 +10,15 @@ namespace GameObjects
         public Room[] AdjacentRooms;
 
         [Header("Audio Decoy")]
+        public bool IsDecoyEnabled = false;
         public AudioDecoy AudioDecoy;
+
+        private void Start()
+        {
+            if (!IsDecoyEnabled)
+            {
+                Destroy(AudioDecoy.gameObject);
+            }
+        }
     }
 }
