@@ -7,6 +7,7 @@ namespace Controllers
     {
         public float RotationSpeed = 0.5f;
 
+        public GameObject Player;
         public GameObject MovementUI;
         public GameObject FlashlightButton;
         public AudioSource MoveSound;
@@ -37,16 +38,16 @@ namespace Controllers
             MovementUI.SetActive(false);
             MoveSound.Play();
 
-            var fromAngle = transform.rotation;
-            var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
+            var fromAngle = Player.transform.rotation;
+            var toAngle = Quaternion.Euler(Player.transform.eulerAngles + byAngles);
 
             for (var t = 0f; t < 1; t += Time.deltaTime / RotationSpeed)
             {
-                transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
+                Player.transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
                 yield return null;
             }
 
-            transform.rotation = toAngle;
+            Player.transform.rotation = toAngle;
             MovementUI.SetActive(true);
             _isTurning = false;
 

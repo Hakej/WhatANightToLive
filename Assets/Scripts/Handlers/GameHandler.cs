@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using Classes.Interfaces;
-using Classes.Static;
 using UnityEditor;
 using UnityEngine;
 namespace Handlers
@@ -11,10 +9,6 @@ namespace Handlers
         public SceneHandler SceneHandler;
         public SceneAsset WinScene;
         public SceneAsset LoseScene;
-
-        [Header("Handlers")]
-        public SanityHandler SanityHandler;
-        public GameTimeHandler GameTimeHandler;
 
         [Header("Player's Room's Power")]
         public bool IsPlayersPowerOn = true;
@@ -31,28 +25,8 @@ namespace Handlers
 
         private void Start()
         {
-            EventHandler.Instance.OnWin += OnWin;
             EventHandler.Instance.OnLose += OnLose;
             EventHandler.Instance.OnPowerToggle += OnPowerToggle;
-            EventHandler.Instance.OnPlayerSanityCrossing50 += OnPlayerSanityCrossing50;
-            EventHandler.Instance.OnPlayerSanityCrossing25 += OnPlayerSanityCrossing25;
-        }
-
-        private void OnWin()
-        {
-            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-            foreach (var enemy in enemies)
-            {
-                Destroy(enemy);
-            }
-
-            foreach (var objectToDestroy in ObjectsToDestroyOnFinish)
-            {
-                Destroy(objectToDestroy);
-            }
-
-            EndScreen.SetActive(true);
         }
 
         private void OnLose()
@@ -72,36 +46,12 @@ namespace Handlers
 
             if (areLightsOn)
             {
-                SanityHandler.CurrentFearLevel--;
+                SanityHandler.Instance.CurrentFearLevel--;
                 CurrentDangerLevel++;
             }
             else
             {
-                SanityHandler.CurrentFearLevel++;
-                CurrentDangerLevel--;
-            }
-        }
-
-        private void OnPlayerSanityCrossing50(bool isBelow)
-        {
-            if (isBelow)
-            {
-                CurrentDangerLevel++;
-            }
-            else
-            {
-                CurrentDangerLevel--;
-            }
-        }
-
-        private void OnPlayerSanityCrossing25(bool isBelow)
-        {
-            if (isBelow)
-            {
-                CurrentDangerLevel++;
-            }
-            else
-            {
+                SanityHandler.Instance.CurrentFearLevel++;
                 CurrentDangerLevel--;
             }
         }

@@ -1,4 +1,4 @@
-﻿using Classes.Static;
+﻿using Handlers;
 using TMPro;
 using UnityEngine;
 

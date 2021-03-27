@@ -16,7 +16,7 @@ public class ComputerButton : MonoBehaviour
     {
         _inactiveColor = Text.color;
 
-        CheckColor(FeaturesController.Instance.CurrentFeature);
+        CheckColor(ComputerFeaturesController.Instance.CurrentFeature);
 
         EventHandler.Instance.OnComputerUIActiveFeatureChange += OnComputerUIActiveFeatureChange;
     }
@@ -58,7 +58,7 @@ public class ComputerButton : MonoBehaviour
     {
         if (Feature != null)
         {
-            FeaturesController.Instance.ChangeFeature(Feature);
+            ComputerFeaturesController.Instance.ChangeFeature(Feature);
             ButtonsMenu.Instance.PlayConfirm();
         }
         else

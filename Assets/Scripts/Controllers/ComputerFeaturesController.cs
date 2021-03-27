@@ -1,9 +1,18 @@
 ﻿using Handlers;
 using UnityEngine;
 
-public class FeaturesController : Singleton<FeaturesController>
+public class ComputerFeaturesController : Singleton<ComputerFeaturesController>
 {
     public GameObject CurrentFeature;
+    public GameObject[] AllFeatures;
+
+    private void Start()
+    {
+        foreach (var feature in AllFeatures)
+        {
+            feature.SetActive(feature == CurrentFeature);
+        }
+    }
 
     public void ChangeFeature(GameObject newFeature)
     {

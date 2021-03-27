@@ -1,6 +1,6 @@
 ﻿using Classes.Abstracts;
-using Classes.Static;
 using GameObjects;
+using Handlers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

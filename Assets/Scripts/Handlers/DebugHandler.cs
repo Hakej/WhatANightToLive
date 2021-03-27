@@ -1,102 +1,100 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using Classes.Abstracts;
+using Handlers;
 using TMPro;
 using UnityEngine;
 
-namespace Handlers
+public class DebugHandler : Singleton<DebugHandler>
 {
-    public class DebugHandler : Singleton<DebugHandler>
+    [Header("Configuration")]
+    public bool IsDebugModeOn = true;
+
+    [Header("UIs")]
+    public Canvas DebugUICanvas;
+    public TextMeshProUGUI PlayerInfoUI;
+    public TextMeshProUGUI EnemyInfoUI;
+
+    [Header("Computer UIs")]
+    public GameObject DebugMinimap;
+
+    private List<Enemy> _spawnedEnemies;
+
+    private void Start()
     {
-        [Header("Configuration")]
-        public bool IsDebugModeOn = true;
-        public Canvas DebugUICanvas;
+        EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
 
-        [Header("Infos")]
-        public TextMeshProUGUI PlayerInfo;
-        public TextMeshProUGUI EnemyInfo;
+        _spawnedEnemies = new List<Enemy>();
 
-        [HideInInspector]
-        public List<Enemy> SpawnedEnemies;
+        UpdateDebug();
+    }
 
-        [Header("Debug minimap")]
-        public GameObject DebugMinimap;
-
-        private void Start()
+    public void Update()
+    {
+        if (!IsDebugModeOn)
         {
-            EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
-
-            SpawnedEnemies = new List<Enemy>();
-
-            UpdateDebug();
+            return;
         }
 
-        public void Update()
+        var gh = GameHandler.Instance;
+        var sh = SanityHandler.Instance;
+
+        PlayerInfoUI.text = $"Current sanity level: {sh.CurrentSanity}\n" +
+                         $"Current fear level: {sh.CurrentFearLevel}\n" +
+                         $"Current sanity drop: {sh.CurrentSanityDrop}\n" +
+                         $"Current danger level: {gh.CurrentDangerLevel}";
+
+        var enemies = new StringBuilder();
+
+        var isAnyoneAttacking = false;
+
+        foreach (var enemy in _spawnedEnemies)
         {
-            if (!IsDebugModeOn)
+            enemies.Append($"{enemy.gameObject.name}\n");
+            enemies.Append($"Current room: {enemy.CurrentRoom.name}\n");
+            enemies.Append($"Is attacking: {enemy.IsAttacking}\n");
+
+            if (enemy.IsAttacking)
             {
-                return;
-            }
+                enemies.Append($"Current attack power: {enemy.CurrentAttackPower.ToString("0.00")}\n");
+                enemies.Append($"Attacking time left: {(enemy.AttackingTime - enemy.CurrentAttackingTime).ToString("0.00")}\n");
 
-            var gh = GameHandler.Instance;
-
-            PlayerInfo.text = $"Current sanity level: {gh.SanityHandler.CurrentSanity}\n" +
-                             $"Current fear level: {gh.SanityHandler.CurrentFearLevel}\n" +
-                             $"Current sanity drop: {gh.SanityHandler.CurrentSanityDrop}\n" +
-                             $"Current danger level: {gh.CurrentDangerLevel}";
-
-            var enemies = new StringBuilder();
-
-            var isAnyoneAttacking = false;
-
-            foreach (var enemy in SpawnedEnemies)
-            {
-                enemies.Append($"{enemy.gameObject.name}\n");
-                enemies.Append($"Current room: {enemy.CurrentRoom.name}\n");
-                enemies.Append($"Is attacking: {enemy.IsAttacking}\n");
-
-                if (enemy.IsAttacking)
-                {
-                    enemies.Append($"Current attack power: {enemy.CurrentAttackPower.ToString("0.00")}\n");
-                    enemies.Append($"Attacking time left: {(enemy.AttackingTime - enemy.CurrentAttackingTime).ToString("0.00")}\n");
-
-                    isAnyoneAttacking = true;
-                }
-                else
-                {
-                    enemies.Append($"Current move cooldown: {enemy.CurrentMoveCooldown.ToString("0.00")}\n");
-                }
-
-                enemies.Append("\n");
-            }
-
-            EnemyInfo.text = enemies.ToString();
-
-            if (isAnyoneAttacking)
-            {
-                EnemyInfo.color = new Color(255, 0, 0);
+                isAnyoneAttacking = true;
             }
             else
             {
-                EnemyInfo.color = new Color(255, 255, 255);
+                enemies.Append($"Current move cooldown: {enemy.CurrentMoveCooldown.ToString("0.00")}\n");
             }
+
+            enemies.Append("\n");
         }
 
-        public void ToggleDebugMode()
-        {
-            IsDebugModeOn = !IsDebugModeOn;
-            UpdateDebug();
-        }
+        EnemyInfoUI.text = enemies.ToString();
 
-        private void UpdateDebug()
+        if (isAnyoneAttacking)
         {
-            DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
-            DebugMinimap.SetActive(IsDebugModeOn);
+            EnemyInfoUI.color = new Color(255, 0, 0);
         }
+        else
+        {
+            EnemyInfoUI.color = new Color(255, 255, 255);
+        }
+    }
 
-        private void OnEnemySpawn(Enemy enemy)
-        {
-            SpawnedEnemies.Add(enemy);
-        }
+    public void ToggleDebugMode()
+    {
+        IsDebugModeOn = !IsDebugModeOn;
+        UpdateDebug();
+    }
+
+    private void UpdateDebug()
+    {
+        DebugMinimap.SetActive(IsDebugModeOn);
+        DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+    }
+
+    private void OnEnemySpawn(Enemy enemy)
+    {
+        _spawnedEnemies.Add(enemy);
     }
 }

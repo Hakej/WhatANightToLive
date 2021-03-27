@@ -26,7 +26,7 @@ namespace Handlers
 
         private void UpdateEverySecond()
         {
-            var gameTime = GameHandler.Instance.GameTimeHandler.CurrentGameTime;
+            var gameTime = GameTimeHandler.Instance.CurrentGameTime;
 
             foreach (var enemySpawnInfo in EnemiesToSpawn.Reverse<EnemySpawnInfo>())
             {
