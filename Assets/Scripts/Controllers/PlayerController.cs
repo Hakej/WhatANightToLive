@@ -50,7 +50,7 @@ namespace Controllers
             MovementUI.SetActive(true);
             _isTurning = false;
 
-            if ((int)toAngle.eulerAngles.y % 180 == 0)
+            if ((int)toAngle.eulerAngles.y != 270)
             {
                 FlashlightButton.SetActive(true);
             }
