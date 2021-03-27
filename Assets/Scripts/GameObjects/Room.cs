@@ -15,8 +15,12 @@ namespace GameObjects
         public AudioDecoy AudioDecoy;
 
         [Header("Scanner")]
-        public bool IsScanerEnabled = false;
+        public bool IsScannerEnabled = false;
         public Scanner Scanner;
+
+        [Header("Door")]
+        public bool IsDoorEnabled = false;
+        public Door Door;
 
         [HideInInspector]
         public List<Enemy> EnemiesInRoom = new List<Enemy>();
@@ -28,9 +32,14 @@ namespace GameObjects
                 Destroy(AudioDecoy.gameObject);
             }
 
-            if (!IsScanerEnabled)
+            if (!IsScannerEnabled)
             {
                 Destroy(Scanner.gameObject);
+            }
+
+            if (!IsDoorEnabled)
+            {
+                Destroy(Door.gameObject);
             }
 
             EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
