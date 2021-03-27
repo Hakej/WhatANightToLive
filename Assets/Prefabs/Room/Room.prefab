@@ -182,7 +182,7 @@ MonoBehaviour:
   AudioDecoy: {fileID: 1723402238369696765}
   IsScannerEnabled: 0
   Scanner: {fileID: 272451962084536790}
-  IsDoorEnabled: 1
+  IsDoorEnabled: 0
   Door: {fileID: 3417684511846660064}
   EnemiesInRoom: []
 --- !u!1001 &2086241713915863742
