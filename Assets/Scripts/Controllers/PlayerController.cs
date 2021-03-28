@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 namespace Controllers
@@ -8,7 +8,7 @@ namespace Controllers
         public float RotationSpeed = 0.5f;
 
         public GameObject Player;
-        public GameObject MovementUI;
+        public GameObject PlayerUI;
         public GameObject FlashlightButton;
         public AudioSource MoveSound;
 
@@ -35,7 +35,7 @@ namespace Controllers
         private IEnumerator RotateMe(Vector3 byAngles)
         {
             _isTurning = true;
-            MovementUI.SetActive(false);
+            PlayerUI.SetActive(false);
             MoveSound.Play();
 
             var fromAngle = Player.transform.rotation;
@@ -48,7 +48,7 @@ namespace Controllers
             }
 
             Player.transform.rotation = toAngle;
-            MovementUI.SetActive(true);
+            PlayerUI.SetActive(true);
             _isTurning = false;
 
             if ((int)toAngle.eulerAngles.y != 270)
