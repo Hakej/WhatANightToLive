@@ -11,17 +11,8 @@ namespace Handlers
         public SceneAsset LoseScene;
 
         [Header("Player's Room's Power")]
-        public bool IsPlayersPowerOn = true;
+        public bool IsPowerOn = true;
         public GameObject PlayerPowerSwitch;
-
-        [Header("Objects to destroy on finish")]
-        public List<GameObject> ObjectsToDestroyOnFinish;
-
-        [Header("Object to activate on win")]
-        public GameObject EndScreen;
-
-        [HideInInspector]
-        public int CurrentDangerLevel = 1;
 
         private void Start()
         {
@@ -42,18 +33,7 @@ namespace Handlers
                 return;
             }
 
-            IsPlayersPowerOn = areLightsOn;
-
-            if (areLightsOn)
-            {
-                SanityHandler.Instance.CurrentFearLevel--;
-                CurrentDangerLevel++;
-            }
-            else
-            {
-                SanityHandler.Instance.CurrentFearLevel++;
-                CurrentDangerLevel--;
-            }
+            IsPowerOn = areLightsOn;
         }
     }
 }

@@ -39,10 +39,24 @@ public class DebugHandler : Singleton<DebugHandler>
         var gh = GameHandler.Instance;
         var sh = SanityHandler.Instance;
 
-        PlayerInfoUI.text = $"Current sanity level: {sh.CurrentSanity}\n" +
-                         $"Current fear level: {sh.CurrentFearLevel}\n" +
-                         $"Current sanity drop: {sh.CurrentSanityDrop}\n" +
-                         $"Current danger level: {gh.CurrentDangerLevel}";
+        var playerInfo = new StringBuilder();
+        Color playerInfoColor;
+
+        playerInfo.Append($"Current sanity level: {sh.CurrentSanity}\n");
+
+        if (gh.IsPowerOn)
+        {
+            playerInfo.Append($"Current sanity gain: {sh.SanityGainInLight}\n");
+            playerInfoColor = Color.white;
+        }
+        else
+        {
+            playerInfo.Append($"Current sanity drop: {sh.SanityDropInDark}\n");
+            playerInfoColor = Color.yellow;
+        }
+
+        PlayerInfoUI.text = playerInfo.ToString();
+        PlayerInfoUI.color = playerInfoColor;
 
         var enemies = new StringBuilder();
 

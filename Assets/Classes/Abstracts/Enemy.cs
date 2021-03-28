@@ -82,7 +82,10 @@ namespace Classes.Abstracts
 
         private void CheckAttack()
         {
-            CurrentAttackPower += Time.deltaTime * GameHandler.Instance.CurrentDangerLevel;
+            if (GameHandler.Instance.IsPowerOn)
+            {
+                CurrentAttackPower += Time.deltaTime;
+            }
 
             if (CurrentAttackPower >= AttackPower)
             {

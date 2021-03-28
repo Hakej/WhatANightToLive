@@ -1292,11 +1292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b786d9dffa4b768d5c20cf0c2b9f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseSanityDrop: 0.3
   StartingSanity: 100
-  CurrentFearLevel: 0
-  SanityGain: 0.1
-  IsGainingSanity: 0
+  SanityDropInDark: 2
+  SanityGainInLight: 0.2
 --- !u!1001 &187454541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6331,7 +6329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1687331039}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &703134269
 MonoBehaviour:
@@ -13188,54 +13186,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1430914229
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1430914230}
-  - component: {fileID: 1430914231}
-  m_Layer: 0
-  m_Name: SanityHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1430914230
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430914229}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1687331039}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1430914231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430914229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b786d9dffa4b768d5c20cf0c2b9f37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BaseSanityDrop: 0.3
-  StartingSanity: 100
-  CurrentFearLevel: 0
-  SanityGain: 0.4
-  IsGainingSanity: 0
 --- !u!1 &1452716872
 GameObject:
   m_ObjectHideFlags: 0
@@ -14457,14 +14407,8 @@ MonoBehaviour:
   SceneHandler: {fileID: 376669244}
   WinScene: {fileID: 102900000, guid: dcddcf2b06db30b4280ed4627899bdd8, type: 3}
   LoseScene: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206, type: 3}
-  IsPlayersPowerOn: 1
+  IsPowerOn: 1
   PlayerPowerSwitch: {fileID: 906444317}
-  ObjectsToDestroyOnFinish:
-  - {fileID: 2128700272}
-  - {fileID: 1067698408}
-  - {fileID: 1598220625}
-  EndScreen: {fileID: 0}
-  CurrentDangerLevel: 1
 --- !u!4 &1687331039
 Transform:
   m_ObjectHideFlags: 0
@@ -14476,7 +14420,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1430914230}
   - {fileID: 703134268}
   m_Father: {fileID: 16503766}
   m_RootOrder: 0

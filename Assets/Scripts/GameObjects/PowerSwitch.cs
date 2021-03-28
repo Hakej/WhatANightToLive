@@ -7,12 +7,12 @@ public class PowerSwitch : MonoBehaviour
     public AudioSource LightSwitchSound;
     public Vector3 LightSwitchRotationOn;
     public Vector3 LightSwitchRotationOff;
-    
+
     private bool _isLightSwitchOn;
 
     private void Start()
     {
-        ToggleLightSwitch(GameHandler.Instance.IsPlayersPowerOn);
+        ToggleLightSwitch(GameHandler.Instance.IsPowerOn);
     }
 
     private void OnMouseDown()
@@ -23,11 +23,11 @@ public class PowerSwitch : MonoBehaviour
     private void ToggleLightSwitch(bool isLightSwitchOn)
     {
         _isLightSwitchOn = isLightSwitchOn;
-        
+
         var newRotation = _isLightSwitchOn ? LightSwitchRotationOn : LightSwitchRotationOff;
 
         LightSwitch.transform.localRotation = Quaternion.Euler(newRotation);
-        
+
         LightSwitchSound.Play();
 
         EventHandler.Instance.PowerToggle(_isLightSwitchOn, tag);
