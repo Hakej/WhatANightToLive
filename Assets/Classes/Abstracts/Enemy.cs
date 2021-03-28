@@ -19,6 +19,7 @@ namespace Classes.Abstracts
         public float MaxSmartMoveChance;
 
         [Header("Enemy foolishness by decoy")]
+        public bool CanDestroyDecoy = true;
         [Range(0, 1)]
         public float MinDecoyFoolChance;
         [Range(0, 1)]
@@ -32,6 +33,10 @@ namespace Classes.Abstracts
         [Header("Enemy attack's strength")]
         public float AttackPower;
         public float AttackingTime;
+
+        [Header("Vent")]
+        public bool IgnoreVents = true;
+        public bool IgnoreAdjacentRooms = false;
 
         [Header("Other")]
         public GameObject MinimapIcon;
@@ -60,7 +65,7 @@ namespace Classes.Abstracts
         {
             PlayerRoom = RoomsHandler.Instance.PlayerRoom;
 
-            RoomsWeights = RoomsHandler.Instance.CalculateWeights(PlayerRoom);
+            RoomsWeights = RoomsHandler.Instance.CalculateWeights(PlayerRoom, IgnoreVents, IgnoreAdjacentRooms);
         }
 
         private void Update()
@@ -134,7 +139,7 @@ namespace Classes.Abstracts
                 destination = AudioDecoyColliderInRange.GetComponent<AudioDecoy>().Room;
             }
 
-            RoomsWeights = RoomsHandler.Instance.CalculateWeights(destination);
+            RoomsWeights = RoomsHandler.Instance.CalculateWeights(destination, IgnoreVents, IgnoreAdjacentRooms);
 
             Move();
         }
@@ -164,7 +169,7 @@ namespace Classes.Abstracts
 
             if (audioDecoy != null)
             {
-                if (!audioDecoy.IsDestroyed && audioDecoy.IsPlaying)
+                if (!audioDecoy.IsDestroyed && audioDecoy.IsPlaying && CanDestroyDecoy)
                 {
                     audioDecoy.DestroyDecoy();
                 }
@@ -205,11 +210,6 @@ namespace Classes.Abstracts
             {
                 AudioDecoyColliderInRange = null;
             }
-        }
-
-        private bool IsInDecoyRange()
-        {
-            return true;
         }
 
         protected abstract void Move();

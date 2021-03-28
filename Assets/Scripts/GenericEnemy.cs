@@ -6,6 +6,10 @@ using Random = UnityEngine.Random;
 
 public class GenericEnemy : Enemy
 {
+    [Header("Needed tags")]
+    public string PlayerAdjacentRoomTag = "PlayerAdjacentRoom";
+    public string PlayerAdjacentVentTag = "PlayerAdjacentVent";
+
     protected override void Move()
     {
         Room newRoom;
@@ -31,7 +35,7 @@ public class GenericEnemy : Enemy
             Debug.Log("I was fooled into bad move.");
         }
 
-        if (newRoom.CompareTag("PlayerAdjacentRoom"))
+        if (newRoom.CompareTag(PlayerAdjacentRoomTag) || newRoom.CompareTag(PlayerAdjacentVentTag))
         {
             ChangeToAttackMode();
         }
@@ -45,6 +49,16 @@ public class GenericEnemy : Enemy
 
         for (int i = 1; i < adjRooms.Length; i++)
         {
+            if (IgnoreVents && adjRooms[i].IsVent)
+            {
+                continue;
+            }
+
+            if (IgnoreAdjacentRooms && adjRooms[i].CompareTag(PlayerAdjacentRoomTag))
+            {
+                continue;
+            }
+
             if (RoomsWeights[adjRooms[i]] == RoomsWeights[nextRoom])
             {
                 var rn = Random.Range(0, 2);

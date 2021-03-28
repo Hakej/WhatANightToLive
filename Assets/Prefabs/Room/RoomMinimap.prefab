@@ -49,5 +49,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReferencedRoom: {fileID: 0}
-  EnemyIconsScale: 50
-  MultipleEnemyIconsOffset: 4
+  MultipleEnemyIconsOffset: 40

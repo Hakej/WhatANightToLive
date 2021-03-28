@@ -8,6 +8,7 @@ namespace GameObjects
 {
     public class Room : MonoBehaviour
     {
+        public bool IsVent = false;
         public Room[] AdjacentRooms;
 
         [Header("Audio Decoy")]

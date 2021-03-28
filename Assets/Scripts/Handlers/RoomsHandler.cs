@@ -6,18 +6,22 @@ public class RoomsHandler : Singleton<RoomsHandler>
 {
     public Room PlayerRoom;
 
-    public Dictionary<Room, int> CalculateWeights(Room destination)
+    [Header("Needed tags")]
+    public string PlayerVentTag = "PlayerVent";
+    public string PlayerAdjacentRoomTag = "PlayerAdjacentRoom";
+
+    public Dictionary<Room, int> CalculateWeights(Room destination, bool ignoreVents, bool ignoreAdjRooms)
     {
         var weightedRooms = new Dictionary<Room, int>();
 
-        return CalculateWeights(weightedRooms, destination, null);
+        return CalculateWeights(weightedRooms, destination, null, ignoreVents, ignoreAdjRooms);
     }
 
-    private Dictionary<Room, int> CalculateWeights(Dictionary<Room, int> weightedRooms, Room currentRoom, Room previousRoom, int currentWeight = 0)
+    private Dictionary<Room, int> CalculateWeights(Dictionary<Room, int> weightedRooms, Room currentRoom, Room previousRoom, bool ignoreVents, bool ignoreAdjRooms, int currentWeight = 0)
     {
         // Check if current room doesn't already have a weight, and if it does - check if it is not smaller or equal already.
         // This is to avoid situation, where AI has more than one path to reach its destination, and prefer the worse one,
-        // because it was overcalculated by the longer path.
+        // because the better was overcalculated by the longer path.
         if (weightedRooms.TryGetValue(currentRoom, out int currentRoomWeight))
         {
             if (currentRoomWeight <= currentWeight)
@@ -35,7 +39,15 @@ public class RoomsHandler : Singleton<RoomsHandler>
             if (adjRoom == previousRoom)
                 continue;
 
-            weightedRooms = CalculateWeights(weightedRooms, adjRoom, currentRoom, currentWeight + 1);
+            // Ignore vents so enemy never enters them
+            if (ignoreVents && adjRoom.IsVent)
+                continue;
+
+            // Ignore adjacenet rooms to force enemy to attack through vents
+            if (ignoreAdjRooms && adjRoom.CompareTag(PlayerAdjacentRoomTag))
+                continue;
+
+            weightedRooms = CalculateWeights(weightedRooms, adjRoom, currentRoom, ignoreVents, ignoreAdjRooms, currentWeight + 1);
         }
 
         return weightedRooms;

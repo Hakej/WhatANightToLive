@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - EnemySpawnRoom
   - AudioDecoy
+  - PlayerAdjacentVent
   layers:
   - Default
   - TransparentFX

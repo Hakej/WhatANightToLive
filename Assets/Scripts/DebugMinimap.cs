@@ -10,7 +10,7 @@ public class DebugMinimap : MonoBehaviour
     public Room ReferencedRoom;
 
     [Header("Enemy icons")]
-    public float MultipleEnemyIconsOffset = 4f;
+    public float MultipleEnemyIconsOffset = 40f;
 
     public Dictionary<Enemy, GameObject> EnemyIcons = new Dictionary<Enemy, GameObject>();
 
@@ -50,7 +50,7 @@ public class DebugMinimap : MonoBehaviour
         for (var i = 0; i < EnemyIcons.Count; i++)
         {
             var iconObject = EnemyIcons.ElementAt(i).Value;
-            iconObject.transform.Translate(Vector3.right * i * MultipleEnemyIconsOffset);
+            iconObject.transform.localPosition = Vector3.zero + Vector3.right * i * MultipleEnemyIconsOffset;
         }
     }
 
@@ -65,7 +65,7 @@ public class DebugMinimap : MonoBehaviour
         for (var i = 0; i < EnemyIcons.Count; i++)
         {
             var iconObject = EnemyIcons.ElementAt(i).Value;
-            iconObject.transform.Translate(Vector3.right * i * MultipleEnemyIconsOffset);
+            iconObject.transform.localPosition = Vector3.zero + Vector3.right * i * MultipleEnemyIconsOffset;
         }
     }
 }
