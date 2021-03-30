@@ -69,6 +69,11 @@ PrefabInstance:
       propertyPath: Room
       value: 
       objectReference: {fileID: 973124914978472994}
+    - target: {fileID: 2248457661863859048, guid: 6886955b829af1d479e78624fc405782,
+        type: 3}
+      propertyPath: ScannerCertainty
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5718224013863894701, guid: 6886955b829af1d479e78624fc405782,
         type: 3}
       propertyPath: m_Name

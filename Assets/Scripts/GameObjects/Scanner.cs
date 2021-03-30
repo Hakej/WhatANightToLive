@@ -9,13 +9,13 @@ public class Scanner : MonoBehaviour
 
     [Header("Scanner settings")]
     [Range(0, 1)]
-    public float ScannerCertainty = 0.2f;
+    public float ScannerCertainty = 0.8f;
 
     public ScanResult Scan()
     {
         var rn = Random.Range(0f, 1f);
 
-        if (rn <= ScannerCertainty)
+        if (rn >= ScannerCertainty)
         {
             return ScanResult.SomethingDetected;
         }
