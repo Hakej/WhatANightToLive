@@ -21,8 +21,8 @@ namespace Handlers
         public event Action<AudioDecoy> OnDestroyedAudioDecoy;
         public event Action<AudioDecoy> OnFixedAudioDecoy;
         public event Action<AudioDecoy, AudioDecoy> OnChangedAudioDecoy;
-
         public event Action<Door> OnDoorHit;
+        public event Action<Door, Door> OnChangedClosedDoor;
 
         public void Win()
         {
@@ -92,6 +92,11 @@ namespace Handlers
         public void ChangedAudioDecoy(AudioDecoy oldDecoy, AudioDecoy newDecoy)
         {
             OnChangedAudioDecoy?.Invoke(oldDecoy, newDecoy);
+        }
+
+        public void ChangedClosedDoor(Door oldClosedDoor, Door newClosedDoor)
+        {
+            OnChangedClosedDoor?.Invoke(oldClosedDoor, newClosedDoor);
         }
 
         public void DoorHit(Door hitDoor)

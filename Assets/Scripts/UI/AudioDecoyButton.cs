@@ -56,5 +56,4 @@ namespace UI
             Image.sprite = AudioDecoy.IsPlaying ? SpriteDecoyPlaying : SpriteDecoyNotPlaying;
         }
     }
-
 }

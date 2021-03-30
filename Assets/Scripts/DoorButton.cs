@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Handlers;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class DoorButton : MonoBehaviour
@@ -13,6 +14,16 @@ public class DoorButton : MonoBehaviour
     private void OnEnable()
     {
         CheckSprite();
+
+        EventHandler.Instance.OnChangedClosedDoor += OnChangedClosedDoor;
+    }
+
+    private void OnChangedClosedDoor(Door oldClosedDoor, Door newClosedDoor)
+    {
+        if (ReferencedDoor == oldClosedDoor || ReferencedDoor == newClosedDoor)
+        {
+            CheckSprite();
+        }
     }
 
     public void ToggleDoor()
