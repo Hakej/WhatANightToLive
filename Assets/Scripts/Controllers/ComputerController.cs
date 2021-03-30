@@ -17,9 +17,6 @@ namespace Controllers
         public AudioClip ComputerEnterSound;
         public AudioClip ComputerLeaveSound;
 
-        public float OnComputerAudioVolume = 0.5f;
-        public float OffComputerAudioVolume = 1f;
-
         [HideInInspector]
         public bool IsOnComputer = false;
 
@@ -27,8 +24,6 @@ namespace Controllers
         {
             ComputerCamera.SetActive(IsOnComputer);
             PlayerCamera.SetActive(!IsOnComputer);
-
-            ComputerAudioSource.volume = IsOnComputer ? OnComputerAudioVolume : OffComputerAudioVolume;
         }
 
         public void ToggleFocus(bool isOnComputer)
@@ -37,8 +32,6 @@ namespace Controllers
 
             ComputerCamera.SetActive(IsOnComputer);
             PlayerCamera.SetActive(!IsOnComputer);
-
-            ComputerAudioSource.volume = IsOnComputer ? OnComputerAudioVolume : OffComputerAudioVolume;
 
             ComputerAudioSource.clip = IsOnComputer ? ComputerEnterSound : ComputerLeaveSound;
             ComputerAudioSource.Play();
