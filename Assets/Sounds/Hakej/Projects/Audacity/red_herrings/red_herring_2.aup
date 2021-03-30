@@ -1,0 +1,69 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="red_herring_2_data" version="1.3.0" audacityversion="2.2.2" sel0="0.0000000000" sel1="12.6066914355" vpos="0" h="0.0000000000" zoom="92.9873052899" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags/>
+	<wavetrack name="222993__zyrytsounds__people-talking" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="12.60621315" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="21">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808489.au" len="21" min="-0.002865" max="0.000658" rms="0.00189"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="555934">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808b08.au" len="262144" min="-0.993992" max="0.962595" rms="0.195363"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808b32.au" len="262144" min="-0.861344" max="0.815671" rms="0.129783"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0808e43.au" len="31646" min="-0.017983" max="0.020962" rms="0.003622"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="12.60668934" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1677">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808774.au" len="1677" min="-0.005911" max="0.004427" rms="0.001408"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="222993__zyrytsounds__people-talking" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="12.60621315" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="21">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808bcb.au" len="21" min="-0.002911" max="0.000612" rms="0.001898"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="555934">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808f70.au" len="262144" min="-0.981573" max="1.000003" rms="0.19509"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808d42.au" len="262144" min="-0.923757" max="0.842641" rms="0.130587"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0808820.au" len="31646" min="-0.019426" max="0.021997" rms="0.003612"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+		<waveclip offset="12.60668934" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="1677">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808eda.au" len="1677" min="-0.005934" max="0.004383" rms="0.001408"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
