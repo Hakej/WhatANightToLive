@@ -117,7 +117,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 633206525201244312}
           m_TargetAssemblyTypeName: AudioDecoyButton, Assembly-CSharp
-          m_MethodName: ToggleAudioDecoy
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

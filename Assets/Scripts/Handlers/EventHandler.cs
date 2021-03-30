@@ -20,6 +20,8 @@ namespace Handlers
         public event Action<bool> OnEyesToggle;
         public event Action<AudioDecoy> OnDestroyedAudioDecoy;
         public event Action<AudioDecoy> OnFixedAudioDecoy;
+        public event Action<AudioDecoy, AudioDecoy> OnChangedAudioDecoy;
+
         public event Action<Door> OnDoorHit;
 
         public void Win()
@@ -85,6 +87,11 @@ namespace Handlers
         public void FixedAudioDecoy(AudioDecoy audioDecoy)
         {
             OnFixedAudioDecoy?.Invoke(audioDecoy);
+        }
+
+        public void ChangedAudioDecoy(AudioDecoy oldDecoy, AudioDecoy newDecoy)
+        {
+            OnChangedAudioDecoy?.Invoke(oldDecoy, newDecoy);
         }
 
         public void DoorHit(Door hitDoor)

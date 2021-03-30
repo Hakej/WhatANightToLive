@@ -19,6 +19,15 @@ namespace UI
 
             EventHandler.Instance.OnDestroyedAudioDecoy += OnDestroyedAudioDecoy;
             EventHandler.Instance.OnFixedAudioDecoy += OnFixedAudioDecoy;
+            EventHandler.Instance.OnChangedAudioDecoy += OnChangedAudioDecoy;
+        }
+
+        private void OnChangedAudioDecoy(AudioDecoy oldDecoy, AudioDecoy newDecoy)
+        {
+            if (AudioDecoy == oldDecoy || AudioDecoy == newDecoy)
+            {
+                CheckSprite();
+            }
         }
 
         private void OnDestroyedAudioDecoy(AudioDecoy audioDecoy)
@@ -39,17 +48,6 @@ namespace UI
                 Image.sprite = SpriteDecoyNotPlaying;
                 Image.color = Color.yellow;
             }
-        }
-
-        public void ToggleAudioDecoy()
-        {
-            if (AudioDecoy.IsDestroyed)
-            {
-                return;
-            }
-
-            AudioDecoy.ToggleDecoy();
-            CheckSprite();
         }
 
         public void CheckSprite()

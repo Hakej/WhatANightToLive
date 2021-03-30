@@ -24,7 +24,6 @@ public class AudioDecoy : MonoBehaviour
     private float _currentDestructionCooldown = 0f;
     private float _destructionCooldown;
 
-
     private void Start()
     {
         AudioDecoyCollider.enabled = IsPlaying;
@@ -70,14 +69,14 @@ public class AudioDecoy : MonoBehaviour
         EventHandler.Instance.DestroyedAudioDecoy(this);
     }
 
-    public void ToggleDecoy()
+    public void ToggleDecoy(bool isDecoyOn)
     {
         if (IsDestroyed)
         {
             return;
         }
 
-        if (DecoyAudioSource.isPlaying)
+        if (!isDecoyOn)
         {
             DecoyAudioSource.Stop();
         }

@@ -209,6 +209,7 @@ Transform:
   - {fileID: 1452716873}
   - {fileID: 2058670548}
   - {fileID: 1902648389}
+  - {fileID: 31168369}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -500,6 +501,50 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &31168368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31168369}
+  - component: {fileID: 31168370}
+  m_Layer: 0
+  m_Name: AudioDecoyHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &31168369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31168368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 16503766}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31168370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31168368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cf7bcf2acd27d4aae5811074eafa2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentDecoy: {fileID: 0}
 --- !u!1 &83404934
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 443028074927777025, guid: 834de48ac3a7c794ea34cfcddef3094a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 443028074927777030, guid: 834de48ac3a7c794ea34cfcddef3094a,
         type: 3}
@@ -6719,6 +6764,36 @@ PrefabInstance:
       propertyPath: AudioDecoy
       value: 
       objectReference: {fileID: 733288543}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 31168370}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioDecoyHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeAudioDecoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UI.AudioDecoyButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 290523915}
     - target: {fileID: 7492351970905429260, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_Name
@@ -6797,12 +6872,12 @@ PrefabInstance:
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 683
+      value: 688.2
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -62
+      value: -61
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
@@ -6847,17 +6922,17 @@ PrefabInstance:
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.055555556
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.055555556
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.055555556
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e940acab7970e8a46b43eb48d362ebbf, type: 3}
@@ -12049,6 +12124,36 @@ PrefabInstance:
       propertyPath: AudioDecoy
       value: 
       objectReference: {fileID: 245031665}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 31168370}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioDecoyHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeAudioDecoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UI.AudioDecoyButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 178493207}
     - target: {fileID: 7492351970905429260, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_Name
@@ -12127,12 +12232,12 @@ PrefabInstance:
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9
+      value: -8.3
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 112
+      value: 105.3
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
@@ -12177,17 +12282,17 @@ PrefabInstance:
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.055555556
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.055555556
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.055555556
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e940acab7970e8a46b43eb48d362ebbf, type: 3}
@@ -20928,6 +21033,36 @@ PrefabInstance:
       propertyPath: AudioDecoy
       value: 
       objectReference: {fileID: 459236992}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 31168370}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeAudioDecoy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioDecoyHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UI.AudioDecoyButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089828821155045871, guid: e940acab7970e8a46b43eb48d362ebbf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1466598278}
     - target: {fileID: 7492351970905429260, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_Name
@@ -21011,12 +21146,12 @@ PrefabInstance:
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 63
+      value: 62.8
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 381
+      value: 383.9
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
@@ -21061,17 +21196,17 @@ PrefabInstance:
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.055555556
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.055555556
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 7492351970905429263, guid: e940acab7970e8a46b43eb48d362ebbf,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.055555556
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e940acab7970e8a46b43eb48d362ebbf, type: 3}
