@@ -89,7 +89,7 @@ namespace Classes.Abstracts
 
             if (CurrentAttackPower >= AttackPower)
             {
-                SuccessfulAttack();
+                TryAttack();
                 return;
             }
 
@@ -184,6 +184,27 @@ namespace Classes.Abstracts
             IsAttacking = true;
         }
 
+        private void TryAttack()
+        {
+            var door = CurrentRoom.Door;
+
+            if (door != null)
+            {
+                if (door.IsClosed)
+                {
+                    FailAttack();
+                }
+                else
+                {
+                    SuccessfulAttack();
+                }
+            }
+            else
+            {
+                SuccessfulAttack();
+            }
+        }
+
         private void SuccessfulAttack()
         {
             EventHandler.Instance.Lose();
@@ -191,6 +212,18 @@ namespace Classes.Abstracts
 
         private void FailAttack()
         {
+            var door = CurrentRoom.Door;
+
+            if (door != null)
+            {
+                if (door.IsClosed)
+                {
+                    // TODO: It should be handled better, but it requires a rework of how room handles disabled features.
+                    door.MakeAttackNoise();
+                    EventHandler.Instance.DoorHit(door);
+                }
+            }
+
             IsAttacking = false;
             CurrentAttackPower = 0f;
             CurrentAttackingTime = 0f;

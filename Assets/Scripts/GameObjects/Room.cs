@@ -31,16 +31,19 @@ namespace GameObjects
             if (!IsDecoyEnabled)
             {
                 Destroy(AudioDecoy.gameObject);
+                Destroy(AudioDecoy);
             }
 
             if (!IsScannerEnabled)
             {
                 Destroy(Scanner.gameObject);
+                Destroy(Scanner);
             }
 
             if (!IsDoorEnabled)
             {
                 Destroy(Door.gameObject);
+                Destroy(Door);
             }
 
             EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;

@@ -12,6 +12,10 @@ namespace Handlers
         public float SanityDropInDark = 1f;
         public float SanityGainInLight = 0.2f;
 
+        [Header("On enemy door hit")]
+        public float MinDoorHitLoss = 5f;
+        public float MaxDoorHitLoss = 15f;
+
         public float CurrentSanity { get; private set; }
 
         public float CurrentSanitySense
@@ -23,6 +27,13 @@ namespace Handlers
         public void Start()
         {
             CurrentSanity = StartingSanity;
+
+            EventHandler.Instance.OnDoorHit += OnDoorHit;
+        }
+
+        private void OnDoorHit(Door hitDoor)
+        {
+            CurrentSanity -= UnityEngine.Random.Range(MinDoorHitLoss, MaxDoorHitLoss);
         }
 
         public void Update()
@@ -31,7 +42,7 @@ namespace Handlers
             {
                 CurrentSanity += SanityGainInLight * Time.deltaTime;
             }
-            else if (CurrentSanity > 0f)
+            else if (CurrentSanity > 0)
             {
                 CurrentSanity -= SanityDropInDark * Time.deltaTime;
             }
@@ -39,6 +50,10 @@ namespace Handlers
             if (CurrentSanity > StartingSanity)
             {
                 CurrentSanity = StartingSanity;
+            }
+            else if (CurrentSanity < 0)
+            {
+                CurrentSanity = 0;
             }
         }
     }
