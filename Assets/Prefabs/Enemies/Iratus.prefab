@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 12941b82fad4cee42ae2c64206b63547, type: 2}
+    - target: {fileID: 5428696955785348173, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: StartingDifficulty

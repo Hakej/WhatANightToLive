@@ -43,7 +43,7 @@ public class RoomsHandler : Singleton<RoomsHandler>
             if (ignoreVents && adjRoom.IsVent)
                 continue;
 
-            // Ignore adjacenet rooms to force enemy to attack through vents
+            // Ignore adjacent rooms to force enemy to attack through vents
             if (ignoreAdjRooms && adjRoom.CompareTag(PlayerAdjacentRoomTag))
                 continue;
 
