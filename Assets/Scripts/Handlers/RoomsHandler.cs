@@ -7,7 +7,6 @@ public class RoomsHandler : Singleton<RoomsHandler>
     public Room PlayerRoom;
 
     [Header("Needed tags")]
-    public string PlayerVentTag = "PlayerVent";
     public string PlayerAdjacentRoomTag = "PlayerAdjacentRoom";
 
     public Dictionary<Room, int> CalculateWeights(Room destination, bool ignoreVents, bool ignoreAdjRooms)

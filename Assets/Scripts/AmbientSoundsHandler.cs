@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Classes.Extensions;
+﻿using Classes.Extensions;
 using UnityEngine;
 
 public class AmbientSoundsHandler : MonoBehaviour
