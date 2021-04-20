@@ -82,11 +82,27 @@ namespace Classes.Abstracts
 
         private void RunAway()
         {
+            IsRunningAway = true;
+            Animator.SetBool("IsRunningAway", true);
+
+            Invoke("FinishRunAway", 1f);
+        }
+
+        private void FinishRunAway()
+        {
+            IsRunningAway = false;
+            Animator.SetBool("IsRunningAway", false);
+
             ResetToSpawn();
         }
 
         private void Update()
         {
+            if (IsRunningAway)
+            {
+                return;
+            }
+
             if (IsAttacking)
             {
                 CheckAttack();
