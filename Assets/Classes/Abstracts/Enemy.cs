@@ -240,6 +240,13 @@ namespace Classes.Abstracts
 
         private void SuccessfulAttack()
         {
+            Animator.SetBool("IsAttacking", true);
+
+            Invoke("AfterAttack", 0.5f);
+        }
+
+        private void AfterAttack()
+        {
             EventHandler.Instance.Lose();
         }
 

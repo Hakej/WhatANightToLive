@@ -23,7 +23,7 @@ namespace Handlers
         private void OnLose()
         {
             // TODO: Add losing logic
-            SceneHandler.LoadScene(LoseScene);
+            SceneHandler.LoadSceneWithBlackScreen(LoseScene);
         }
 
         private void OnPowerToggle(bool areLightsOn, string poweredTag)
