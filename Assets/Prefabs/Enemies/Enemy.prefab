@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-5339867390265945114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9089333739357495211}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7495553126514134751}
+  m_Layer: 0
+  m_Name: uploads_files_2022522_Ghost_01 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7495553126514134751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9089333739357495211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -5339867390265945114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8766667469337999424}
+  m_Father: {fileID: 8277398045375427700}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5428696955785348173
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +127,37 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &6546923916990955624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9089333739357495211}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8766667469337999424}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8766667469337999424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6902f036b9b460447bfdf9e0dad85268,
+    type: 3}
+  m_PrefabInstance: {fileID: 9089333739357495211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546923916990955624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7495553126514134751}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7168618044978624865
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +188,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5649409643441935382}
-  - {fileID: 8766667469337999424}
+  - {fileID: 7495553126514134751}
   - {fileID: 3050355930564593774}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -158,7 +220,10 @@ MonoBehaviour:
   AttackingTime: 0
   IgnoreVents: 1
   IgnoreAdjacentRooms: 0
+  NextToAdjacentRoomTag: NextToAdjacentRoom
+  FlashlightTag: Flashlight
   MinimapIcon: {fileID: 3415580616009304491}
+  Animator: {fileID: 0}
   CurrentDifficulty: 0
   SpawnRoom: {fileID: 0}
   CurrentRoom: {fileID: 0}
@@ -167,6 +232,7 @@ MonoBehaviour:
   CurrentAttackingTime: 0
   CurrentMoveCooldown: 0
   PlayerRoom: {fileID: 0}
+  IsRunningAway: 0
   PlayerAdjacentRoomTag: PlayerAdjacentRoom
   PlayerAdjacentVentTag: PlayerAdjacentVent
 --- !u!65 &6962799869906893397
@@ -347,9 +413,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6902f036b9b460447bfdf9e0dad85268, type: 3}
---- !u!4 &8766667469337999424 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6902f036b9b460447bfdf9e0dad85268,
-    type: 3}
-  m_PrefabInstance: {fileID: 9089333739357495211}
-  m_PrefabAsset: {fileID: 0}

@@ -12,7 +12,8 @@ TagManager:
   - EnemySpawnRoom
   - AudioDecoy
   - PlayerAdjacentVent
-  - NextToAdjecentRoom
+  - Flashlight
+  - NextToAdjacentRoom
   layers:
   - Default
   - TransparentFX

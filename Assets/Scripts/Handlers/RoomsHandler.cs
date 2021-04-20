@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Assets.Classes.Unity;
 using GameObjects;
 using UnityEngine;
 
@@ -7,7 +8,10 @@ public class RoomsHandler : Singleton<RoomsHandler>
     public Room PlayerRoom;
 
     [Header("Needed tags")]
-    public string PlayerAdjacentRoomTag = "PlayerAdjacentRoom";
+    [TagSelector]
+    public string AdjacentRoomTag = "";
+    [TagSelector]
+    public string NextToAdjacentRoomTag = "";
 
     public Dictionary<Room, int> CalculateWeights(Room destination, bool ignoreVents, bool ignoreAdjRooms)
     {
@@ -43,7 +47,7 @@ public class RoomsHandler : Singleton<RoomsHandler>
                 continue;
 
             // Ignore adjacent rooms to force enemy to attack through vents
-            if (ignoreAdjRooms && adjRoom.CompareTag(PlayerAdjacentRoomTag))
+            if (ignoreAdjRooms && !adjRoom.IsVent && (adjRoom.CompareTag(NextToAdjacentRoomTag) || adjRoom.CompareTag(AdjacentRoomTag)))
                 continue;
 
             weightedRooms = CalculateWeights(weightedRooms, adjRoom, currentRoom, ignoreVents, ignoreAdjRooms, currentWeight + 1);

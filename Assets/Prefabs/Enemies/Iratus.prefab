@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: MoveCooldown
-      value: 4.524
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
@@ -65,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: MinSmartMoveChance
-      value: 0.66
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}

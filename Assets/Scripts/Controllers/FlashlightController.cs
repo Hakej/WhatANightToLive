@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Handlers;
+using UnityEngine;
 
 namespace Controllers
 {
@@ -8,14 +9,14 @@ namespace Controllers
 
         public AudioClip FlashlightOnSound;
         public AudioClip FlashlightOffSound;
-        public Light FlashLight;
+        public GameObject FlashLight;
 
         public void ToggleFlashlight(bool state)
         {
-            FlashLight.enabled = state;
+            FlashLight.SetActive(state);
 
-            AudioSource.clip = state ? FlashlightOnSound : FlashlightOffSound;
-            AudioSource.Play();
+            var sound = state ? FlashlightOnSound : FlashlightOffSound;
+            AudioSource.PlayOneShot(sound);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Classes.Unity;
 using GameObjects;
 using Handlers;
 using UnityEngine;
@@ -38,16 +39,25 @@ namespace Classes.Abstracts
         public bool IgnoreVents = true;
         public bool IgnoreAdjacentRooms = false;
 
+        [Header("FlashlightMechanisms")]
+        [TagSelector]
+        public string NextToAdjacentRoomTag = "";
+        [TagSelector]
+        public string FlashlightTag = "";
+
+
         [Header("Other")]
         public GameObject MinimapIcon;
+        public Animator Animator;
 
+
+        ///--- Hidden in inspector ---///
         [HideInInspector]
         public int CurrentDifficulty;
         [HideInInspector]
         public Room SpawnRoom;
         [HideInInspector]
         public Room CurrentRoom;
-
         [HideInInspector]
         public bool IsAttacking = false;
         [HideInInspector]
@@ -60,12 +70,19 @@ namespace Classes.Abstracts
         public Dictionary<Room, int> RoomsWeights;
         [HideInInspector]
         public Room PlayerRoom;
+        [HideInInspector]
+        public bool IsRunningAway = false;
 
         private void Start()
         {
             PlayerRoom = RoomsHandler.Instance.PlayerRoom;
 
             RoomsWeights = RoomsHandler.Instance.CalculateWeights(PlayerRoom, IgnoreVents, IgnoreAdjacentRooms);
+        }
+
+        private void RunAway()
+        {
+            ResetToSpawn();
         }
 
         private void Update()
@@ -224,12 +241,31 @@ namespace Classes.Abstracts
                 }
             }
 
+            ResetToSpawn();
+
+            Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {SpawnRoom.name}.");
+        }
+
+        private void LitByFlashLight()
+        {
+            if (CurrentRoom.CompareTag(NextToAdjacentRoomTag))
+            {
+                RunAway();
+            }
+            else
+            {
+                SuccessfulAttack();
+            }
+        }
+
+        private void ResetToSpawn()
+        {
             IsAttacking = false;
+            IsRunningAway = false;
             CurrentAttackPower = 0f;
             CurrentAttackingTime = 0f;
 
             ChangeRoom(SpawnRoom);
-            Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {SpawnRoom.name}.");
         }
 
         private void OnTriggerEnter(Collider other)
@@ -237,6 +273,10 @@ namespace Classes.Abstracts
             if (other.tag == AudioDecoyTag)
             {
                 AudioDecoyColliderInRange = other;
+            }
+            else if (other.tag == FlashlightTag)
+            {
+                LitByFlashLight();
             }
         }
 

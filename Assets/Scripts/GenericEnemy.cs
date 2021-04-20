@@ -2,6 +2,7 @@
 using GameObjects;
 using Handlers;
 using UnityEngine;
+using What_a_Night_to_Live.Assets.Classes.Exceptions;
 using Random = UnityEngine.Random;
 
 public class GenericEnemy : Enemy
@@ -43,18 +44,29 @@ public class GenericEnemy : Enemy
 
     private Room GetNextRoom(bool isRoomBest)
     {
-        var adjRooms = CurrentRoom.AdjacentRooms;
-        var nextRoom = adjRooms[0];
-        var nextRoomWeight = RoomsWeights[nextRoom];
+        Room nextRoom = null;
+        Room[] adjRooms = CurrentRoom.AdjacentRooms;
+
+        // Get first adjacent room 
+        foreach (var room in adjRooms)
+        {
+            if (RoomsWeights.ContainsKey(room))
+            {
+                nextRoom = room;
+                break;
+            }
+        }
+
+        // If there is no adjacent room enemy can go to, throw an error
+        if (nextRoom == null)
+        {
+            throw new NoNextRoomException(CurrentRoom);
+        }
 
         for (int i = 1; i < adjRooms.Length; i++)
         {
-            if (IgnoreVents && adjRooms[i].IsVent)
-            {
-                continue;
-            }
-
-            if (IgnoreAdjacentRooms && adjRooms[i].CompareTag(PlayerAdjacentRoomTag))
+            // If can't go to a room, ignore it
+            if (!RoomsWeights.ContainsKey(adjRooms[i]))
             {
                 continue;
             }
