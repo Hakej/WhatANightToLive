@@ -16018,7 +16018,7 @@ MonoBehaviour:
   LoseScene: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206, type: 3}
   IsPowerOn: 1
   PlayerPowerSwitch: {fileID: 906444317}
-  GameObjectsToDisableOnLose: []
+  EnemyAudioSourceTag: EnemyAudioSource
 --- !u!4 &1687331039
 Transform:
   m_ObjectHideFlags: 0
@@ -22105,6 +22105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075185056239619879, guid: b8cce44429994cd4886b57e4cb3af51a,
+        type: 3}
+      propertyPath: BlackScreenTime
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4463913189159186559, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}

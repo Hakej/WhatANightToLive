@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Classes.Unity;
 using UnityEditor;
 using UnityEngine;
 namespace Handlers
@@ -15,7 +16,8 @@ namespace Handlers
         public GameObject PlayerPowerSwitch;
 
         [Header("Lose")]
-        public GameObject[] GameObjectsToDisableOnLose;
+        [TagSelector]
+        public string EnemyAudioSourceTag = "";
 
         private void Start()
         {
@@ -25,16 +27,16 @@ namespace Handlers
 
         private void OnLose()
         {
-            foreach (var gameObject in GameObjectsToDisableOnLose)
-            {
-                gameObject.SetActive(false);
-            }
 
             var allAudioSources = FindObjectsOfType<AudioSource>();
 
             foreach (var audioSource in allAudioSources)
             {
-                audioSource.enabled = false;
+                // Disable all audio sources, except for the enemies
+                if (!audioSource.CompareTag(EnemyAudioSourceTag))
+                {
+                    audioSource.enabled = false;
+                }
             }
 
             SceneHandler.LoadSceneWithBlackScreen(LoseScene);

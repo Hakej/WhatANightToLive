@@ -10,7 +10,7 @@ namespace Handlers
         public Animator Transition;
 
         public GameObject BlackScreen;
-        public float BlackScreenTime = 4f;
+        public float BlackScreenTime = 6f;
 
         private float _transitionTime;
 

@@ -48,6 +48,10 @@ namespace Classes.Abstracts
         [TagSelector]
         public string PlayerLookTag = "";
 
+        [Header("Enemy audio")]
+        public AudioSource EnemyAudioSource;
+        public AudioClip JumpscareAudio;
+
         [Header("Other")]
         public GameObject MinimapIcon;
         public Animator Animator;
@@ -268,6 +272,7 @@ namespace Classes.Abstracts
             yield return new WaitForSeconds(delayToAttack);
 
             Animator.SetBool("IsAttacking", true);
+            EnemyAudioSource.PlayOneShot(JumpscareAudio);
 
             yield return new WaitForSeconds(0.5f);
 

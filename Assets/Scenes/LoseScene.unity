@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 1585845715}
   - component: {fileID: 1585845717}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: YouAreDead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -783,17 +783,17 @@ PrefabInstance:
     - target: {fileID: 7941905353436344672, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7941905353436344683, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7941905353530517485, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8cce44429994cd4886b57e4cb3af51a, type: 3}
@@ -975,7 +975,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922292677}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce467bb43d432364d83f9d1af73233a3, type: 3}

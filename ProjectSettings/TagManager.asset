@@ -15,6 +15,7 @@ TagManager:
   - Flashlight
   - NextToAdjacentRoom
   - PlayerLook
+  - EnemyAudioSource
   layers:
   - Default
   - TransparentFX
