@@ -14,6 +14,9 @@ namespace Handlers
         public bool IsPowerOn = true;
         public GameObject PlayerPowerSwitch;
 
+        [Header("Lose")]
+        public GameObject[] GameObjectsToDisableOnLose;
+
         private void Start()
         {
             EventHandler.Instance.OnLose += OnLose;
@@ -22,7 +25,18 @@ namespace Handlers
 
         private void OnLose()
         {
-            // TODO: Add losing logic
+            foreach (var gameObject in GameObjectsToDisableOnLose)
+            {
+                gameObject.SetActive(false);
+            }
+
+            var allAudioSources = FindObjectsOfType<AudioSource>();
+
+            foreach (var audioSource in allAudioSources)
+            {
+                audioSource.enabled = false;
+            }
+
             SceneHandler.LoadSceneWithBlackScreen(LoseScene);
         }
 

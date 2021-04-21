@@ -83,6 +83,13 @@ namespace Classes.Abstracts
             PlayerRoom = RoomsHandler.Instance.PlayerRoom;
 
             RoomsWeights = RoomsHandler.Instance.CalculateWeights(PlayerRoom, IgnoreVents, IgnoreAdjacentRooms);
+
+            EventHandler.Instance.OnLose += OnLose;
+        }
+
+        private void OnLose()
+        {
+            Destroy(this);
         }
 
         private void RunAway()

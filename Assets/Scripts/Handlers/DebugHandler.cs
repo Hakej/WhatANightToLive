@@ -18,15 +18,14 @@ public class DebugHandler : Singleton<DebugHandler>
     [Header("Computer UIs")]
     public GameObject DebugMinimap;
 
-    private List<Enemy> _spawnedEnemies;
+    private List<Enemy> _spawnedEnemies = new List<Enemy>();
 
     private void Start()
     {
-        EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
-
-        _spawnedEnemies = new List<Enemy>();
-
         UpdateDebug();
+
+        EventHandler.Instance.OnLose += OnLose;
+        EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
     }
 
     public void Update()
@@ -105,6 +104,11 @@ public class DebugHandler : Singleton<DebugHandler>
     {
         DebugMinimap.SetActive(IsDebugModeOn);
         DebugUICanvas.gameObject.SetActive(IsDebugModeOn);
+    }
+
+    private void OnLose()
+    {
+        Destroy(this);
     }
 
     private void OnEnemySpawn(Enemy enemy)

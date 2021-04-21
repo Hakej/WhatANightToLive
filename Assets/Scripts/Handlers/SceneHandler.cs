@@ -10,6 +10,7 @@ namespace Handlers
         public Animator Transition;
 
         public GameObject BlackScreen;
+        public float BlackScreenTime = 4f;
 
         private float _transitionTime;
 
@@ -37,12 +38,11 @@ namespace Handlers
             StartCoroutine(LoadLevelWithBlackScreen(scene.name));
         }
 
-
         private IEnumerator LoadLevelWithBlackScreen(string sceneName)
         {
             BlackScreen.SetActive(true);
 
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(BlackScreenTime);
 
             SceneManager.LoadScene(sceneName);
         }
