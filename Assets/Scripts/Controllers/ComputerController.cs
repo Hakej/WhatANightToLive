@@ -24,6 +24,16 @@ namespace Controllers
         {
             ComputerCamera.SetActive(IsOnComputer);
             PlayerCamera.SetActive(!IsOnComputer);
+
+            EventHandler.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+        }
+
+        private void OnSuccessfulAttack(bool isPlayerFacingEnemy)
+        {
+            if (IsOnComputer)
+            {
+                ToggleFocus(false);
+            }
         }
 
         public void ToggleFocus(bool isOnComputer)

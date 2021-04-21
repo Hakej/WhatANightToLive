@@ -11,6 +11,19 @@ namespace Controllers
         public AudioClip FlashlightOffSound;
         public GameObject FlashLight;
 
+        private void Start()
+        {
+            EventHandler.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+        }
+
+        private void OnSuccessfulAttack(bool isPlayerFacingEnemy)
+        {
+            if (FlashLight.activeSelf && !isPlayerFacingEnemy)
+            {
+                ToggleFlashlight(false);
+            }
+        }
+
         public void ToggleFlashlight(bool state)
         {
             FlashLight.SetActive(state);

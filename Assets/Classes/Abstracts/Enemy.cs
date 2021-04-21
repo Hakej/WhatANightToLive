@@ -169,7 +169,7 @@ namespace Classes.Abstracts
 
             var destination = PlayerRoom;
 
-            if (AudioDecoyColliderInRange != null && AudioDecoyColliderInRange.enabled)
+            if (AudioDecoyColliderInRange && AudioDecoyColliderInRange.enabled)
             {
                 var randomFoolishness = Random.Range(0f, 1f);
                 var currentSanitySense = SanityHandler.Instance.CurrentSanitySense;
@@ -215,7 +215,7 @@ namespace Classes.Abstracts
 
             var audioDecoy = newRoom.AudioDecoy;
 
-            if (audioDecoy != null)
+            if (audioDecoy)
             {
                 if (!audioDecoy.IsDestroyed && audioDecoy.IsPlaying && CanDestroyDecoy)
                 {
@@ -234,13 +234,10 @@ namespace Classes.Abstracts
         {
             var door = CurrentRoom.Door;
 
-            if (door != null)
+            if (door && door.IsClosed)
             {
-                if (door.IsClosed)
-                {
-                    FailAttack();
-                    return;
-                }
+                FailAttack();
+                return;
             }
 
             SuccessfulAttack();
@@ -248,6 +245,8 @@ namespace Classes.Abstracts
 
         private void SuccessfulAttack()
         {
+            EventHandler.Instance.SuccessfulAttack(IsPlayerFacingMe);
+
             IsAttacking = false;
 
             if (!IsPlayerFacingMe)
@@ -284,14 +283,11 @@ namespace Classes.Abstracts
         {
             var door = CurrentRoom.Door;
 
-            if (door != null)
+            if (door && door.IsClosed)
             {
-                if (door.IsClosed)
-                {
-                    // TODO: It should be handled better, but it requires a rework of how room handles disabled features.
-                    door.MakeAttackNoise();
-                    EventHandler.Instance.DoorHit(door);
-                }
+                // TODO: It should be handled better, but it requires a rework of how room handles disabled features.
+                door.MakeAttackNoise();
+                EventHandler.Instance.DoorHit(door);
             }
 
             ResetToSpawn();

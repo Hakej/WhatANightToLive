@@ -20,8 +20,9 @@ namespace Handlers
         public event Action<AudioDecoy, AudioDecoy> OnChangedAudioDecoy;
         public event Action<Door> OnDoorHit;
         public event Action<Door, Door> OnChangedClosedDoor;
-        public event Action OnSuccessfulAttack;
-
+        public event Action<bool> OnSuccessfulAttack;
+        public event Action OnPlayerRotationStart;
+        public event Action<Quaternion> OnPlayerRotationStop;
 
         public void Win()
         {
@@ -86,6 +87,21 @@ namespace Handlers
         public void DoorHit(Door hitDoor)
         {
             OnDoorHit?.Invoke(hitDoor);
+        }
+
+        public void SuccessfulAttack(bool isPlayerFacingEnemy)
+        {
+            OnSuccessfulAttack?.Invoke(isPlayerFacingEnemy);
+        }
+
+        public void PlayerRotationStart()
+        {
+            OnPlayerRotationStart?.Invoke();
+        }
+
+        public void PlayerRotationStop(Quaternion newAngle)
+        {
+            OnPlayerRotationStop?.Invoke(newAngle);
         }
     }
 }

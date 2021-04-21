@@ -8,6 +8,16 @@ public class Computer : MonoBehaviour
 
     public AudioSource PowerOnWithoutPowerAudioSource;
 
+    private void Start()
+    {
+        EventHandler.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+    }
+
+    private void OnSuccessfulAttack(bool isPlayerFacingEnemy)
+    {
+        Destroy(this);
+    }
+
     private void OnMouseDown()
     {
         if (GameHandler.Instance.IsPowerOn)

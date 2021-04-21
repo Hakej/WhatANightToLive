@@ -1,4 +1,5 @@
 using System.Collections;
+using Handlers;
 using UnityEngine;
 
 namespace Controllers
@@ -9,8 +10,6 @@ namespace Controllers
         public float JumpscareRotationSpeed = 0.2f;
 
         public GameObject Player;
-        public GameObject PlayerUI;
-        public GameObject FlashlightButton;
         public AudioSource MoveSound;
 
         private bool _isTurning;
@@ -35,8 +34,9 @@ namespace Controllers
 
         private IEnumerator RotateMe(Vector3 byAngles, float rotationSpeed)
         {
+            EventHandler.Instance.PlayerRotationStart();
+
             _isTurning = true;
-            PlayerUI.SetActive(false);
             MoveSound.Play();
 
             var fromAngle = Player.transform.rotation;
@@ -49,17 +49,9 @@ namespace Controllers
             }
 
             Player.transform.rotation = toAngle;
-            PlayerUI.SetActive(true);
             _isTurning = false;
 
-            if ((int)toAngle.eulerAngles.y != 270)
-            {
-                FlashlightButton.SetActive(true);
-            }
-            else
-            {
-                FlashlightButton.SetActive(false);
-            }
+            EventHandler.Instance.PlayerRotationStop(toAngle);
         }
 
         public void RotateToFaceEnemy(Vector3 enemyPosition)

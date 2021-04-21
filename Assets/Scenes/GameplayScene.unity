@@ -334,6 +334,7 @@ Transform:
   - {fileID: 31168369}
   - {fileID: 41489599}
   - {fileID: 1143660090}
+  - {fileID: 1007707697}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8687,9 +8688,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 0.2
+  JumpscareRotationSpeed: 0.2
   Player: {fileID: 1051608104}
-  PlayerUI: {fileID: 1815233546}
-  FlashlightButton: {fileID: 573195590}
   MoveSound: {fileID: 1051608108}
 --- !u!1001 &899728715
 PrefabInstance:
@@ -9890,6 +9890,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1007707696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007707697}
+  - component: {fileID: 1007707698}
+  m_Layer: 0
+  m_Name: PlayerUIHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1007707697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007707696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 16503766}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1007707698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007707696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a90aaaaf3c9b14c83bbd8879665bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 1815233546}
+  FlashlightButton: {fileID: 573195590}
 --- !u!1001 &1008209467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15973,6 +16018,7 @@ MonoBehaviour:
   LoseScene: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206, type: 3}
   IsPowerOn: 1
   PlayerPowerSwitch: {fileID: 906444317}
+  GameObjectsToDisableOnLose: []
 --- !u!4 &1687331039
 Transform:
   m_ObjectHideFlags: 0
