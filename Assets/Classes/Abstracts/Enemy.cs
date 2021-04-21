@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Assets.Classes.Unity;
+using Controllers;
 using GameObjects;
 using Handlers;
 using UnityEngine;
@@ -27,6 +29,7 @@ namespace Classes.Abstracts
         public float MaxDecoyFoolChance;
         public bool IsCurrentlyFooled;
         public BoxCollider EnemyCollider;
+        [TagSelector]
         public string AudioDecoyTag;
         [HideInInspector]
         public Collider AudioDecoyColliderInRange;
@@ -39,16 +42,16 @@ namespace Classes.Abstracts
         public bool IgnoreVents = true;
         public bool IgnoreAdjacentRooms = false;
 
-        [Header("FlashlightMechanisms")]
-        [TagSelector]
-        public string NextToAdjacentRoomTag = "";
+        [Header("Jumpscare Mechanisms")]
         [TagSelector]
         public string FlashlightTag = "";
-
+        [TagSelector]
+        public string PlayerLookTag = "";
 
         [Header("Other")]
         public GameObject MinimapIcon;
         public Animator Animator;
+        public GameObject Player;
 
 
         ///--- Hidden in inspector ---///
@@ -72,6 +75,8 @@ namespace Classes.Abstracts
         public Room PlayerRoom;
         [HideInInspector]
         public bool IsRunningAway = false;
+        [HideInInspector]
+        public bool IsPlayerFacingMe = false;
 
         private void Start()
         {
@@ -215,6 +220,7 @@ namespace Classes.Abstracts
         protected void ChangeToAttackMode()
         {
             IsAttacking = true;
+            CurrentMoveCooldown = 0f;
         }
 
         private void TryAttack()
@@ -226,23 +232,40 @@ namespace Classes.Abstracts
                 if (door.IsClosed)
                 {
                     FailAttack();
-                }
-                else
-                {
-                    SuccessfulAttack();
+                    return;
                 }
             }
-            else
-            {
-                SuccessfulAttack();
-            }
+
+            SuccessfulAttack();
         }
 
         private void SuccessfulAttack()
         {
+            IsAttacking = false;
+
+            if (!IsPlayerFacingMe)
+            {
+                var delay = PlayerController.Instance.JumpscareRotationSpeed;
+
+                PlayerController.Instance.RotateToFaceEnemy(transform.position);
+
+                StartCoroutine(Attack(delay));
+            }
+            else
+            {
+                StartCoroutine(Attack());
+            }
+        }
+
+        private IEnumerator Attack(float delayToAttack = 0f)
+        {
+            yield return new WaitForSeconds(delayToAttack);
+
             Animator.SetBool("IsAttacking", true);
 
-            Invoke("AfterAttack", 0.5f);
+            yield return new WaitForSeconds(0.5f);
+
+            AfterAttack();
         }
 
         private void AfterAttack()
@@ -271,13 +294,13 @@ namespace Classes.Abstracts
 
         private void LitByFlashLight()
         {
-            if (CurrentRoom.CompareTag(NextToAdjacentRoomTag))
+            if (IsAttacking)
             {
-                RunAway();
+                SuccessfulAttack();
             }
             else
             {
-                SuccessfulAttack();
+                RunAway();
             }
         }
 
@@ -301,6 +324,10 @@ namespace Classes.Abstracts
             {
                 LitByFlashLight();
             }
+            else if (other.tag == PlayerLookTag)
+            {
+                IsPlayerFacingMe = true;
+            }
         }
 
         private void OnTriggerExit(Collider other)
@@ -308,6 +335,10 @@ namespace Classes.Abstracts
             if (other.tag == AudioDecoyTag)
             {
                 AudioDecoyColliderInRange = null;
+            }
+            else if (other.tag == PlayerLookTag)
+            {
+                IsPlayerFacingMe = false;
             }
         }
 

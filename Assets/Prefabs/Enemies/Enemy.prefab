@@ -177,10 +177,11 @@ MonoBehaviour:
   AttackingTime: 0
   IgnoreVents: 1
   IgnoreAdjacentRooms: 0
-  NextToAdjacentRoomTag: NextToAdjacentRoom
   FlashlightTag: Flashlight
+  PlayerLookTag: PlayerLook
   MinimapIcon: {fileID: 3415580616009304491}
   Animator: {fileID: 1293610092983224423}
+  Player: {fileID: 0}
   CurrentDifficulty: 0
   SpawnRoom: {fileID: 0}
   CurrentRoom: {fileID: 0}
@@ -190,6 +191,7 @@ MonoBehaviour:
   CurrentMoveCooldown: 0
   PlayerRoom: {fileID: 0}
   IsRunningAway: 0
+  IsPlayerFacingMe: 0
   PlayerAdjacentRoomTag: PlayerAdjacentRoom
   PlayerAdjacentVentTag: PlayerAdjacentVent
 --- !u!65 &6962799869906893397

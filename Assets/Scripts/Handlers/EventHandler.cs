@@ -20,6 +20,8 @@ namespace Handlers
         public event Action<AudioDecoy, AudioDecoy> OnChangedAudioDecoy;
         public event Action<Door> OnDoorHit;
         public event Action<Door, Door> OnChangedClosedDoor;
+        public event Action OnSuccessfulAttack;
+
 
         public void Win()
         {
