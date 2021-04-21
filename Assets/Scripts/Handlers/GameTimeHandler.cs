@@ -13,7 +13,7 @@ namespace Handlers
 
         private void Start()
         {
-            CurrentGameTime = new GameTime(StartingGameTime);
+            CurrentGameTime = StartingGameTime;
         }
 
         public void Update()
