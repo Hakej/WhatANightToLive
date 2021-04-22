@@ -47,6 +47,8 @@ namespace Classes.Abstracts
         public string FlashlightTag = "";
         [TagSelector]
         public string PlayerLookTag = "";
+        [TagSelector]
+        public string MapRightSideTag = "";
 
         [Header("Enemy audio")]
         public AudioSource EnemyAudioSource;
@@ -55,8 +57,6 @@ namespace Classes.Abstracts
         [Header("Other")]
         public GameObject MinimapIcon;
         public Animator Animator;
-        public GameObject Player;
-
 
         ///--- Hidden in inspector ---///
         [HideInInspector]
@@ -336,6 +336,11 @@ namespace Classes.Abstracts
             {
                 IsPlayerFacingMe = true;
             }
+            else if (other.tag == MapRightSideTag)
+            {
+                Animator.SetBool("IsApproachingFromRight", true);
+                transform.Rotate(Vector3.up * 180);
+            }
         }
 
         private void OnTriggerExit(Collider other)
@@ -347,6 +352,11 @@ namespace Classes.Abstracts
             else if (other.tag == PlayerLookTag)
             {
                 IsPlayerFacingMe = false;
+            }
+            else if (other.tag == MapRightSideTag)
+            {
+                Animator.SetBool("IsApproachingFromRight", false);
+                transform.Rotate(Vector3.up * -180);
             }
         }
 

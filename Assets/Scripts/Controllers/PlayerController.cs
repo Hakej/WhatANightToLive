@@ -60,6 +60,10 @@ namespace Controllers
 
             var direction = enemyPosition - Player.transform.position;
             var rotation = Quaternion.LookRotation(direction);
+
+            // Reset x and z axis, because only y axis should be rotated towards enemy
+            rotation.eulerAngles = new Vector3(0, rotation.eulerAngles.y, 0);
+
             var rotationAngle = rotation.eulerAngles - Player.transform.rotation.eulerAngles;
 
             StartCoroutine(RotateMe(rotationAngle, JumpscareRotationSpeed));
