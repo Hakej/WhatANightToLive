@@ -10,6 +10,7 @@ public class DebugMinimap : MonoBehaviour
     public Room ReferencedRoom;
 
     [Header("Enemy icons")]
+    public Vector3 Scale;
     public float MultipleEnemyIconsOffset = 40f;
 
     public Dictionary<Enemy, GameObject> EnemyIcons = new Dictionary<Enemy, GameObject>();
@@ -44,6 +45,7 @@ public class DebugMinimap : MonoBehaviour
     {
         var enemyIconObject = Instantiate(enemy.MinimapIcon, transform);
         enemyIconObject.name = enemy.name + enemyIconObject.name.Replace("(Clone)", "");
+        enemyIconObject.transform.localScale = Scale;
 
         EnemyIcons.Add(enemy, enemyIconObject);
 
