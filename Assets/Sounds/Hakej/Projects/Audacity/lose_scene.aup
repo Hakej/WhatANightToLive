@@ -1,0 +1,59 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="lose_scene_data" version="1.3.0" audacityversion="2.2.2" sel0="0.0779026171" sel1="0.0779026171" vpos="0" h="0.0000000000" zoom="51.3461569081" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="ARTIST" value="Mondfisch89"/>
+	</tags>
+	<wavetrack name="377566__yudena__ghost2-bymondisch89" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="376832">
+				<waveblock start="0">
+					<simpleblockfile filename="e080893d.au" len="262144" min="-0.531006" max="0.504395" rms="0.128981"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808377.au" len="114688" min="-0.243347" max="0.215271" rms="0.062562"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="377566__yudena__ghost2-bymondisch89" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="376832">
+				<waveblock start="0">
+					<simpleblockfile filename="e080869d.au" len="262144" min="-0.437317" max="0.422577" rms="0.11714"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e080844d.au" len="114688" min="-0.251282" max="0.252747" rms="0.058172"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="377566__yudena__ghost2-bymondisch89" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="0.501187" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="376832">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808a72.au" len="262144" min="-0.820895" max="0.81673" rms="0.206022"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808f94.au" len="114688" min="-0.418776" max="0.369127" rms="0.097297"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="377566__yudena__ghost2-bymondisch89" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="0.501187" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="376832">
+				<waveblock start="0">
+					<simpleblockfile filename="e08082aa.au" len="262144" min="-0.701419" max="0.670688" rms="0.1954"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808eea.au" len="114688" min="-0.458276" max="0.464524" rms="0.100162"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
