@@ -38,6 +38,7 @@ namespace Classes.Abstracts
         [Header("Enemy attack's strength")]
         public float AttackPower;
         public float AttackingTime;
+        public float LowSanityThreshold = 10f;
 
         [Header("Vent")]
         public bool IgnoreVents = true;
@@ -171,7 +172,7 @@ namespace Classes.Abstracts
                 CloseToPlayerAudioSource.PlayOneShot(CloseToPlayerAudioClips.GetRandomElement());
             }
 
-            if (GameHandler.Instance.IsPowerOn)
+            if (GameHandler.Instance.IsPowerOn || SanityHandler.Instance.CurrentSanity <= LowSanityThreshold)
             {
                 CurrentAttackPower += Time.deltaTime;
             }

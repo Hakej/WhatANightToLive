@@ -3342,12 +3342,24 @@ MonoBehaviour:
   DisableEnemies: 0
   EnemiesContainer: {fileID: 1101431402}
   EnemiesToSpawn:
-  - EnemyPrefab: {fileID: 3864044535442055448, guid: 27dd2ae427aba5445aa2f9c335c8b1cf,
+  - EnemyPrefab: {fileID: 3864044535442055448, guid: 405a9ff4e2aa1f441b32e8d2e6a59b06,
       type: 3}
-    SpawnRoom: {fileID: 462510601}
+    SpawnRoom: {fileID: 1459521493}
     SpawnTime:
       Hour: 18
-      Minutes: 1
+      Minutes: 30
+  - EnemyPrefab: {fileID: 5691349400541302450, guid: 60788d9ed841c964ab414e2aec74810f,
+      type: 3}
+    SpawnRoom: {fileID: 1459521493}
+    SpawnTime:
+      Hour: 19
+      Minutes: 0
+  - EnemyPrefab: {fileID: 3864044535442055448, guid: 27dd2ae427aba5445aa2f9c335c8b1cf,
+      type: 3}
+    SpawnRoom: {fileID: 1459521493}
+    SpawnTime:
+      Hour: 20
+      Minutes: 0
 --- !u!114 &376669244 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3075185056239619879, guid: b8cce44429994cd4886b57e4cb3af51a,
@@ -16759,8 +16771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartingGameTime:
-    Hour: 20
-    Minutes: 20
+    Hour: 18
+    Minutes: 0
   CurrentGameTime:
     Hour: 0
     Minutes: 0
