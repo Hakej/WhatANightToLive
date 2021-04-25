@@ -252,7 +252,7 @@ namespace Classes.Abstracts
             transform.position = CurrentRoom.transform.position;
         }
 
-        protected void ChangeRoom(Room newRoom)
+        public void ChangeRoom(Room newRoom)
         {
             EventHandler.Instance.EnemyChangingRoom(this, CurrentRoom, newRoom);
             CurrentRoom = newRoom;
@@ -290,7 +290,7 @@ namespace Classes.Abstracts
             SuccessfulAttack();
         }
 
-        private void SuccessfulAttack()
+        public void SuccessfulAttack()
         {
             EventHandler.Instance.SuccessfulAttack(IsPlayerFacingMe);
 

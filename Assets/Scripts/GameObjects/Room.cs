@@ -50,6 +50,14 @@ namespace GameObjects
             EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
         }
 
+        private void OnForceLose()
+        {
+            if (Door != null && !Door.IsClosed)
+            {
+
+            }
+        }
+
         private void OnEnemySpawn(Enemy enemy)
         {
             if (enemy.SpawnRoom == this)

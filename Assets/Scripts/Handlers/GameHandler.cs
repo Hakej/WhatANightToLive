@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Assets.Classes.Unity;
 using UnityEditor;
 using UnityEngine;
@@ -27,7 +28,6 @@ namespace Handlers
 
         private void OnLose()
         {
-
             var allAudioSources = FindObjectsOfType<AudioSource>();
 
             foreach (var audioSource in allAudioSources)

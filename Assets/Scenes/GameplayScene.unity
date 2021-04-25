@@ -333,8 +333,8 @@ Transform:
   - {fileID: 1902648389}
   - {fileID: 31168369}
   - {fileID: 41489599}
-  - {fileID: 1143660090}
   - {fileID: 1007707697}
+  - {fileID: 1143660090}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9931,7 +9931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 16503766}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1007707698
 MonoBehaviour:
@@ -11655,8 +11655,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1143660090}
+  - component: {fileID: 1143660091}
   m_Layer: 0
-  m_Name: LoseHandler
+  m_Name: ForceLoseHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11674,8 +11675,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 16503766}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1143660091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143660089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f2ceae274799e458fd808abf6254a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceLoseGameTime:
+    Hour: 3
+    Minutes: 15
+  LeftAttackingRoom: {fileID: 497193764}
+  RightAttackingRoom: {fileID: 2767942183961668560}
 --- !u!1 &1149009768
 GameObject:
   m_ObjectHideFlags: 0
