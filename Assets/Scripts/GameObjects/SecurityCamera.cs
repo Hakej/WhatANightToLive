@@ -14,7 +14,6 @@ namespace GameObjects
 
         public float DistortionTime = 1f;
         public GameObject DistortionPlane;
-        public GameObject AudioListener;
         public AudioSource DistortionSound;
 
         private bool _isDistorted;

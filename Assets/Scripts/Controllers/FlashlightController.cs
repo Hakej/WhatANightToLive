@@ -1,22 +1,35 @@
-﻿using UnityEngine;
+﻿using Handlers;
+using UnityEngine;
 
 namespace Controllers
 {
     public class FlashlightController : MonoBehaviour
     {
         public AudioSource AudioSource;
-        
+
         public AudioClip FlashlightOnSound;
         public AudioClip FlashlightOffSound;
+        public GameObject FlashLight;
 
-        public Light FlashLight;
+        private void Start()
+        {
+            EventHandler.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+        }
+
+        private void OnSuccessfulAttack(bool isPlayerFacingEnemy)
+        {
+            if (FlashLight.activeSelf && !isPlayerFacingEnemy)
+            {
+                ToggleFlashlight(false);
+            }
+        }
 
         public void ToggleFlashlight(bool state)
         {
-            FlashLight.enabled = state;
+            FlashLight.SetActive(state);
 
-            AudioSource.clip = state ? FlashlightOnSound : FlashlightOffSound;
-            AudioSource.Play();
+            var sound = state ? FlashlightOnSound : FlashlightOffSound;
+            AudioSource.PlayOneShot(sound);
         }
     }
 }

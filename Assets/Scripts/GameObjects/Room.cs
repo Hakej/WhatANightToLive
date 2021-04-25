@@ -1,4 +1,5 @@
-﻿using Classes.Abstracts;
+﻿using System.Collections.Generic;
+using Classes.Abstracts;
 using Controllers;
 using Handlers;
 using UnityEngine;
@@ -7,63 +8,80 @@ namespace GameObjects
 {
     public class Room : MonoBehaviour
     {
-        public GameObject SecurityCamera;
+        public bool IsVent = false;
         public Room[] AdjacentRooms;
-        public bool IsCameraDisabled;
 
-        private SecurityCamera _securityCameraScript;
+        [Header("Audio Decoy")]
+        public bool IsDecoyEnabled = false;
+        public AudioDecoy AudioDecoy;
 
-        private void Awake()
+        [Header("Scanner")]
+        public bool IsScannerEnabled = false;
+        public Scanner Scanner;
+
+        [Header("Door")]
+        public bool IsDoorEnabled = false;
+        public Door Door;
+
+        [HideInInspector]
+        public List<Enemy> EnemiesInRoom = new List<Enemy>();
+
+        private void Start()
         {
-            if (IsCameraDisabled)
+            if (!IsDecoyEnabled)
             {
-                if (SecurityCamera != null)
-                {
-                    SecurityCamera.SetActive(false);
-                }
-                
-                return;
+                Destroy(AudioDecoy.gameObject);
+                Destroy(AudioDecoy);
             }
 
-            _securityCameraScript = SecurityCamera.GetComponent<SecurityCamera>();
-            
-            EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
+            if (!IsScannerEnabled)
+            {
+                Destroy(Scanner.gameObject);
+                Destroy(Scanner);
+            }
+
+            if (!IsDoorEnabled)
+            {
+                Destroy(Door.gameObject);
+                Destroy(Door);
+            }
+
             EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
+            EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
+        }
+
+        private void OnForceLose()
+        {
+            if (Door != null && !Door.IsClosed)
+            {
+
+            }
         }
 
         private void OnEnemySpawn(Enemy enemy)
         {
-            if (IsCameraDisabled)
+            if (enemy.SpawnRoom == this)
             {
-                return;
-            }
-            
-            if (enemy.StartingRoom == this)
-            {
-                _securityCameraScript.StartDistortion();
+                EnemiesInRoom.Add(enemy);
             }
         }
 
-        private void OnEnemyChangingRoom(Room oldRoom, Room newRoom)
+        private void OnEnemyChangingRoom(Enemy enemy, Room oldRoom, Room newRoom)
         {
-            if (IsCameraDisabled)
+            if (oldRoom == this)
             {
-                return;
+                if (EnemiesInRoom.Contains(enemy))
+                {
+                    EnemiesInRoom.Remove(enemy);
+                }
             }
-        
-            if (this != oldRoom && this != newRoom)
+            else if (newRoom == this)
             {
-                return;
+                if (!EnemiesInRoom.Contains(enemy))
+                {
+                    EnemiesInRoom.Add(enemy);
+                }
             }
-
-            var curCam = SecurityCamerasController.Instance.CurrentCamera;
-
-            if (curCam != SecurityCamera)
-            {
-                return;
-            }
-        
-            _securityCameraScript.StartDistortion();
         }
     }
 }

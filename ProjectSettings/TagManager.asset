@@ -10,6 +10,13 @@ TagManager:
   - SecurityCamera
   - Enemy
   - EnemySpawnRoom
+  - AudioDecoy
+  - PlayerAdjacentVent
+  - Flashlight
+  - NextToAdjacentRoom
+  - PlayerLook
+  - EnemyAudioSource
+  - MapSideCollider
   layers:
   - Default
   - TransparentFX
@@ -26,7 +33,7 @@ TagManager:
   - EndScreen
   - DebugMinimap
   - Highlightable
-  - 
+  - Computer UI
   - 
   - 
   - 

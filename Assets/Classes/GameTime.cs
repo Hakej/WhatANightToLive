@@ -24,7 +24,7 @@ namespace Classes
         {
             var sumMinutes = Minutes + minutes;
 
-            Hour += (int) sumMinutes / 60;
+            Hour += (int)sumMinutes / 60;
             Minutes = sumMinutes % 60;
         }
 
@@ -35,9 +35,14 @@ namespace Classes
 
         public bool IsEqual(GameTime time)
         {
-            return Hour == time.Hour && (int) Minutes == (int) time.Minutes;
+            return Hour == time.Hour && (int)Minutes == (int)time.Minutes;
         }
-        
+
+        public bool IsGreaterOrEqual(GameTime time)
+        {
+            return Hour >= time.Hour && (int)Minutes >= (int)time.Minutes;
+        }
+
         public override string ToString()
         {
             var hour = Hour.ToString();
@@ -52,7 +57,7 @@ namespace Classes
             {
                 minutes = "0" + minutes;
             }
-            
+
             return $"{hour}:{minutes}";
         }
     }

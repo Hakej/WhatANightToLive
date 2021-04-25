@@ -8,31 +8,45 @@ namespace Handlers
     public class EnemySpawnHandler : MonoBehaviour
     {
         public bool DisableEnemies;
-        
-        public List<Enemy> EnemiesToSpawn;
-    
+
+        public GameObject EnemiesContainer;
+
+        public List<EnemySpawnInfo> EnemiesToSpawn;
+
         private void Start()
         {
-            if (!DisableEnemies)
+            if (DisableEnemies)
             {
+                Destroy(this);
                 return;
             }
 
-            Destroy(this);
+            InvokeRepeating("UpdateEverySecond", 0f, 1.0f);
         }
 
-        private void Update()
+        private void UpdateEverySecond()
         {
-            var gameTime = GameHandler.Instance.GameTimeHandler.CurrentGameTime;
-            
-            foreach (var enemy in EnemiesToSpawn.Reverse<Enemy>())
+            var gameTime = GameTimeHandler.Instance.CurrentGameTime;
+
+            foreach (var enemySpawnInfo in EnemiesToSpawn.Reverse<EnemySpawnInfo>())
             {
-                if (gameTime.IsEqual(enemy.SpawningGameTime))
+                if (gameTime.IsGreaterOrEqual(enemySpawnInfo.SpawnTime))
                 {
-                    enemy.Spawn();
-                    EnemiesToSpawn.Remove(enemy);
+                    SpawnEnemy(enemySpawnInfo);
+                    EnemiesToSpawn.Remove(enemySpawnInfo);
                 }
             }
+        }
+
+        private void SpawnEnemy(EnemySpawnInfo info)
+        {
+            var spawnedEnemy = Instantiate(info.EnemyPrefab, EnemiesContainer.transform);
+            spawnedEnemy.name = info.EnemyPrefab.name;
+
+            var spawnedEnemyScript = spawnedEnemy.GetComponent<Enemy>();
+            spawnedEnemyScript.Spawn(info);
+
+            EventHandler.Instance.EnemySpawn(spawnedEnemyScript);
         }
     }
 }

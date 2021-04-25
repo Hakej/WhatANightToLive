@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Classes.Interfaces;
-using Classes.Static;
+using System.Linq;
+using Assets.Classes.Unity;
 using UnityEditor;
 using UnityEngine;
 namespace Handlers
@@ -11,99 +11,45 @@ namespace Handlers
         public SceneHandler SceneHandler;
         public SceneAsset WinScene;
         public SceneAsset LoseScene;
-        
-        [Header("Handlers")] 
-        public SanityHandler SanityHandler;
-        public GameTimeHandler GameTimeHandler;
 
         [Header("Player's Room's Power")]
-        public bool IsPlayersPowerOn = true;
+        public bool IsPowerOn = true;
         public GameObject PlayerPowerSwitch;
 
-        [Header("Objects to destroy on finish")]
-        public List<GameObject> ObjectsToDestroyOnFinish;
-        
-        [Header("Object to activate on win")]
-        public GameObject EndScreen;
-        
-        [HideInInspector]
-        public int CurrentDangerLevel = 1;
+        [Header("Lose")]
+        [TagSelector]
+        public string EnemyAudioSourceTag = "";
 
         private void Start()
         {
-            EventHandler.Instance.OnWin += OnWin;
             EventHandler.Instance.OnLose += OnLose;
             EventHandler.Instance.OnPowerToggle += OnPowerToggle;
-            EventHandler.Instance.OnPlayerSanityCrossing50 += OnPlayerSanityCrossing50;
-            EventHandler.Instance.OnPlayerSanityCrossing25 += OnPlayerSanityCrossing25;
-        }
-
-        private void OnWin()
-        {
-            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-            foreach (var enemy in enemies)
-            {
-                Destroy(enemy);
-            }
-
-            foreach (var objectToDestroy in ObjectsToDestroyOnFinish)
-            {
-                Destroy(objectToDestroy);
-            }
-            
-            EndScreen.SetActive(true);
         }
 
         private void OnLose()
         {
-            // TODO: Add losing logic
-            SceneHandler.LoadScene(LoseScene);
+            var allAudioSources = FindObjectsOfType<AudioSource>();
+
+            foreach (var audioSource in allAudioSources)
+            {
+                // Disable all audio sources, except for the enemies
+                if (!audioSource.CompareTag(EnemyAudioSourceTag))
+                {
+                    audioSource.enabled = false;
+                }
+            }
+
+            SceneHandler.LoadSceneWithBlackScreen(LoseScene);
         }
-        
+
         private void OnPowerToggle(bool areLightsOn, string poweredTag)
         {
             if (!PlayerPowerSwitch.CompareTag(poweredTag))
             {
                 return;
             }
-            
-            IsPlayersPowerOn = areLightsOn;
 
-            if (areLightsOn)
-            {
-                SanityHandler.CurrentFearLevel--;
-                CurrentDangerLevel++;
-            }
-            else
-            {
-                SanityHandler.CurrentFearLevel++;
-                CurrentDangerLevel--;
-            }
-        }
-
-        private void OnPlayerSanityCrossing50(bool isBelow)
-        {
-            if (isBelow)
-            {
-                CurrentDangerLevel++;
-            }
-            else
-            {
-                CurrentDangerLevel--;
-            }
-        }
-        
-        private void OnPlayerSanityCrossing25(bool isBelow)
-        {
-            if (isBelow)
-            {
-                CurrentDangerLevel++;
-            }
-            else
-            {
-                CurrentDangerLevel--;
-            }
+            IsPowerOn = areLightsOn;
         }
     }
 }

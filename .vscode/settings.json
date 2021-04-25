@@ -51,28 +51,5 @@
         "ProjectSettings/": true,
         "temp/": true,
         "Temp/": true
-    },
-    "editor.semanticTokenColorCustomizations": {
-        "enabled": true,
-        "rules": {
-            "parameter": {
-                "foreground": "#FFFFFF",
-                "fontStyle": "italic",
-            },
-            "class": {
-                "foreground": "#C191FF",
-                "fontStyle": "underline",
-            },
-            "class.static": {
-                "fontStyle": "bold underline",
-            },
-            "field": "#66C3CC",
-            "property": "#66C3CC",
-            "plainKeyword": "#6C95EB",
-            "number": "#ED94C0",
-            "member": "#33CC8F",
-            "local": "#FFFFFF"
-        },
-        "notebook.kernelProviderAssociations": [],
-        "csharp.semanticHighlighting.enabled": true
     }
+}
