@@ -116,11 +116,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2433713791126662365, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5093571188835735974, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a55fb29aa56dc3343a48b15067dba551, type: 2}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: MovementAudioClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: CloseToPlayerAudioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: VentMovementAudioClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: StartingDifficulty
@@ -134,12 +154,12 @@ PrefabInstance:
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: AttackPower
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: AttackingTime
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
@@ -207,6 +227,56 @@ PrefabInstance:
       propertyPath: Animator
       value: 
       objectReference: {fileID: 3748457619093504102}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: MovementAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: bb0bff5508cef7448b3a976dc766325c, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: MovementAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: de66ea5417d0cc948b5e8bfa96cad664, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: MovementAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 569738b60b2c0c740908e0de353345dd, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: MovementAudioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: c72d3ef35cc222549b8797aecedaf0ab, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: CloseToPlayerAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dc76a25efaf8ed4a9ad091f00356024, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: VentMovementAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 77f64288bec818849b578fa3d0a78dfe, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: VentMovementAudioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: e8d6c85dc7ac08d4fb379f325f59bfc9, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: VentMovementAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 476af7493d2b2444da30f2f74a1bae18, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: VentMovementAudioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: de33f25fd444c8342a8ce8e00d6c982c, type: 3}
+    - target: {fileID: 6795249731734033578, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7168618044978624865, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: m_Name

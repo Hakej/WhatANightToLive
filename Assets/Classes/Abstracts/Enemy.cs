@@ -57,6 +57,7 @@ namespace Classes.Abstracts
         public AudioClip JumpscareAudio;
         public AudioSource JumpscareAudioSource;
         public AudioClip[] MovementAudioClips;
+        public AudioClip[] VentMovementAudioClips;
         public AudioSource MovementAudioSource;
         public AudioClip[] CloseToPlayerAudioClips;
         public AudioSource CloseToPlayerAudioSource;
@@ -109,9 +110,31 @@ namespace Classes.Abstracts
             Animator.SetBool("IsRunningAway", true);
 
             MovementAudioSource.pitch = Random.Range(0.8f, 1.2f);
-            MovementAudioSource.PlayOneShot(MovementAudioClips.GetRandomElement());
+
+            PlayMovementSound();
 
             Invoke("FinishRunAway", 1f);
+        }
+
+        protected void PlayMovementSound()
+        {
+            MovementAudioSource.pitch = Random.Range(0.8f, 1.2f);
+
+            AudioClip clipToPlay = null;
+
+            if (CurrentRoom.IsVent)
+            {
+                clipToPlay = VentMovementAudioClips.GetRandomElement();
+            }
+            else
+            {
+                clipToPlay = MovementAudioClips.GetRandomElement();
+            }
+
+            if (clipToPlay != null)
+            {
+                MovementAudioSource.PlayOneShot(clipToPlay);
+            }
         }
 
         private void FinishRunAway()

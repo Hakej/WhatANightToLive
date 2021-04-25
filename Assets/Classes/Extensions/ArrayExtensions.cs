@@ -9,12 +9,26 @@ namespace Classes.Extensions
 
         public static T GetRandomElement<T>(this T[] items)
         {
-            return items[_rand.Next(0, items.Length)];
+            if (items.Length == 0)
+            {
+                return default(T);
+            }
+            else
+            {
+                return items[_rand.Next(0, items.Length)];
+            }
         }
 
         public static T GetRandomElement<T>(this List<T> items)
         {
-            return items[_rand.Next(0, items.Count)];
+            if (items.Count == 0)
+            {
+                return default(T);
+            }
+            else
+            {
+                return items[_rand.Next(0, items.Count)];
+            }
         }
     }
 }

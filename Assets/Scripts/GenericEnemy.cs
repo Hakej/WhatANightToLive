@@ -38,8 +38,7 @@ public class GenericEnemy : Enemy
             ChangeToAttackMode();
         }
 
-        MovementAudioSource.pitch = Random.Range(0.8f, 1.2f);
-        MovementAudioSource.PlayOneShot(MovementAudioClips.GetRandomElement());
+        PlayMovementSound();
     }
 
     private Room GetNextRoom(bool isRoomBest)
