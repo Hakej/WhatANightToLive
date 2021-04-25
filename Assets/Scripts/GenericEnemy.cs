@@ -1,4 +1,5 @@
 ﻿using Classes.Abstracts;
+using Classes.Extensions;
 using GameObjects;
 using Handlers;
 using UnityEngine;
@@ -7,10 +8,6 @@ using Random = UnityEngine.Random;
 
 public class GenericEnemy : Enemy
 {
-    [Header("Needed tags")]
-    public string PlayerAdjacentRoomTag = "PlayerAdjacentRoom";
-    public string PlayerAdjacentVentTag = "PlayerAdjacentVent";
-
     protected override void Move()
     {
         Room newRoom;
@@ -36,10 +33,13 @@ public class GenericEnemy : Enemy
             Debug.Log("I was fooled into bad move.");
         }
 
-        if (newRoom.CompareTag(PlayerAdjacentRoomTag) || newRoom.CompareTag(PlayerAdjacentVentTag))
+        if (newRoom.CompareTag(PlayerAdjacentRoomTag))
         {
             ChangeToAttackMode();
         }
+
+        MovementAudioSource.pitch = Random.Range(0.8f, 1.2f);
+        MovementAudioSource.PlayOneShot(MovementAudioClips.GetRandomElement());
     }
 
     private Room GetNextRoom(bool isRoomBest)

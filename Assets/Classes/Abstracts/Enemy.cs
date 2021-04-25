@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Assets.Classes.Unity;
+using Classes.Extensions;
 using Controllers;
 using GameObjects;
 using Handlers;
@@ -49,10 +50,16 @@ namespace Classes.Abstracts
         public string PlayerLookTag = "";
         [TagSelector]
         public string MapRightSideTag = "";
+        [TagSelector]
+        public string PlayerAdjacentRoomTag = "";
 
         [Header("Enemy audio")]
-        public AudioSource EnemyAudioSource;
         public AudioClip JumpscareAudio;
+        public AudioSource JumpscareAudioSource;
+        public AudioClip[] MovementAudioClips;
+        public AudioSource MovementAudioSource;
+        public AudioClip[] CloseToPlayerAudioClips;
+        public AudioSource CloseToPlayerAudioSource;
 
         [Header("Other")]
         public GameObject MinimapIcon;
@@ -101,6 +108,9 @@ namespace Classes.Abstracts
             IsRunningAway = true;
             Animator.SetBool("IsRunningAway", true);
 
+            MovementAudioSource.pitch = Random.Range(0.8f, 1.2f);
+            MovementAudioSource.PlayOneShot(MovementAudioClips.GetRandomElement());
+
             Invoke("FinishRunAway", 1f);
         }
 
@@ -131,6 +141,11 @@ namespace Classes.Abstracts
 
         private void CheckAttack()
         {
+            if (!CloseToPlayerAudioSource.isPlaying)
+            {
+                CloseToPlayerAudioSource.PlayOneShot(CloseToPlayerAudioClips.GetRandomElement());
+            }
+
             if (GameHandler.Instance.IsPowerOn)
             {
                 CurrentAttackPower += Time.deltaTime;
@@ -232,6 +247,8 @@ namespace Classes.Abstracts
         {
             IsAttacking = true;
             CurrentMoveCooldown = 0f;
+
+            CloseToPlayerAudioSource.volume = IsPlayerFacingMe ? 0.4f : 0.05f;
         }
 
         private void TryAttack()
@@ -272,7 +289,8 @@ namespace Classes.Abstracts
             yield return new WaitForSeconds(delayToAttack);
 
             Animator.SetBool("IsAttacking", true);
-            EnemyAudioSource.PlayOneShot(JumpscareAudio);
+
+            JumpscareAudioSource.PlayOneShot(JumpscareAudio);
 
             yield return new WaitForSeconds(0.5f);
 
@@ -295,7 +313,7 @@ namespace Classes.Abstracts
                 EventHandler.Instance.DoorHit(door);
             }
 
-            ResetToSpawn();
+            RunAway();
 
             Debug.Log($"{gameObject.name}: I've failed the attack on player. Teleporting to {SpawnRoom.name}.");
         }
@@ -335,6 +353,8 @@ namespace Classes.Abstracts
             else if (other.tag == PlayerLookTag)
             {
                 IsPlayerFacingMe = true;
+
+                CloseToPlayerAudioSource.volume = IsAttacking ? 0.4f : 0f;
             }
             else if (other.tag == MapRightSideTag)
             {
@@ -352,6 +372,7 @@ namespace Classes.Abstracts
             else if (other.tag == PlayerLookTag)
             {
                 IsPlayerFacingMe = false;
+                CloseToPlayerAudioSource.volume = IsAttacking ? 0.05f : 0f;
             }
             else if (other.tag == MapRightSideTag)
             {
