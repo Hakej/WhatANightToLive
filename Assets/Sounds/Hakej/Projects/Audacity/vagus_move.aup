@@ -1,0 +1,180 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="vagus_move_data" version="1.3.0" audacityversion="2.2.2" sel0="4.9774056631" sel1="4.9774056631" vpos="528" h="0.0000000000" zoom="44.1997327303" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="TITLE" value="Footsteps concrete"/>
+		<tag name="ALBUM" value="YouTube Audio Library"/>
+	</tags>
+	<wavetrack name="458457__prometheus888__creak1" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="234275">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808ac8.au" len="234275" min="-0.188599" max="0.176239" rms="0.018064"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="458457__prometheus888__creak1" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="234275">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808695.au" len="234275" min="-0.168182" max="0.177826" rms="0.016839"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="458458__prometheus888__creak3" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="44084">
+				<waveblock start="0">
+					<simpleblockfile filename="e080840e.au" len="44084" min="-0.249542" max="0.243866" rms="0.048573"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="458458__prometheus888__creak3" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="44084">
+				<waveblock start="0">
+					<simpleblockfile filename="e080892c.au" len="44084" min="-0.215851" max="0.210083" rms="0.046698"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="0" linked="1" mute="0" solo="1" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="125716">
+				<waveblock start="0">
+					<simpleblockfile filename="e08088e7.au" len="125716" min="-0.032258" max="0.037557" rms="0.002617"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="1" linked="0" mute="0" solo="1" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="125716">
+				<waveblock start="0">
+					<simpleblockfile filename="e08080cb.au" len="125716" min="-0.032249" max="0.037592" rms="0.002617"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="137689">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808122.au" len="137689" min="-0.103176" max="0.139521" rms="0.006759"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="137689">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808245.au" len="137689" min="-0.103146" max="0.139536" rms="0.006759"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="117733">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808e4a.au" len="117733" min="-0.02599" max="0.027747" rms="0.002973"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="117733">
+				<waveblock start="0">
+					<simpleblockfile filename="e08087e1.au" len="117733" min="-0.025981" max="0.027748" rms="0.002973"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="159639">
+				<waveblock start="0">
+					<simpleblockfile filename="e080899b.au" len="159639" min="-0.027119" max="0.029038" rms="0.002026"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="159639">
+				<waveblock start="0">
+					<simpleblockfile filename="e080876e.au" len="159639" min="-0.027106" max="0.029026" rms="0.002026"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="127711">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808560.au" len="47892" min="-0.048521" max="0.0322" rms="0.002714"/>
+				</waveblock>
+				<waveblock start="47892">
+					<simpleblockfile filename="e0808f1c.au" len="79819" min="-0.030097" max="0.035073" rms="0.002582"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="127711">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808fdb.au" len="47892" min="-0.048504" max="0.032202" rms="0.002713"/>
+				</waveblock>
+				<waveblock start="47892">
+					<simpleblockfile filename="e0808cd4.au" len="79819" min="-0.030073" max="0.035091" rms="0.002581"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="0" linked="1" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="111942">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808333.au" len="54876" min="-0.018795" max="0.034698" rms="0.003053"/>
+				</waveblock>
+				<waveblock start="54876">
+					<simpleblockfile filename="e08081e9.au" len="57066" min="-0.04432" max="0.052122" rms="0.004019"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="459964__florianreichelt__footsteps-on-concrete" channel="1" linked="0" mute="1" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="111942">
+				<waveblock start="0">
+					<simpleblockfile filename="e080846e.au" len="54876" min="-0.018821" max="0.034705" rms="0.003053"/>
+				</waveblock>
+				<waveblock start="54876">
+					<simpleblockfile filename="e08083a4.au" len="57066" min="-0.044323" max="0.052128" rms="0.00402"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

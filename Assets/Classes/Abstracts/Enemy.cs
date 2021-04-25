@@ -119,6 +119,8 @@ namespace Classes.Abstracts
             IsRunningAway = false;
             Animator.SetBool("IsRunningAway", false);
 
+            CloseToPlayerAudioSource.volume = 0f;
+
             ResetToSpawn();
         }
 
