@@ -132,9 +132,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6106e8752bbdd5342a4698d84014918b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuSceneName: MainMenu
-  GameplaySceneName: GameplayScene
-  LoseSceneName: LoseScene
+  MenuScene:
+    sceneAsset: {fileID: 102900000, guid: 7564ea65b99508048bcac6d22a0af3e8, type: 3}
+    scenePath: Assets/Scenes/MainMenu.unity
+  GameplayScene:
+    sceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+    scenePath: Assets/Scenes/GameplayScene.unity
+  LoseScene:
+    sceneAsset: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206, type: 3}
+    scenePath: Assets/Scenes/LoseScene.unity
   Transition: {fileID: 7941905353436344672}
   BlackScreen: {fileID: 1323010873898486874}
   BlackScreenTime: 5

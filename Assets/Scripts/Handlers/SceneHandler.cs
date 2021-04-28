@@ -9,9 +9,9 @@ namespace Handlers
     public class SceneHandler : MonoBehaviour
     {
         [Header("Scenes")]
-        public string MenuSceneName;
-        public string GameplaySceneName;
-        public string LoseSceneName;
+        public SceneReference MenuScene;
+        public SceneReference GameplayScene;
+        public SceneReference LoseScene;
 
         [Header("Transition")]
         public Animator Transition;
@@ -29,17 +29,17 @@ namespace Handlers
 
         public void LoadGameplayScene()
         {
-            LoadScene(GameplaySceneName);
+            LoadScene(GameplayScene);
         }
 
         public void LoadMenuScene()
         {
-            LoadScene(MenuSceneName);
+            LoadScene(MenuScene);
         }
 
         private void OnLose()
         {
-            LoadSceneWithBlackScreen(LoseSceneName);
+            LoadSceneWithBlackScreen(LoseScene);
         }
 
         private void OnDisable()
@@ -50,12 +50,12 @@ namespace Handlers
             }
         }
 
-        private void LoadScene(string sceneName)
+        private void LoadScene(SceneReference sceneName)
         {
             StartCoroutine(LoadLevel(sceneName));
         }
 
-        private IEnumerator LoadLevel(string sceneName)
+        private IEnumerator LoadLevel(SceneReference sceneName)
         {
             Transition.SetTrigger("Start");
 
@@ -64,18 +64,18 @@ namespace Handlers
             SceneManager.LoadScene(sceneName);
         }
 
-        private void LoadSceneWithBlackScreen(string sceneName)
+        private void LoadSceneWithBlackScreen(SceneReference scene)
         {
-            StartCoroutine(LoadLevelWithBlackScreen(sceneName));
+            StartCoroutine(LoadLevelWithBlackScreen(scene));
         }
 
-        private IEnumerator LoadLevelWithBlackScreen(string sceneName)
+        private IEnumerator LoadLevelWithBlackScreen(SceneReference scene)
         {
             BlackScreen.SetActive(true);
 
             yield return new WaitForSeconds(BlackScreenTime);
 
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(scene);
         }
     }
 }

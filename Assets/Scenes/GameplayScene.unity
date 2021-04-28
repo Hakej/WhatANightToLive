@@ -3429,7 +3429,7 @@ MonoBehaviour:
   DisableEnemies: 0
   EnemiesContainer: {fileID: 1101431402}
   EnemiesToSpawn:
-  - EnemyPrefab: {fileID: 3864044535442055448, guid: 27dd2ae427aba5445aa2f9c335c8b1cf,
+  - EnemyPrefab: {fileID: 3864044535442055448, guid: b274fad6b6332dd43afdfb20c7acec5d,
       type: 3}
     SpawnRoom: {fileID: 1459521493}
     SpawnTime:
