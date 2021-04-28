@@ -1,5 +1,5 @@
-﻿using Handlers;
-using UnityEngine;
+﻿using UnityEngine;
+using Singletons;
 
 public class PlayerUIHandler : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class PlayerUIHandler : MonoBehaviour
 
     private void Start()
     {
-        var eh = EventHandler.Instance;
+        var eh = EventManager.Instance;
 
         eh.OnPlayerRotationStart += OnPlayerRotationStart;
         eh.OnPlayerRotationStop += OnPlayerRotationStop;

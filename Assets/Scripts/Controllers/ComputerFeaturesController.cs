@@ -1,7 +1,7 @@
-﻿using Handlers;
+﻿using Singletons;
 using UnityEngine;
 
-public class ComputerFeaturesController : Singleton<ComputerFeaturesController>
+public class ComputerFeaturesController : MonoBehaviour
 {
     public GameObject CurrentFeature;
     public GameObject[] AllFeatures;
@@ -20,6 +20,6 @@ public class ComputerFeaturesController : Singleton<ComputerFeaturesController>
         CurrentFeature = newFeature;
         CurrentFeature.SetActive(true);
 
-        EventHandler.Instance.ComputerUIActiveFeatureChange(newFeature);
+        EventManager.Instance.ComputerUIActiveFeatureChange(newFeature);
     }
 }

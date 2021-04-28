@@ -1,4 +1,4 @@
-﻿using Handlers;
+﻿using Singletons;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +15,7 @@ public class DoorButton : MonoBehaviour
     {
         CheckSprite();
 
-        EventHandler.Instance.OnChangedClosedDoor += OnChangedClosedDoor;
+        EventManager.Instance.OnChangedClosedDoor += OnChangedClosedDoor;
     }
 
     private void OnChangedClosedDoor(Door oldClosedDoor, Door newClosedDoor)

@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Handlers;
+﻿using System.Collections.Generic;
+using Singletons;
 using UnityEngine;
 
 namespace Controllers
 {
-    public class ComputerController : Singleton<ComputerController>
+    public class ComputerController : MonoBehaviour
     {
         public GameObject PlayerCamera;
         public GameObject ComputerCamera;
@@ -25,7 +24,7 @@ namespace Controllers
             ComputerCamera.SetActive(IsOnComputer);
             PlayerCamera.SetActive(!IsOnComputer);
 
-            EventHandler.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+            EventManager.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
         }
 
         private void OnSuccessfulAttack(bool isPlayerFacingEnemy)
@@ -51,7 +50,7 @@ namespace Controllers
                 computerNoise.SetActive(IsOnComputer);
             }
 
-            EventHandler.Instance.PlayerFocusChange(IsOnComputer);
+            EventManager.Instance.PlayerFocusChange(IsOnComputer);
         }
     }
 }

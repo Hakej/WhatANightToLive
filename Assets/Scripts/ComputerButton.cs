@@ -1,5 +1,5 @@
 ﻿using Controllers;
-using Handlers;
+using Singletons;
 using TMPro;
 using UnityEngine;
 using UI;
@@ -10,15 +10,22 @@ public class ComputerButton : MonoBehaviour
     public TextMeshProUGUI Text;
 
     public Color ActiveColor;
+
+    private ComputerController _computerController;
+    private ComputerFeaturesController _computerFeaturesController;
+
     private Color _inactiveColor;
 
     private void Start()
     {
+        _computerController = FindObjectOfType<ComputerController>();
+        _computerFeaturesController = FindObjectOfType<ComputerFeaturesController>();
+
         _inactiveColor = Text.color;
 
-        CheckColor(ComputerFeaturesController.Instance.CurrentFeature);
+        CheckColor(_computerFeaturesController.CurrentFeature);
 
-        EventHandler.Instance.OnComputerUIActiveFeatureChange += OnComputerUIActiveFeatureChange;
+        EventManager.Instance.OnComputerUIActiveFeatureChange += OnComputerUIActiveFeatureChange;
     }
 
     private void CheckColor(GameObject feature)
@@ -58,12 +65,12 @@ public class ComputerButton : MonoBehaviour
     {
         if (Feature != null)
         {
-            ComputerFeaturesController.Instance.ChangeFeature(Feature);
+            _computerFeaturesController.ChangeFeature(Feature);
             ButtonsMenu.Instance.PlayConfirm();
         }
         else
         {
-            ComputerController.Instance.ToggleFocus(false);
+            _computerController.ToggleFocus(false);
         }
     }
 }

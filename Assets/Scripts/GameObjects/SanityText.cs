@@ -1,4 +1,4 @@
-﻿using Handlers;
+using Handlers;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +8,8 @@ public class SanityText : MonoBehaviour
     public float MinAlpha;
     public float MaxAlpha;
 
+    public SanityHandler SanityHandler;
+
     private void Start()
     {
         InvokeRepeating("UpdateEverySecond", 0f, 1.0f);
@@ -15,9 +17,9 @@ public class SanityText : MonoBehaviour
 
     private void UpdateEverySecond()
     {
-        var currentSanity = SanityHandler.Instance.CurrentSanity;
+        var currentSanity = SanityHandler.CurrentSanity;
 
-        if (SanityHandler.Instance.CurrentSanity > 50f)
+        if (SanityHandler.CurrentSanity > 50f)
         {
             Text.color = Color.white;
         }

@@ -2,7 +2,7 @@
 using System.Linq;
 using Classes.Abstracts;
 using GameObjects;
-using Handlers;
+using Singletons;
 using UnityEngine;
 
 public class DebugMinimap : MonoBehaviour
@@ -17,8 +17,8 @@ public class DebugMinimap : MonoBehaviour
 
     private void Start()
     {
-        EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
-        EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
+        EventManager.Instance.OnEnemySpawn += OnEnemySpawn;
+        EventManager.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
     }
 
     private void OnEnemySpawn(Enemy enemy)

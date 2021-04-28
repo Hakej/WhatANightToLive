@@ -1,4 +1,4 @@
-﻿using Handlers;
+using Handlers;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -7,9 +7,11 @@ public class InsanityPostProcessing : MonoBehaviour
     public float SanityThreshold = 50f;
     public Volume Volume;
 
+    public SanityHandler SanityHandler;
+
     private void Update()
     {
-        var currentSanity = SanityHandler.Instance.CurrentSanity;
+        var currentSanity = SanityHandler.CurrentSanity;
 
         if (currentSanity >= SanityThreshold)
         {

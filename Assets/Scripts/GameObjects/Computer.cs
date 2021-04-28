@@ -1,16 +1,18 @@
 ﻿using Controllers;
 using Handlers;
 using UnityEngine;
+using Singletons;
 
 public class Computer : MonoBehaviour
 {
     public ComputerController ComputerController;
+    public PowerHandler PowerHandler;
 
     public AudioSource PowerOnWithoutPowerAudioSource;
 
     private void Start()
     {
-        EventHandler.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+        EventManager.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
     }
 
     private void OnSuccessfulAttack(bool isPlayerFacingEnemy)
@@ -20,7 +22,7 @@ public class Computer : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameHandler.Instance.IsPowerOn)
+        if (PowerHandler.IsPowerOn)
         {
             ComputerController.ToggleFocus(true);
         }

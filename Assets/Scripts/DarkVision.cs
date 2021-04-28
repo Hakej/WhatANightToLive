@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-using EventHandler = Handlers.EventHandler;
+using Singletons;
 
 public class DarkVision : MonoBehaviour
 {
@@ -17,10 +16,10 @@ public class DarkVision : MonoBehaviour
     {
         DarkVisionLight.intensity = 0f;
 
-        EventHandler.Instance.OnPowerToggle += ToggleDarkVision;
+        EventManager.Instance.OnPowerToggle += ToggleDarkVision;
     }
 
-    private void ToggleDarkVision(bool isPowerOn, string gameObjectTag)
+    private void ToggleDarkVision(bool isPowerOn)
     {
         if (_isDarkVisionOn != isPowerOn)
         {

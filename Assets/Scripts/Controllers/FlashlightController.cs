@@ -1,4 +1,4 @@
-﻿using Handlers;
+﻿using Singletons;
 using UnityEngine;
 
 namespace Controllers
@@ -9,11 +9,20 @@ namespace Controllers
 
         public AudioClip FlashlightOnSound;
         public AudioClip FlashlightOffSound;
+
         public GameObject FlashLight;
 
         private void Start()
         {
-            EventHandler.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+            EventManager.Instance.OnSuccessfulAttack += OnSuccessfulAttack;
+        }
+
+        private void OnDisable()
+        {
+            if (EventManager.Instance != null)
+            {
+                EventManager.Instance.OnSuccessfulAttack -= OnSuccessfulAttack;
+            }
         }
 
         private void OnSuccessfulAttack(bool isPlayerFacingEnemy)

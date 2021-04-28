@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Handlers
 {
-    public class GameTimeHandler : Singleton<GameTimeHandler>
+    public class GameTimeHandler : MonoBehaviour
     {
         public GameTime StartingGameTime;
 

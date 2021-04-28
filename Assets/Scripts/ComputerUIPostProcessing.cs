@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Handlers;
+using Singletons;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -12,7 +12,7 @@ public class ComputerUIPostProcessing : MonoBehaviour
 
     private void Start()
     {
-        EventHandler.Instance.OnComputerUIActiveFeatureChange += OnComputerUIActiveFeatureChange;
+        EventManager.Instance.OnComputerUIActiveFeatureChange += OnComputerUIActiveFeatureChange;
     }
 
     private void OnComputerUIActiveFeatureChange(GameObject feature)

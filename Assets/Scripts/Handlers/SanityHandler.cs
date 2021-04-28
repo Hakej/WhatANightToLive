@@ -1,12 +1,11 @@
-﻿using System;
-using Classes.Interfaces;
+using System;
 using UnityEngine;
-using EventHandler = Handlers.EventHandler;
+using Singletons;
 
 namespace Handlers
 {
     [Serializable]
-    public class SanityHandler : Singleton<SanityHandler>
+    public class SanityHandler : MonoBehaviour
     {
         public float StartingSanity = 100f;
         public float SanityDropInDark = 1f;
@@ -15,6 +14,9 @@ namespace Handlers
         [Header("On enemy door hit")]
         public float MinDoorHitLoss = 5f;
         public float MaxDoorHitLoss = 15f;
+
+        [Header("Needed handlers")]
+        public PowerHandler PowerHandler;
 
         public float CurrentSanity { get; private set; }
 
@@ -28,7 +30,7 @@ namespace Handlers
         {
             CurrentSanity = StartingSanity;
 
-            EventHandler.Instance.OnDoorHit += OnDoorHit;
+            EventManager.Instance.OnDoorHit += OnDoorHit;
         }
 
         private void OnDoorHit(Door hitDoor)
@@ -38,7 +40,7 @@ namespace Handlers
 
         public void Update()
         {
-            if (GameHandler.Instance.IsPowerOn)
+            if (PowerHandler.IsPowerOn)
             {
                 CurrentSanity += SanityGainInLight * Time.deltaTime;
             }

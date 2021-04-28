@@ -3,14 +3,14 @@ using Classes.Abstracts;
 using GameObjects;
 using UnityEngine;
 
-namespace Handlers
+namespace Singletons
 {
-    public class EventHandler : Singleton<EventHandler>
+    public class EventManager : Singleton<EventManager>
     {
         public event Action OnWin;
         public event Action OnLose;
         public event Action<bool> OnPlayerFocusChange;
-        public event Action<bool, string> OnPowerToggle;
+        public event Action<bool> OnPowerToggle;
         public event Action<Enemy> OnEnemySpawn;
         public event Action<Enemy, Room, Room> OnEnemyChangingRoom;
         public event Action<GameObject> OnComputerUIActiveFeatureChange;
@@ -39,9 +39,9 @@ namespace Handlers
             OnPlayerFocusChange?.Invoke(isFocused);
         }
 
-        public void PowerToggle(bool isPowerOn, string gameObjectTag)
+        public void PowerToggle(bool isPowerOn)
         {
-            OnPowerToggle?.Invoke(isPowerOn, gameObjectTag);
+            OnPowerToggle?.Invoke(isPowerOn);
         }
 
         public void EnemySpawn(Enemy enemy)

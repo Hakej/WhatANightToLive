@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using Handlers;
+using Singletons;
 using UnityEngine;
 
 public class PoweredDevice : MonoBehaviour
@@ -15,16 +15,11 @@ public class PoweredDevice : MonoBehaviour
 
     private void Awake()
     {
-        EventHandler.Instance.OnPowerToggle += OnToggle;
+        EventManager.Instance.OnPowerToggle += OnToggle;
     }
 
-    private void OnToggle(bool isRunning, string poweredTag)
+    private void OnToggle(bool isRunning)
     {
-        if (!CompareTag(poweredTag))
-        {
-            return;
-        }
-
         if (!IsMuted)
         {
             PlayAudio(isRunning);

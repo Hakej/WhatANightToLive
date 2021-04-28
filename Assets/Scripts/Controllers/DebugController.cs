@@ -6,15 +6,22 @@ using UnityEngine;
 
 namespace Handlers
 {
-    public class DebugController : Singleton<DebugController>
+    public class DebugController : MonoBehaviour
     {
         public KeyCode ToggleDebugKey;
+
+        private DebugHandler _debugHandler;
+
+        private void Start()
+        {
+            _debugHandler = FindObjectOfType<DebugHandler>();
+        }
 
         private void Update()
         {
             if (Input.GetKeyDown(ToggleDebugKey))
             {
-                DebugHandler.Instance.ToggleDebugMode();
+                _debugHandler.ToggleDebugMode();
             }
         }
     }

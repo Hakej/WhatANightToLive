@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Classes.Abstracts;
-using Controllers;
-using Handlers;
+using Singletons;
 using UnityEngine;
 
 namespace GameObjects
@@ -46,8 +45,8 @@ namespace GameObjects
                 Destroy(Door);
             }
 
-            EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
-            EventHandler.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
+            EventManager.Instance.OnEnemySpawn += OnEnemySpawn;
+            EventManager.Instance.OnEnemyChangingRoom += OnEnemyChangingRoom;
         }
 
         private void OnForceLose()

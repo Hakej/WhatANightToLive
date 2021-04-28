@@ -12,6 +12,9 @@ public class ForceLoseHandler : MonoBehaviour
     public Room LeftAttackingRoom;
     public Room RightAttackingRoom;
 
+    public GameTimeHandler GameTimeHandler;
+
+
     private void Start()
     {
         InvokeRepeating("UpdateEverySecond", 0f, 1.0f);
@@ -19,7 +22,7 @@ public class ForceLoseHandler : MonoBehaviour
 
     public void UpdateEverySecond()
     {
-        var gth = GameTimeHandler.Instance;
+        var gth = GameTimeHandler;
 
         if (gth.CurrentGameTime.IsEqual(ForceLoseGameTime))
         {

@@ -2,6 +2,7 @@
 using System.Linq;
 using Classes.Abstracts;
 using UnityEngine;
+using Singletons;
 
 namespace Handlers
 {
@@ -12,6 +13,8 @@ namespace Handlers
         public GameObject EnemiesContainer;
 
         public List<EnemySpawnInfo> EnemiesToSpawn;
+
+        public GameTimeHandler GameTimeHandler;
 
         private void Start()
         {
@@ -26,7 +29,7 @@ namespace Handlers
 
         private void UpdateEverySecond()
         {
-            var gameTime = GameTimeHandler.Instance.CurrentGameTime;
+            var gameTime = GameTimeHandler.CurrentGameTime;
 
             foreach (var enemySpawnInfo in EnemiesToSpawn.Reverse<EnemySpawnInfo>())
             {
@@ -46,7 +49,7 @@ namespace Handlers
             var spawnedEnemyScript = spawnedEnemy.GetComponent<Enemy>();
             spawnedEnemyScript.Spawn(info);
 
-            EventHandler.Instance.EnemySpawn(spawnedEnemyScript);
+            EventManager.Instance.EnemySpawn(spawnedEnemyScript);
         }
     }
 }

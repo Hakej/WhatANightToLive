@@ -3,7 +3,7 @@ using Assets.Classes.Unity;
 using GameObjects;
 using UnityEngine;
 
-public class RoomsHandler : Singleton<RoomsHandler>
+public class RoomsHandler : MonoBehaviour
 {
     public Room PlayerRoom;
 

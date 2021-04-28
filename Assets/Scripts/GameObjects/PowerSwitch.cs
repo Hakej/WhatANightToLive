@@ -3,33 +3,25 @@ using UnityEngine;
 
 public class PowerSwitch : MonoBehaviour
 {
+    public PowerHandler PowerHandler;
     public GameObject LightSwitch;
     public AudioSource LightSwitchSound;
     public Vector3 LightSwitchRotationOn;
     public Vector3 LightSwitchRotationOff;
 
-    private bool _isLightSwitchOn;
-
-    private void Start()
-    {
-        ToggleLightSwitch(GameHandler.Instance.IsPowerOn);
-    }
-
     private void OnMouseDown()
     {
-        ToggleLightSwitch(!_isLightSwitchOn);
+        ToggleLightSwitch();
     }
 
-    private void ToggleLightSwitch(bool isLightSwitchOn)
+    private void ToggleLightSwitch()
     {
-        _isLightSwitchOn = isLightSwitchOn;
+        PowerHandler.TogglePower();
 
-        var newRotation = _isLightSwitchOn ? LightSwitchRotationOn : LightSwitchRotationOff;
+        var newRotation = PowerHandler.IsPowerOn ? LightSwitchRotationOn : LightSwitchRotationOff;
 
         LightSwitch.transform.localRotation = Quaternion.Euler(newRotation);
 
         LightSwitchSound.Play();
-
-        EventHandler.Instance.PowerToggle(_isLightSwitchOn, tag);
     }
 }

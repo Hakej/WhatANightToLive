@@ -1,5 +1,5 @@
 ﻿using GameObjects;
-using Handlers;
+using Singletons;
 using UnityEngine;
 
 public class AudioDecoy : MonoBehaviour
@@ -49,7 +49,7 @@ public class AudioDecoy : MonoBehaviour
         IsDestroyed = false;
         _currentDestructionCooldown = 0f;
 
-        EventHandler.Instance.FixedAudioDecoy(this);
+        EventManager.Instance.FixedAudioDecoy(this);
     }
 
     public void DestroyDecoy()
@@ -66,7 +66,7 @@ public class AudioDecoy : MonoBehaviour
 
         _destructionCooldown = Random.Range(MinDestructionCooldown, MaxDestructionCooldown);
 
-        EventHandler.Instance.DestroyedAudioDecoy(this);
+        EventManager.Instance.DestroyedAudioDecoy(this);
     }
 
     public void ToggleDecoy(bool isDecoyOn)

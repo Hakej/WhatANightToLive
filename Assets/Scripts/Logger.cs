@@ -1,14 +1,14 @@
 ﻿using Classes.Abstracts;
 using GameObjects;
 using UnityEngine;
-using EventHandler = Handlers.EventHandler;
+using Singletons;
 
-public class Logger : Singleton<Logger>
+public class Logger : MonoBehaviour
 {
     private void Start()
     {
-        EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
-        EventHandler.Instance.OnEnemyChangingRoom += OnEnemyMove;
+        EventManager.Instance.OnEnemySpawn += OnEnemySpawn;
+        EventManager.Instance.OnEnemyChangingRoom += OnEnemyMove;
     }
 
     private void OnEnemyMove(Enemy enemy, Room oldRoom, Room newRoom)

@@ -7,10 +7,11 @@ namespace GameObjects
     public class Clock : MonoBehaviour
     {
         public TextMeshPro TimeText;
+        public GameTimeHandler GameTimeHandler;
 
         private void Update()
         {
-            TimeText.text = GameTimeHandler.Instance.CurrentGameTime.ToString();
+            TimeText.text = GameTimeHandler.CurrentGameTime.ToString();
         }
     }
 }

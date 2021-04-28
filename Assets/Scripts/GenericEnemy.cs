@@ -12,7 +12,7 @@ public class GenericEnemy : Enemy
     {
         Room newRoom;
         var smartMoveChance = Random.Range(0f, 1f);
-        var currentSanitySense = SanityHandler.Instance.CurrentSanitySense;
+        var currentSanitySense = _sanityHandler.CurrentSanitySense;
         var currentSmartMoveChance = Mathf.Lerp(MaxSmartMoveChance, MinSmartMoveChance, currentSanitySense);
 
         var isNextRoomTheBest = smartMoveChance <= currentSmartMoveChance;

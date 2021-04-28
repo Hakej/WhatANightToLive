@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Text;
 using Classes.Abstracts;
 using Handlers;
 using TMPro;
 using UnityEngine;
+using Singletons;
 
-public class DebugHandler : Singleton<DebugHandler>
+public class DebugHandler : MonoBehaviour
 {
     [Header("Configuration")]
     public bool IsDebugModeOn = true;
@@ -18,14 +19,19 @@ public class DebugHandler : Singleton<DebugHandler>
     [Header("Computer UIs")]
     public GameObject DebugMinimap;
 
+    [Header("Needed handlers")]
+    public GameHandler GameHandler;
+    public PowerHandler PowerHandler;
+    public SanityHandler SanityHandler;
+
     private List<Enemy> _spawnedEnemies = new List<Enemy>();
 
     private void Start()
     {
         UpdateDebug();
 
-        EventHandler.Instance.OnLose += OnLose;
-        EventHandler.Instance.OnEnemySpawn += OnEnemySpawn;
+        EventManager.Instance.OnLose += OnLose;
+        EventManager.Instance.OnEnemySpawn += OnEnemySpawn;
     }
 
     public void Update()
@@ -35,15 +41,16 @@ public class DebugHandler : Singleton<DebugHandler>
             return;
         }
 
-        var gh = GameHandler.Instance;
-        var sh = SanityHandler.Instance;
+        var gh = GameHandler;
+        var ph = PowerHandler;
+        var sh = SanityHandler;
 
         var playerInfo = new StringBuilder();
         Color playerInfoColor;
 
         playerInfo.Append($"Current sanity level: {sh.CurrentSanity}\n");
 
-        if (gh.IsPowerOn)
+        if (ph.IsPowerOn)
         {
             playerInfo.Append($"Current sanity gain: {sh.SanityGainInLight}\n");
             playerInfoColor = Color.white;

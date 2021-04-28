@@ -1,4 +1,4 @@
-﻿using Handlers;
+﻿using Singletons;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,9 +17,9 @@ namespace UI
         {
             CheckSprite();
 
-            EventHandler.Instance.OnDestroyedAudioDecoy += OnDestroyedAudioDecoy;
-            EventHandler.Instance.OnFixedAudioDecoy += OnFixedAudioDecoy;
-            EventHandler.Instance.OnChangedAudioDecoy += OnChangedAudioDecoy;
+            EventManager.Instance.OnDestroyedAudioDecoy += OnDestroyedAudioDecoy;
+            EventManager.Instance.OnFixedAudioDecoy += OnFixedAudioDecoy;
+            EventManager.Instance.OnChangedAudioDecoy += OnChangedAudioDecoy;
         }
 
         private void OnChangedAudioDecoy(AudioDecoy oldDecoy, AudioDecoy newDecoy)

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Classes.Unity;
 using Classes.Extensions;
@@ -6,6 +6,7 @@ using Controllers;
 using GameObjects;
 using Handlers;
 using UnityEngine;
+using Singletons;
 
 namespace Classes.Abstracts
 {
@@ -67,6 +68,12 @@ namespace Classes.Abstracts
         public GameObject MinimapIcon;
         public Animator Animator;
 
+        private PowerHandler _powerHandler;
+        private RoomsHandler _roomsHandler;
+        protected SanityHandler _sanityHandler;
+
+        private PlayerController _playerController;
+
         ///--- Hidden in inspector ---///
         [HideInInspector]
         public int CurrentDifficulty;
@@ -93,11 +100,17 @@ namespace Classes.Abstracts
 
         private void Start()
         {
-            PlayerRoom = RoomsHandler.Instance.PlayerRoom;
+            _powerHandler = FindObjectOfType<PowerHandler>();
+            _sanityHandler = FindObjectOfType<SanityHandler>();
+            _roomsHandler = FindObjectOfType<RoomsHandler>();
 
-            RoomsWeights = RoomsHandler.Instance.CalculateWeights(PlayerRoom, IgnoreVents, IgnoreAdjacentRooms);
+            _playerController = FindObjectOfType<PlayerController>();
 
-            EventHandler.Instance.OnLose += OnLose;
+            PlayerRoom = _roomsHandler.PlayerRoom;
+
+            RoomsWeights = _roomsHandler.CalculateWeights(PlayerRoom, IgnoreVents, IgnoreAdjacentRooms);
+
+            EventManager.Instance.OnLose += OnLose;
         }
 
         private void OnLose()
@@ -172,7 +185,7 @@ namespace Classes.Abstracts
                 CloseToPlayerAudioSource.PlayOneShot(CloseToPlayerAudioClips.GetRandomElement());
             }
 
-            if (GameHandler.Instance.IsPowerOn || SanityHandler.Instance.CurrentSanity <= LowSanityThreshold)
+            if (_powerHandler.IsPowerOn || _sanityHandler.CurrentSanity <= LowSanityThreshold)
             {
                 CurrentAttackPower += Time.deltaTime;
             }
@@ -217,7 +230,7 @@ namespace Classes.Abstracts
             if (AudioDecoyColliderInRange && AudioDecoyColliderInRange.enabled)
             {
                 var randomFoolishness = Random.Range(0f, 1f);
-                var currentSanitySense = SanityHandler.Instance.CurrentSanitySense;
+                var currentSanitySense = _sanityHandler.CurrentSanitySense;
                 var currentFoolishness = Mathf.Lerp(MinDecoyFoolChance, MaxDecoyFoolChance, currentSanitySense);
 
                 IsCurrentlyFooled = randomFoolishness <= currentFoolishness;
@@ -232,7 +245,7 @@ namespace Classes.Abstracts
                 destination = AudioDecoyColliderInRange.GetComponent<AudioDecoy>().Room;
             }
 
-            RoomsWeights = RoomsHandler.Instance.CalculateWeights(destination, IgnoreVents, IgnoreAdjacentRooms);
+            RoomsWeights = _roomsHandler.CalculateWeights(destination, IgnoreVents, IgnoreAdjacentRooms);
 
             Move();
         }
@@ -254,7 +267,7 @@ namespace Classes.Abstracts
 
         public void ChangeRoom(Room newRoom)
         {
-            EventHandler.Instance.EnemyChangingRoom(this, CurrentRoom, newRoom);
+            EventManager.Instance.EnemyChangingRoom(this, CurrentRoom, newRoom);
             CurrentRoom = newRoom;
             transform.position = newRoom.transform.position;
 
@@ -292,15 +305,15 @@ namespace Classes.Abstracts
 
         public void SuccessfulAttack()
         {
-            EventHandler.Instance.SuccessfulAttack(IsPlayerFacingMe);
+            EventManager.Instance.SuccessfulAttack(IsPlayerFacingMe);
 
             IsAttacking = false;
 
             if (!IsPlayerFacingMe)
             {
-                var delay = PlayerController.Instance.JumpscareRotationSpeed;
+                var delay = _playerController.JumpscareRotationSpeed;
 
-                PlayerController.Instance.RotateToFaceEnemy(transform.position);
+                _playerController.RotateToFaceEnemy(transform.position);
 
                 StartCoroutine(Attack(delay));
             }
@@ -325,7 +338,7 @@ namespace Classes.Abstracts
 
         private void AfterAttack()
         {
-            EventHandler.Instance.Lose();
+            EventManager.Instance.Lose();
         }
 
         private void FailAttack()
@@ -336,7 +349,7 @@ namespace Classes.Abstracts
             {
                 // TODO: It should be handled better, but it requires a rework of how room handles disabled features.
                 door.MakeAttackNoise();
-                EventHandler.Instance.DoorHit(door);
+                EventManager.Instance.DoorHit(door);
             }
 
             RunAway();

@@ -1,4 +1,4 @@
-﻿using Handlers;
+﻿using Singletons;
 using UnityEngine;
 
 public class DoorsHandler : MonoBehaviour
@@ -21,6 +21,6 @@ public class DoorsHandler : MonoBehaviour
             CurrentClosedDoor.Close();
         }
 
-        EventHandler.Instance.ChangedClosedDoor(oldClosedDoor, CurrentClosedDoor);
+        EventManager.Instance.ChangedClosedDoor(oldClosedDoor, CurrentClosedDoor);
     }
 }

@@ -1,4 +1,4 @@
-﻿using Handlers;
+using Handlers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,9 +18,11 @@ public class TV : MonoBehaviour
     public float MaxWhiteNoiseVolume = 0.1f;
     public float WhiteNoiseStartingSanity = 50f;
 
+    public SanityHandler SanityHandler;
+
     private void Update()
     {
-        var curSanity = SanityHandler.Instance.CurrentSanity;
+        var curSanity = SanityHandler.CurrentSanity;
 
         SanityText.text = $"Sanity: {(int)curSanity}%";
 

@@ -1,14 +1,14 @@
-﻿using Handlers;
+﻿using Singletons;
 using UI;
 using UnityEngine;
 
-public class AudioDecoyHandler : Singleton<AudioDecoyHandler>
+public class AudioDecoyHandler : MonoBehaviour
 {
     public AudioDecoy CurrentDecoy;
 
     private void Start()
     {
-        EventHandler.Instance.OnDestroyedAudioDecoy += OnDestroyedAudioDecoy;
+        EventManager.Instance.OnDestroyedAudioDecoy += OnDestroyedAudioDecoy;
     }
 
     private void OnDestroyedAudioDecoy(AudioDecoy destroyedDecoy)
@@ -54,6 +54,6 @@ public class AudioDecoyHandler : Singleton<AudioDecoyHandler>
             CurrentDecoy.ToggleDecoy(true);
         }
 
-        EventHandler.Instance.ChangedAudioDecoy(oldAudioDecoy, CurrentDecoy);
+        EventManager.Instance.ChangedAudioDecoy(oldAudioDecoy, CurrentDecoy);
     }
 }

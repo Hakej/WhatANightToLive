@@ -1,10 +1,10 @@
 using System.Collections;
-using Handlers;
+using Singletons;
 using UnityEngine;
 
 namespace Controllers
 {
-    public class PlayerController : Singleton<PlayerController>
+    public class PlayerController : MonoBehaviour
     {
         public float RotationSpeed = 0.5f;
         public float JumpscareRotationSpeed = 0.2f;
@@ -34,7 +34,7 @@ namespace Controllers
 
         private IEnumerator RotateMe(Vector3 byAngles, float rotationSpeed)
         {
-            EventHandler.Instance.PlayerRotationStart();
+            EventManager.Instance.PlayerRotationStart();
 
             _isTurning = true;
             MoveSound.Play();
@@ -51,7 +51,7 @@ namespace Controllers
             Player.transform.rotation = toAngle;
             _isTurning = false;
 
-            EventHandler.Instance.PlayerRotationStop(toAngle);
+            EventManager.Instance.PlayerRotationStop(toAngle);
         }
 
         public void RotateToFaceEnemy(Vector3 enemyPosition)
