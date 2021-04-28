@@ -1,14 +1,17 @@
 ﻿using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Singletons;
+using UnityEditor;
+
 namespace Handlers
 {
     public class SceneHandler : MonoBehaviour
     {
         [Header("Scenes")]
-        public SceneAsset LoseScene;
+        public string MenuSceneName;
+        public string GameplaySceneName;
+        public string LoseSceneName;
 
         [Header("Transition")]
         public Animator Transition;
@@ -24,9 +27,19 @@ namespace Handlers
             EventManager.Instance.OnLose += OnLose;
         }
 
+        public void LoadGameplayScene()
+        {
+            LoadScene(GameplaySceneName);
+        }
+
+        public void LoadMenuScene()
+        {
+            LoadScene(MenuSceneName);
+        }
+
         private void OnLose()
         {
-            LoadSceneWithBlackScreen(LoseScene);
+            LoadSceneWithBlackScreen(LoseSceneName);
         }
 
         private void OnDisable()
@@ -37,9 +50,9 @@ namespace Handlers
             }
         }
 
-        public void LoadScene(SceneAsset scene)
+        private void LoadScene(string sceneName)
         {
-            StartCoroutine(LoadLevel(scene.name));
+            StartCoroutine(LoadLevel(sceneName));
         }
 
         private IEnumerator LoadLevel(string sceneName)
@@ -51,9 +64,9 @@ namespace Handlers
             SceneManager.LoadScene(sceneName);
         }
 
-        public void LoadSceneWithBlackScreen(SceneAsset scene)
+        private void LoadSceneWithBlackScreen(string sceneName)
         {
-            StartCoroutine(LoadLevelWithBlackScreen(scene.name));
+            StartCoroutine(LoadLevelWithBlackScreen(sceneName));
         }
 
         private IEnumerator LoadLevelWithBlackScreen(string sceneName)

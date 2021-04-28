@@ -1,4 +1,4 @@
-﻿using Classes.Abstracts;
+using Classes.Abstracts;
 using Classes.Extensions;
 using GameObjects;
 using Handlers;

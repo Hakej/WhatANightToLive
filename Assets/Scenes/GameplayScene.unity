@@ -6972,8 +6972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRoom: {fileID: 345050816}
-  AdjacentRoomTag: PlayerAdjacentRoom
-  NextToAdjacentRoomTag: NextToAdjacentRoom
+  AdjacentRoomTag: 
+  NextToAdjacentRoomTag: 
 --- !u!1001 &706476570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22383,11 +22383,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075185056239619879, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
-      propertyPath: BlackScreenTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3075185056239619879, guid: b8cce44429994cd4886b57e4cb3af51a,
-        type: 3}
       propertyPath: LoseScene
       value: 
       objectReference: {fileID: 102900000, guid: 16c1da49decb9ec41b6378d35b965206,
@@ -22445,7 +22440,7 @@ PrefabInstance:
     - target: {fileID: 7941905352758590237, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7941905352758590237, guid: b8cce44429994cd4886b57e4cb3af51a,
         type: 3}

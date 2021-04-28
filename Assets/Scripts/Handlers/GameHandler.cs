@@ -1,4 +1,3 @@
-﻿using Assets.Classes.Unity;
 using UnityEngine;
 using Singletons;
 
@@ -6,10 +5,9 @@ namespace Handlers
 {
     public class GameHandler : MonoBehaviour
     {
-
         [Header("Lose")]
         [TagSelector]
-        public string EnemyAudioSourceTag = "";
+        public string EnemyAudioSourceTag;
 
         private void Start()
         {

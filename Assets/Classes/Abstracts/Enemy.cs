@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Classes.Unity;
 using Classes.Extensions;
 using Controllers;
 using GameObjects;
@@ -31,8 +30,7 @@ namespace Classes.Abstracts
         public float MaxDecoyFoolChance;
         public bool IsCurrentlyFooled;
         public BoxCollider EnemyCollider;
-        [TagSelector]
-        public string AudioDecoyTag;
+
         [HideInInspector]
         public Collider AudioDecoyColliderInRange;
 
@@ -45,7 +43,9 @@ namespace Classes.Abstracts
         public bool IgnoreVents = true;
         public bool IgnoreAdjacentRooms = false;
 
-        [Header("Jumpscare Mechanisms")]
+        [Header("Needed tags")]
+        [TagSelector]
+        public string AudioDecoyTag;
         [TagSelector]
         public string FlashlightTag = "";
         [TagSelector]

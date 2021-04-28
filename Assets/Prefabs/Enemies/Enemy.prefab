@@ -408,12 +408,13 @@ MonoBehaviour:
   MaxDecoyFoolChance: 1
   IsCurrentlyFooled: 0
   EnemyCollider: {fileID: 6962799869906893397}
-  AudioDecoyTag: AudioDecoy
   AudioDecoyColliderInRange: {fileID: 0}
   AttackPower: 0
   AttackingTime: 0
+  LowSanityThreshold: 10
   IgnoreVents: 1
   IgnoreAdjacentRooms: 0
+  AudioDecoyTag: AudioDecoy
   FlashlightTag: Flashlight
   PlayerLookTag: PlayerLook
   MapRightSideTag: MapSideCollider
@@ -421,6 +422,7 @@ MonoBehaviour:
   JumpscareAudio: {fileID: 8300000, guid: 437e7f59f9b833b46971546e63ef3780, type: 3}
   JumpscareAudioSource: {fileID: 4073947237270089472}
   MovementAudioClips: []
+  VentMovementAudioClips: []
   MovementAudioSource: {fileID: 679053783923096569}
   CloseToPlayerAudioClips: []
   CloseToPlayerAudioSource: {fileID: 511171003904991040}

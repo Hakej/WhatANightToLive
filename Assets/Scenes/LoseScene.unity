@@ -384,13 +384,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1478507587}
-        m_TargetAssemblyTypeName: SceneHandler, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 2
+        m_TargetAssemblyTypeName: Handlers.SceneHandler, Assembly-CSharp
+        m_MethodName: LoadMenuScene
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: 7564ea65b99508048bcac6d22a0af3e8,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
