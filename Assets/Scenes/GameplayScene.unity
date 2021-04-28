@@ -3429,7 +3429,7 @@ MonoBehaviour:
   DisableEnemies: 0
   EnemiesContainer: {fileID: 1101431402}
   EnemiesToSpawn:
-  - EnemyPrefab: {fileID: 3864044535442055448, guid: b274fad6b6332dd43afdfb20c7acec5d,
+  - EnemyPrefab: {fileID: 3864044535442055448, guid: 27dd2ae427aba5445aa2f9c335c8b1cf,
       type: 3}
     SpawnRoom: {fileID: 1459521493}
     SpawnTime:
@@ -6972,8 +6972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRoom: {fileID: 345050816}
-  AdjacentRoomTag: 
-  NextToAdjacentRoomTag: 
+  AdjacentRoomTag: PlayerAdjacentRoom
+  NextToAdjacentRoomTag: NextToAdjacentRoom
 --- !u!1001 &706476570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8809,6 +8809,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1322447543}
     m_Modifications:
+    - target: {fileID: 906444318, guid: 1c4151658ec90d54e861d0a34461ba21, type: 3}
+      propertyPath: PowerHandler
+      value: 
+      objectReference: {fileID: 192515817}
     - target: {fileID: 2015877580865809817, guid: 1c4151658ec90d54e861d0a34461ba21,
         type: 3}
       propertyPath: m_LocalPosition.x

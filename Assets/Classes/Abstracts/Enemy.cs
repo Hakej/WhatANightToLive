@@ -120,7 +120,9 @@ namespace Classes.Abstracts
 
         private void RunAway()
         {
+            IsAttacking = false;
             IsRunningAway = true;
+
             Animator.SetBool("IsRunningAway", true);
 
             MovementAudioSource.pitch = Random.Range(0.8f, 1.2f);
