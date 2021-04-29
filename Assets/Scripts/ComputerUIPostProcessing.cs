@@ -10,17 +10,6 @@ public class ComputerUIPostProcessing : MonoBehaviour
     public float LoweringTime;
     public Volume Volume;
 
-    private void Start()
-    {
-        EventManager.Instance.OnComputerUIActiveFeatureChange += OnComputerUIActiveFeatureChange;
-    }
-
-    private void OnComputerUIActiveFeatureChange(GameObject feature)
-    {
-        // TODO: Add some visual effect for changing current feature
-        //LowerChromaticAberration();
-    }
-
     private void OnEnable()
     {
         Invoke("LowerChromaticAberration", Delay);
@@ -28,6 +17,11 @@ public class ComputerUIPostProcessing : MonoBehaviour
 
     private void LowerChromaticAberration()
     {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
         if (Volume.profile.TryGet<ChromaticAberration>(out var chromaticAberration))
         {
             StartCoroutine(LowerOverTime(chromaticAberration));
