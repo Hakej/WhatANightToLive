@@ -227,6 +227,11 @@ namespace Classes.Abstracts
         {
             CurrentMoveCooldown += Time.deltaTime;
 
+            if (IsPlayerFacingMe)
+            {
+                return;
+            }
+
             if (CurrentMoveCooldown < MoveCooldown)
             {
                 return;

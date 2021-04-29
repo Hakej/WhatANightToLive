@@ -11716,7 +11716,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1051608105}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1149009770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11744,8 +11744,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3, z: 7.673335}
-  m_Center: {x: 0.0000000206633, y: 0.5, z: 3.3366685}
+  m_Size: {x: 3.7541294, y: 3, z: 7.673335}
+  m_Center: {x: 0.059651457, y: 0.5, z: 3.3366685}
 --- !u!1 &1164112017
 GameObject:
   m_ObjectHideFlags: 0
