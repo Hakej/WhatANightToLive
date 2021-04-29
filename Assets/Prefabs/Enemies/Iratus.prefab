@@ -20,12 +20,12 @@ PrefabInstance:
     - target: {fileID: 2433713791126662365, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3298206244247770793, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5093571188835735974, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
@@ -123,6 +123,16 @@ PrefabInstance:
       propertyPath: MovementAudioClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: b041e84a06c6a544db3f22fe23327a39, type: 3}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: DifficultyRiseAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822761892982298793, guid: 97692ca8b6aab7644abc6487d90acbdc,
+        type: 3}
+      propertyPath: DifficultyRiseCooldown
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6795249731734033578, guid: 97692ca8b6aab7644abc6487d90acbdc,
         type: 3}
       propertyPath: m_RootOrder

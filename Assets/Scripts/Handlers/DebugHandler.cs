@@ -71,6 +71,7 @@ public class DebugHandler : MonoBehaviour
         foreach (var enemy in _spawnedEnemies)
         {
             enemies.Append($"{enemy.gameObject.name}\n");
+            enemies.Append($"Current difficulty: {enemy.CurrentDifficulty}\n");
             enemies.Append($"Current room: {enemy.CurrentRoom.name}\n");
             enemies.Append($"Is attacking: {enemy.IsAttacking}\n");
 

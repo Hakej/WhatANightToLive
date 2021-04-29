@@ -401,6 +401,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingDifficulty: 0
   MoveCooldown: 0
+  DifficultyRiseAmount: 1
+  DifficultyRiseCooldown: 30
   MinSmartMoveChance: 0
   MaxSmartMoveChance: 1
   CanDestroyDecoy: 1

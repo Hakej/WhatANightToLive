@@ -15,6 +15,8 @@ namespace Classes.Abstracts
         [Range(0, 20)]
         public int StartingDifficulty;
         public float MoveCooldown;
+        public int DifficultyRiseAmount;
+        public float DifficultyRiseCooldown;
 
         [Header("Enemy smart move")]
         [Range(0, 1)]
@@ -111,6 +113,19 @@ namespace Classes.Abstracts
             RoomsWeights = _roomsHandler.CalculateWeights(PlayerRoom, IgnoreVents, IgnoreAdjacentRooms);
 
             EventManager.Instance.OnLose += OnLose;
+
+            InvokeRepeating("RaiseDifficulty", DifficultyRiseCooldown, DifficultyRiseCooldown);
+        }
+
+        private void RaiseDifficulty()
+        {
+            CurrentDifficulty += DifficultyRiseAmount;
+
+            if (CurrentDifficulty >= 20)
+            {
+                CurrentDifficulty = 20;
+                CancelInvoke("RaiseDifficulty");
+            }
         }
 
         private void OnLose()
