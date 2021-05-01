@@ -4124,19 +4124,19 @@ MonoBehaviour:
     SpawnRoom: {fileID: 1459521493}
     SpawnTime:
       Hour: 20
-      Minutes: 1
-  - EnemyPrefab: {fileID: 5691349400541302450, guid: 60788d9ed841c964ab414e2aec74810f,
-      type: 3}
-    SpawnRoom: {fileID: 1459521493}
-    SpawnTime:
-      Hour: 20
       Minutes: 30
-  - EnemyPrefab: {fileID: 3864044535442055448, guid: 27dd2ae427aba5445aa2f9c335c8b1cf,
+  - EnemyPrefab: {fileID: 5691349400541302450, guid: 60788d9ed841c964ab414e2aec74810f,
       type: 3}
     SpawnRoom: {fileID: 1459521493}
     SpawnTime:
       Hour: 21
       Minutes: 0
+  - EnemyPrefab: {fileID: 3864044535442055448, guid: 27dd2ae427aba5445aa2f9c335c8b1cf,
+      type: 3}
+    SpawnRoom: {fileID: 1459521493}
+    SpawnTime:
+      Hour: 21
+      Minutes: 30
   GameTimeHandler: {fileID: 1710297679}
 --- !u!1001 &387566852
 PrefabInstance:

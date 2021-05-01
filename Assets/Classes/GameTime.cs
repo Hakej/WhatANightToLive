@@ -24,8 +24,10 @@ namespace Classes
         {
             var sumMinutes = Minutes + minutes;
 
-            Hour += (int)sumMinutes / 60;
             Minutes = sumMinutes % 60;
+
+            Hour += (int)sumMinutes / 60;
+            Hour %= 24;
         }
 
         public void AddHours(int hours)
